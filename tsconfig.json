@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6",
+      "scripthost",
+      "es2016"
+    ],
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "removeComments": true,
+    "include": [
+      "./src/**/*"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "public"
+  ]
+}
