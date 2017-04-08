@@ -15,13 +15,9 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "noImplicitAny": true,
-    "removeComments": true,
-    "include": [
-      "./src/**/*"
-    ]
+    "removeComments": true
   },
-  "exclude": [
-    "node_modules",
-    "public"
+  "include": [
+    "./src/**/*"
   ]
 }

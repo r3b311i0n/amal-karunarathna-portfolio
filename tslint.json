@@ -156,7 +156,7 @@
     "ordered-imports": true,
     "quotemark": [
       true,
-      "double",
+      "single",
       "jsx-double",
       "avoid-escape"
     ],
