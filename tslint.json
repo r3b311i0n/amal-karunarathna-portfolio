@@ -3,6 +3,9 @@
     "tslint:latest",
     "tslint-react"
   ],
+  "rulesDirectory": [
+    "node_modules/tslint-microsoft-contrib"
+  ],
   "rules": {
     "ban-types": [
       true,
@@ -95,6 +98,9 @@
       1
     ],
     "no-require-imports": true,
+    "trailing-comma": [
+      false
+    ],
     "arrow-parens": true,
     "arrow-return-shorthand": [
       true
@@ -133,7 +139,7 @@
     "no-boolean-literal-compare": true,
     "no-consecutive-blank-lines": true,
     "no-trailing-whitespace": [
-      true,
+      false,
       "ignore-comments",
       "ignore-template-strings"
     ],

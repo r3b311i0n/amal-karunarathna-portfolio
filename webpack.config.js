@@ -9,7 +9,7 @@ module.exports = function (env) {
             entry: './src/index.tsx',
             output: {
                 filename: 'bundle.js',
-                path: path.resolve(__dirname,'dist'),
+                path: path.resolve(__dirname, 'dist'),
                 publicPath: '/dist/'
             },
 
@@ -48,7 +48,6 @@ module.exports = function (env) {
                                         loader: 'css-loader',
                                         options: {
                                             importLoaders: 1,
-                                            modules: true,
                                             sourceMap: true
                                         }
                                     },
@@ -74,10 +73,15 @@ module.exports = function (env) {
             },
 
             devServer: {
-                contentBase: path.join(__dirname, 'public'),
+                contentBase: [
+                    path.join(__dirname, 'public'),
+                    path.join(__dirname, 'node_modules/react/dist'),
+                    path.join(__dirname, 'node_modules/react-dom/dist')
+                ],
                 compress: true,
                 port: 4200,
-                publicPath: '/dist/'
+                publicPath: '/dist/',
+                historyApiFallback: true
             }
         };
     }

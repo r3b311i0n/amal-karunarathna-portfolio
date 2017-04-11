@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,8 @@
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.16.1",
     "tslint": "^5.0.0",
+    "tslint-microsoft-contrib": "^4.0.1",
+    "tslint-react": "^2.5.0",
     "typescript": "^2.2.2",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
