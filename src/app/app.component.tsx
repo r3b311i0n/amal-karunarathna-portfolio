@@ -11,8 +11,8 @@ export class App extends React.Component<any, any> {
 
     public render(): JSX.Element {
         return (
-            <div>
-                <header>{navBar()}</header>
+            <div className="app-root">
+                <aside>{navBar()}</aside>
             </div>
         );
     }

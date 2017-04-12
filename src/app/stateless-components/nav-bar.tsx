@@ -6,11 +6,13 @@ import navBtn from './nav-btn';
 
 const navBar = () => {
     return (
-        <ul>
-            <li>{navBtn('CODE')}</li>
-            <li>{navBtn('BLOG')}</li>
-            <li>{navBtn('ABOUT ME')}</li>
-        </ul>
+        <div className="nav-bar">
+            <ul>
+                <li>{navBtn('BLOG')}</li>
+                <li>{navBtn('CODE')}</li>
+                <li>{navBtn('ABOUT ME')}</li>
+            </ul>
+        </div>
     );
 };
 

@@ -1,0 +1,19 @@
+.nav-bar {
+    display: block;
+    float: right;
+}
+
+.nav-bar li {
+    border-bottom: 2px solid;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    list-style-type: none;
+    padding: 1rem;
+    text-align: right;
+    transition-property: color;
+    transition-duration: 300ms;
+}
+
+.nav-bar li:hover {
+    color: #d20000;
+}
