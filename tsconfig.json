@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "es6",
+    "module": "es2015",
     "moduleResolution": "node",
     "target": "es2015",
     "sourceMap": true,
@@ -13,11 +13,13 @@
       "es2016"
     ],
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "jsx": "react",
     "noImplicitAny": true,
     "removeComments": true
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./test/**/*"
   ]
 }
