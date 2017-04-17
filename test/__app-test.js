@@ -1,11 +1,8 @@
 const assert = require('assert');
 
-const app = require('../src/app/app.component');
+import AppComponent from '../src/app/app.component';
 
 describe('#App', () => {
-    describe('#karmaTester()', () => {
-        it('should work', () => {
-            assert.equal(0, app.App.karmaTester());
-        })
+    it('should be a react component', () => {
     });
 });

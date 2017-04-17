@@ -5,17 +5,6 @@ import navBar from './stateless-components/nav-bar';
 export class App extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-        App.karmaTester();
-    }
-
-    private static karmaTester(): number {
-        console.log('KARMA!!!');
-
-        return 0;
-    }
-
-    private componentDidMount() {
-        console.log('LOADED!');
     }
 
 //    Highest-level container-component
@@ -24,6 +13,7 @@ export class App extends React.Component<any, any> {
         return (
             <div className="app-root">
                 <aside>{navBar()}</aside>
+                <main></main>
             </div>
         );
     }

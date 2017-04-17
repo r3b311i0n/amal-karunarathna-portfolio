@@ -7,11 +7,14 @@ import navBtn from './nav-btn';
 const navBar = () => {
     return (
         <div className="nav-bar">
-            <ul>
-                <li>{navBtn('BLOG')}</li>
-                <li>{navBtn('CODE')}</li>
-                <li>{navBtn('ABOUT ME')}</li>
-            </ul>
+            <nav>
+                <ul>
+                    <li>{navBtn('HOME', '/')}</li>
+                    <li>{navBtn('BLOG', '/blog')}</li>
+                    <li>{navBtn('CODE', '/code')}</li>
+                    <li>{navBtn('ABOUT ME', '/about')}</li>
+                </ul>
+            </nav>
         </div>
     );
 };

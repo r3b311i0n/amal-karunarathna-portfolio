@@ -1,7 +1,9 @@
 .nav-btn {
     background-color: transparent;
     color: inherit;
-    font-family: sans-serif;
+    font-family: "Avenir Next LT Pro", sans-serif;
     font-size: 1.3em;
     letter-spacing: 0.1em;
+    outline: none;
+    text-decoration: none;
 }
