@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './nav-btn.css';
 
-// Stateless nav-btn component that takes btn label and route destination, then puts them in a ReactRouterDom.Link.
+// Stateless nav-btn component that takes btn label and route destination, then puts them in a ReactRouterDom.NavLink.
 
 const navBtn = (btnLabel: string, routeDestination: string) => {
     return (
-        <Link to={routeDestination} className="nav-btn">{btnLabel}</Link>
+        <NavLink to={routeDestination} className="nav-btn-root">{btnLabel}</NavLink>
     );
 };
 

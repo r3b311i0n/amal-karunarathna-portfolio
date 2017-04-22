@@ -6,7 +6,7 @@ import navBtn from './nav-btn';
 
 const navBar = () => {
     return (
-        <div className="nav-bar">
+        <div className="nav-bar-root">
             <nav>
                 <ul>
                     <li>{navBtn('HOME', '/')}</li>
