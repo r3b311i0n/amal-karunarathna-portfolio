@@ -1,18 +1,8 @@
-.about-root {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 10.486em;
-}
-
 .about-content {
-    display: inline-flex;
-    flex-direction: column;
-    width: 70%;
+    margin: 0 3.157em;
 }
 
 .about-header {
-    font-family: "Avenir Next LT Pro", sans-serif;
     font-size: 1.777rem;
     text-align: center;
 }

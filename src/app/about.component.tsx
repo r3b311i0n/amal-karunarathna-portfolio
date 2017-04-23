@@ -1,17 +1,20 @@
 import * as React from 'react';
 import './about.component.css';
-import navBar from './stateless-components/nav-bar';
+import NavBar from './stateless-components/nav-bar';
 
 export class About extends React.Component<void, void> {
     constructor(props: any) {
         super(props);
     }
 
+    private static active = {color: 'rgba(0, 0, 0, 1)', 'font-size': '1.333em'};
+    private static inactive = {color: 'inherit', 'font-size': '1em'};
+
     // Container-component of ME!!!.
 
     public render(): JSX.Element {
         return (
-            <div className="about-root">
+            <div>
                 <div className="about-content">
                     <header><h2 className="about-header">Amal Karunarathna</h2></header>
                     <main>
@@ -34,7 +37,7 @@ export class About extends React.Component<void, void> {
                         </section>
                     </main>
                 </div>
-                <aside>{navBar()}</aside>
+                <aside>{NavBar(About.inactive, About.inactive, About.inactive, About.active)}</aside>
             </div>
         );
     }

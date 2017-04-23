@@ -1,12 +1,3 @@
-.app-root {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 10.486em;
-}
-
 .app-content {
-    display: inline-flex;
-    flex-direction: column;
-    width: 70%;
+    margin: 0 3.157em;
 }

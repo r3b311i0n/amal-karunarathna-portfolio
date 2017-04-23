@@ -1,0 +1,27 @@
+#root {
+    font-family: "Avenir Next LT Pro", sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+#root:first-child {
+    padding: 0 17.713em;
+}
+
+@media screen and (max-width: 1024px) {
+    #root:first-child {
+        padding: 0 9.69em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #root:first-child {
+        padding: 0 5.61em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #root:first-child {
+        padding: 0 1em;
+    }
+}
