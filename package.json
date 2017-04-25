@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/history": "^4.5.0",
-    "@types/react": "^15.0.22",
+    "@types/react": "^15.0.23",
     "@types/react-dom": "^15.5.0",
     "@types/react-motion": "0.0.21",
     "@types/react-redux": "^4.4.39",

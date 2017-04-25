@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Motion, spring} from 'react-motion';
 import './about.component.css';
+import {Social} from './social.component';
 import AboutMe from './stateless-components/about-me';
 import NavBar from './stateless-components/nav-bar';
 
@@ -61,6 +62,7 @@ export class About extends React.Component<void, IAboutState> {
                     </main>
                 </div>
                 <aside>{NavBar(inactive, inactive, inactive, active)}</aside>
+                <Social/>
             </div>
         );
     }

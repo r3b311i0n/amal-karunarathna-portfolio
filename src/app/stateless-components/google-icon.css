@@ -1,0 +1,27 @@
+.google-plus-g {
+    animation: google-plus-g 800ms;
+}
+
+@keyframes google-plus-g {
+    from {
+        fill: #DC4E41;
+    }
+    to {
+        fill: #FFFFFF;
+    }
+}
+
+.google-plus-plus {
+    animation: google-plus-plus 1.1s cubic-bezier(.8, .27, .83, .67);
+}
+
+@keyframes google-plus-plus {
+    from {
+        transform: scale(0, 0) rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    to {
+        transform: scale(1, 1) rotate(360deg);
+        transform-origin: 50% 50%;
+    }
+}
