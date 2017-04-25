@@ -8,7 +8,7 @@ const active = {color: 'rgba(0, 0, 0, 1)', 'font-size': '1.333em'};
 const inactive = {color: 'inherit', 'font-size': '1em'};
 
 interface IAboutState {
-    willSlideIn: boolean;
+    willAnimateIn: boolean;
 }
 
 export class About extends React.Component<void, IAboutState> {
@@ -16,12 +16,13 @@ export class About extends React.Component<void, IAboutState> {
         super(props);
 
         this.state = {
-            willSlideIn: false
+            willAnimateIn: false
         };
     }
 
     private componentDidMount() {
-        this.setState({willSlideIn: true});
+        // For triggering the slide-in animation for AboutMe.
+        this.setState({willAnimateIn: true});
     }
 
     // Container-component of ME!!!.
@@ -30,12 +31,25 @@ export class About extends React.Component<void, IAboutState> {
         return (
             <div>
                 <div className="about-content">
-                    <header><h2 className="about-header">Amal Karunarathna</h2></header>
+                    <header>
+                        <Motion
+                            style={{
+                                alpha: this.state.willAnimateIn ? spring(1) : spring(0)
+                            }}
+                        >
+                            {(interpolation: any) => <h2
+                                className="about-header"
+                                style={{opacity: interpolation.alpha}}
+                            >
+                                Amal Karunarathna
+                            </h2>}
+                        </Motion>
+                    </header>
                     <main>
                         <Motion
                             style={{
-                                alpha: this.state.willSlideIn ? spring(1) : spring(0),
-                                x: this.state.willSlideIn ? spring(0) : spring(300)
+                                alpha: this.state.willAnimateIn ? spring(1) : spring(0),
+                                x: this.state.willAnimateIn ? spring(0) : spring(300)
                             }}
                         >
                             {(interpolation: any) => <div
