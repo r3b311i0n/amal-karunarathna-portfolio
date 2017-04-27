@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "@types/react": "^15.0.23",
     "@types/react-dom": "^15.5.0",
     "@types/react-motion": "0.0.21",
-    "@types/react-redux": "^4.4.39",
+    "@types/react-redux": "^4.4.40",
     "@types/react-router-dom": "^4.0.4",
     "awesome-typescript-loader": "^3.1.2",
     "css-loader": "^0.28.0",
@@ -47,13 +47,13 @@
     "tslint-react": "^3.0.0",
     "typescript": "^2.2.2",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.4"
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "history": "^4.6.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-motion": "^0.4.8",
+    "react-motion": "^0.5.0",
     "react-redux": "^5.0.4",
     "react-redux-firebase": "^1.4.0-rc.1",
     "react-router-dom": "^4.1.1",
