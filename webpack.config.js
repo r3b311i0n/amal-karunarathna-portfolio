@@ -76,7 +76,9 @@ module.exports = function (env) {
                 contentBase: [
                     path.join(__dirname, 'public'),
                     path.join(__dirname, 'node_modules/react/dist'),
-                    path.join(__dirname, 'node_modules/react-dom/dist')
+                    path.join(__dirname, 'node_modules/react-dom/dist'),
+                    path.join(__dirname, 'node_modules/redux/dist'),
+                    path.join(__dirname, 'node_modules/react-redux/dist')
                 ],
                 compress: true,
                 port: 4200,

@@ -10,7 +10,7 @@ export class App extends React.Component<void, void> {
         super(props);
     }
 
-//    Index container-component
+//    Index presentational-component.
 
     public render(): JSX.Element {
         return (

@@ -10,7 +10,7 @@ export class Blog extends React.Component<void, void> {
         super(props);
     }
 
-//    Blog article container-component
+//    Blog article presentational-component.
 
     public render(): JSX.Element {
         return (

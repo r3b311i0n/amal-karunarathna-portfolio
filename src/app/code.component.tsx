@@ -9,7 +9,7 @@ export class Code extends React.Component<void, void> {
         super(props);
     }
 
-//    Programming section container-component
+//    Programming section presentational-component.
 
     public render(): JSX.Element {
         return (

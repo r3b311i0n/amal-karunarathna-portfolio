@@ -26,7 +26,7 @@ export class About extends React.Component<void, IAboutState> {
         this.setState({willAnimateIn: true});
     }
 
-    // Container-component of ME!!!.
+    // Presentational-component of ME!!!.
 
     public render(): JSX.Element {
         return (

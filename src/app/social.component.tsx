@@ -1,12 +1,12 @@
 import * as React from 'react';
 import GoogleIcon from './stateless-components/google-icon';
 
-export class Social extends React.Component<void, void> {
+export class Social extends React.Component<any, void> {
     constructor(props: any) {
         super(props);
     }
 
-//    Social links container-component
+//    Social links presentational-component.
 
     public render(): JSX.Element {
         return (
