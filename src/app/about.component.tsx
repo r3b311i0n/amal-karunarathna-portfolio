@@ -30,7 +30,7 @@ export class About extends React.Component<void, IAboutState> {
 
     public render(): JSX.Element {
         return (
-            <div>
+            <div className="about-root">
                 <div className="about-content">
                     <header>
                         <Motion

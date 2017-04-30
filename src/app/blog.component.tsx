@@ -6,7 +6,9 @@ import NavBar from './stateless-components/nav-bar';
 const active = {color: 'rgba(0, 0, 0, 1)', 'font-size': '1.333em'};
 const inactive = {color: 'inherit', 'font-size': '1em'};
 
-const blogTest = {name: 'Meth is GREAT!', tags: ['drugs', 'meth', 'poverty', 'white trash']};
+const blogTest = {
+    Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
+};
 
 export class Blog extends React.Component<void, void> {
     constructor(props: any) {
@@ -17,10 +19,10 @@ export class Blog extends React.Component<void, void> {
 
     public render(): JSX.Element {
         return (
-            <div>
-                <div className="blog-content">
+            <div className="blog-root">
+                <div>
                     <main>
-                        {BlogLink(blogTest.name, blogTest.tags)}
+                        {BlogLink(blogTest.Meth.name, blogTest.Meth.tags)}
                     </main>
                 </div>
                 <aside>{NavBar(inactive, active, inactive, inactive)}</aside>

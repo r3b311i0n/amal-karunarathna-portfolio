@@ -4,10 +4,10 @@ import Tag from './tag';
 
 const BlogLink = (articleName: string, tags: string[]) =>
     (
-        <div>
-        <span>
-            {articleName}
-        </span>
+        <div className="blog-link-root">
+            <span className="blog-link-article-name">
+                {articleName}
+            </span>
             <div className="blog-link-tags">
                 {
                     tags.map((value: string) => (
