@@ -1,9 +1,9 @@
 import * as React from 'react';
-import './google-icon.css';
+import './google-plus-icon.css';
 
 //noinspection TsLint
-const GoogleIcon = () => (
-    <svg className="google-plus-icon" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+const GooglePlusIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
         <title>Google +</title>
         <g fill="none" fill-rule="evenodd">
             <path
@@ -21,4 +21,4 @@ const GoogleIcon = () => (
     </svg>
 );
 
-export default GoogleIcon;
+export default GooglePlusIcon;

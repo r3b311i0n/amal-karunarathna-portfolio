@@ -1,0 +1,31 @@
+.twitter-bird {
+    animation: twitter-bird-fade 1.75s;
+}
+
+@keyframes twitter-bird-fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.twitter-hashtag {
+    animation: twitter-hashtag-fade 1.75s;
+}
+
+@keyframes twitter-hashtag-fade {
+    0% {
+        fill: rgba(0, 0, 0, 0);
+    }
+    50% {
+        fill: rgba(255, 255, 255, 1);
+    }
+    100% {
+        fill: rgba(0, 0, 0, 0);
+    }
+}

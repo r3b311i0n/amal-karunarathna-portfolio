@@ -3,7 +3,7 @@ import './github-icon.css';
 
 //noinspection TsLint
 const GitHubIcon = () => (
-    <svg className="github-icon" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><title>
         GitHub</title>
         <g fill="#151513" fill-rule="evenodd">
             <path
