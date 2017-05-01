@@ -5,12 +5,8 @@
     margin-top: 5em;
 }
 
-.social-icon {
+.social-icon > a:any-link {
     cursor: pointer;
-    margin: 0 1em;
-}
-
-.social-icon > a:focus {
     outline: none;
 }
 

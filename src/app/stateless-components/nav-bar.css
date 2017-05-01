@@ -1,26 +1,28 @@
 .nav-bar-root {
-    position: fixed;
-    right: 7.478em;
-    top: 3.157em;
-    width: max-content;
+    & {
+        position: fixed;
+        right: 7.478em;
+        top: 3.157em;
+        width: max-content;
+    }
+
+    & li {
+        border-bottom: 2px solid;
+        color: gray(127, 75%);
+        cursor: pointer;
+        list-style-type: none;
+        margin: 1rem;
+        text-align: right;
+        transition-property: color;
+        transition-duration: 300ms;
+    }
+
+    & li:hover {
+        color: #d20000;
+    }
 }
 
-.nav-bar-root li {
-    border-bottom: 2px solid;
-    color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    list-style-type: none;
-    margin: 1rem;
-    text-align: right;
-    transition-property: color;
-    transition-duration: 300ms;
-}
-
-.nav-bar-root li:hover {
-    color: #d20000;
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
     .nav-bar-root {
         animation: nav-bar-fade-out 300ms ease-in;
         visibility: hidden;
@@ -38,7 +40,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (width >= 1025px) {
     .nav-bar-root {
         animation: nav-bar-fade-in 300ms ease-out;
         visibility: visible;

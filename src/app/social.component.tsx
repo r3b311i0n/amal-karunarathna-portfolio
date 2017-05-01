@@ -5,7 +5,7 @@ import GooglePlusIcon from './stateless-components/google-plus-icon';
 import MediumIcon from './stateless-components/medium-icon';
 import TwitterIcon from './stateless-components/twitter-icon';
 
-export class Social extends React.Component<any, void> {
+export class Social extends React.Component<{}, void> {
     constructor(props: any) {
         super(props);
     }

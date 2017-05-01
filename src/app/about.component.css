@@ -1,3 +1,7 @@
+.about-root {
+    padding: 0 17.713em;
+}
+
 .about-content {
     margin: 0 3.157em;
 }
@@ -7,23 +11,19 @@
     text-align: center;
 }
 
-.about-root {
-    padding: 0 17.713em;
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
     .about-root {
         padding: 0 9.69em;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
     .about-root {
         padding: 0 5.61em;
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (width <= 640px) {
     .about-root {
         padding: 0 1em;
     }

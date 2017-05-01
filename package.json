@@ -1,8 +1,11 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
+  "browserslist": [
+    "last 2 versions"
+  ],
   "scripts": {
     "test": "mocha",
     "watch": "webpack-dev-server",

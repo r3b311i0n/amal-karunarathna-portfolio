@@ -1,7 +1,7 @@
 .tag-root {
-    border: solid 2px rgba(0, 0, 0, 0.5);
+    border: solid 2px color(black a(50%));
     border-radius: 0.5em;
-    color: rgba(0, 0, 0, 0.5);;
+    color: color(black a(50%));
     cursor: pointer;
     font-family: "Operator Mono", monospace;
     font-size: 0.75em;
