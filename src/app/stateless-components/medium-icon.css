@@ -1,0 +1,75 @@
+.green1 {
+    animation: green1 3s;
+}
+
+@keyframes green1 {
+    0% {
+        fill: #00AB6C;
+    }
+    33% {
+        fill: #14C767;
+    }
+    66% {
+        fill: #0BE370;
+    }
+    100% {
+        fill: #32FC8D;
+    }
+}
+
+.green2 {
+    animation: green2 3s;
+}
+
+@keyframes green2 {
+    0% {
+        fill: #14C767;
+    }
+    33% {
+        fill: #00AB6C;
+    }
+    66% {
+        fill: #32FC8D;
+    }
+    100% {
+        fill: #0BE370;
+    }
+}
+
+.green3 {
+    animation: green3 3s;
+}
+
+@keyframes green3 {
+    0% {
+        fill: #0BE370;
+    }
+    33% {
+        fill: #32FC8D;
+    }
+    66% {
+        fill: #00AB6C;
+    }
+    100% {
+        fill: #14C767;
+    }
+}
+
+.green4 {
+    animation: green4 3s;
+}
+
+@keyframes green4 {
+    0% {
+        fill: #32FC8D;
+    }
+    33% {
+        fill: #0BE370;
+    }
+    66% {
+        fill: #14C767;
+    }
+    100% {
+        fill: #00AB6C;
+    }
+}

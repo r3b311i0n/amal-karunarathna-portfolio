@@ -2,6 +2,7 @@ import * as React from 'react';
 import './social.component.css';
 import GitHubIcon from './stateless-components/github-icon';
 import GooglePlusIcon from './stateless-components/google-plus-icon';
+import MediumIcon from './stateless-components/medium-icon';
 import TwitterIcon from './stateless-components/twitter-icon';
 
 export class Social extends React.Component<any, void> {
@@ -22,6 +23,11 @@ export class Social extends React.Component<any, void> {
                 <span className="social-icon">
                     <a href="https://plus.google.com/u/0/+AmalKarunarathna" target="_blank" title="Google +">
                         <GooglePlusIcon/>
+                    </a>
+                </span>
+                <span className="social-icon">
+                    <a href="https://medium.com/@r3b311i0n" target="_blank" title="Medium">
+                        <MediumIcon/>
                     </a>
                 </span>
                 <span className="social-icon">

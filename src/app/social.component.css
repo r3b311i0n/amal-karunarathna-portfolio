@@ -1,4 +1,7 @@
 .social-root {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
     margin-top: 5em;
 }
 
@@ -9,4 +12,20 @@
 
 .social-icon > a:focus {
     outline: none;
+}
+
+.social-icon:nth-child(1) {
+    grid-column-start: 1;
+}
+
+.social-icon:nth-child(2) {
+    grid-column-start: 2;
+}
+
+.social-icon:nth-child(3) {
+    grid-column-start: 3;
+}
+
+.social-icon:nth-child(4) {
+    grid-column-start: 4;
 }
