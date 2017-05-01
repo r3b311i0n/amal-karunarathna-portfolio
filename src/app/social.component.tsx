@@ -1,4 +1,5 @@
 import * as React from 'react';
+import GitHubIcon from './stateless-components/github-icon';
 import GoogleIcon from './stateless-components/google-icon';
 
 export class Social extends React.Component<any, void> {
@@ -11,6 +12,7 @@ export class Social extends React.Component<any, void> {
     public render(): JSX.Element {
         return (
             <div>
+                <GitHubIcon/>
                 <GoogleIcon/>
             </div>
         );

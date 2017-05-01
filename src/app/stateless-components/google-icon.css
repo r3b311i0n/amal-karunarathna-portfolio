@@ -1,3 +1,7 @@
+.google-plus-icon {
+    cursor: pointer;
+}
+
 .google-plus-g {
     animation: google-plus-g 800ms;
 }
@@ -18,10 +22,10 @@
 @keyframes google-plus-plus {
     from {
         transform: scale(0, 0) rotate(0deg);
-        transform-origin: 50% 50%;
+        transform-origin: 42px 29px;
     }
     to {
         transform: scale(1, 1) rotate(360deg);
-        transform-origin: 50% 50%;
+        transform-origin: 42px 29px;
     }
 }
