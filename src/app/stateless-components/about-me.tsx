@@ -3,9 +3,11 @@ import './about-me.css';
 
 // My stateless component.
 
-const AboutMe = (myDescription: string) => (
+const AboutMe = (myDescription1: string, myDescription2: string, myDescription3: string) => (
     <section className="about-me">
-        <p>{myDescription}</p>
+        <p>{myDescription1}</p>
+        <p>{myDescription2}</p>
+        <p>{myDescription3}</p>
     </section>
 );
 

@@ -9,9 +9,11 @@ import NavBar from './stateless-components/nav-bar';
 const active = {color: 'rgba(0, 0, 0, 1)', 'font-size': '1.333em'};
 const inactive = {color: 'inherit', 'font-size': '1em'};
 
-let myDescription: string;
+let myDescription1: string;
+let myDescription2: string;
+let myDescription3: string;
 const database = firebase.database();
-const meRef = database.ref('me');
+const meRef = database.ref('me/');
 
 interface IAboutState {
     willAnimateIn: boolean;
@@ -29,7 +31,9 @@ export class About extends React.Component<void, IAboutState> {
     private componentDidMount() {
         // For triggering the slide-in animation for AboutMe.
         meRef.once('value').then((snapshot) => {
-            myDescription = snapshot.val();
+            myDescription1 = snapshot.child('para1').val();
+            myDescription2 = snapshot.child('para2').val();
+            myDescription3 = snapshot.child('para3').val();
             this.setState({willAnimateIn: true});
         });
     }
@@ -64,7 +68,7 @@ export class About extends React.Component<void, IAboutState> {
                             {(interpolation: any) => <div
                                 style={{transform: `translateX(${interpolation.x}px)`, opacity: interpolation.alpha}}
                             >
-                                {AboutMe(myDescription)}
+                                {AboutMe(myDescription1, myDescription2, myDescription3)}
                             </div>}
                         </Motion>
                     </main>
