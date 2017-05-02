@@ -17,7 +17,7 @@ export class Code extends React.Component<void, void> {
                 <div className="code-content">
                     <main></main>
                 </div>
-                <aside>{NavBar(inactive, inactive, active, inactive)}</aside>
+                {NavBar(inactive, inactive, active, inactive)}
             </div>
         );
     }

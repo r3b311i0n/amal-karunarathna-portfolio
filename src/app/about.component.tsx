@@ -1,3 +1,4 @@
+import * as firebase from 'firebase';
 import * as React from 'react';
 import {Motion, spring} from 'react-motion';
 import './about.component.css';
@@ -7,6 +8,10 @@ import NavBar from './stateless-components/nav-bar';
 
 const active = {color: 'rgba(0, 0, 0, 1)', 'font-size': '1.333em'};
 const inactive = {color: 'inherit', 'font-size': '1em'};
+
+let myDescription: string;
+const database = firebase.database();
+const meRef = database.ref('me');
 
 interface IAboutState {
     willAnimateIn: boolean;
@@ -23,7 +28,10 @@ export class About extends React.Component<void, IAboutState> {
 
     private componentDidMount() {
         // For triggering the slide-in animation for AboutMe.
-        this.setState({willAnimateIn: true});
+        meRef.once('value').then((snapshot) => {
+            myDescription = snapshot.val();
+            this.setState({willAnimateIn: true});
+        });
     }
 
     // Presentational-component of ME!!!.
@@ -56,12 +64,12 @@ export class About extends React.Component<void, IAboutState> {
                             {(interpolation: any) => <div
                                 style={{transform: `translateX(${interpolation.x}px)`, opacity: interpolation.alpha}}
                             >
-                                <AboutMe/>
+                                {AboutMe(myDescription)}
                             </div>}
                         </Motion>
                     </main>
                 </div>
-                <aside>{NavBar(inactive, inactive, inactive, active)}</aside>
+                {NavBar(inactive, inactive, inactive, active)}
                 <Social/>
             </div>
         );

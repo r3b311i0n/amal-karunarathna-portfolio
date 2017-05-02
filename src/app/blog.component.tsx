@@ -25,7 +25,7 @@ export class Blog extends React.Component<void, void> {
                         {BlogLink(blogTest.Meth.name, blogTest.Meth.tags)}
                     </main>
                 </div>
-                <aside>{NavBar(inactive, active, inactive, inactive)}</aside>
+                {NavBar(inactive, active, inactive, inactive)}
             </div>
         );
     }

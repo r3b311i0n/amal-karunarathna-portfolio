@@ -69,7 +69,7 @@ module.exports = function (env) {
                 'react-dom': 'ReactDOM',
                 'redux': 'Redux',
                 'react-redux': 'ReactRedux',
-                'react-redux-firebase': 'ReactReduxFirebase'
+                'firebase': 'firebase'
             },
 
             devServer: {
@@ -78,7 +78,8 @@ module.exports = function (env) {
                     path.join(__dirname, 'node_modules/react/dist'),
                     path.join(__dirname, 'node_modules/react-dom/dist'),
                     path.join(__dirname, 'node_modules/redux/dist'),
-                    path.join(__dirname, 'node_modules/react-redux/dist')
+                    path.join(__dirname, 'node_modules/react-redux/dist'),
+                    path.join(__dirname, 'node_modules/firebase')
                 ],
                 compress: true,
                 port: 4200,

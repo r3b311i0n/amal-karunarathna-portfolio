@@ -18,7 +18,7 @@ export class App extends React.Component<void, void> {
                 <div className="app-content">
                     <main></main>
                 </div>
-                <aside>{NavBar(active, inactive, inactive, inactive)}</aside>
+                {NavBar(active, inactive, inactive, inactive)}
             </div>
         );
     }
