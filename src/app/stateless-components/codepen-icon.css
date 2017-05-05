@@ -4,11 +4,11 @@
 
 @keyframes box-spin {
     from {
-        transform: rotate(0deg);
+        transform: scaleX(5) scaleY(5);
         transform-origin: 50% 50%;
     }
     to {
-        transform: rotate(360deg);
+        transform: scaleX(1) scaleY(1);
         transform-origin: 50% 50%;
     }
 }

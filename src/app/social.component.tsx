@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './social.component.css';
 import CodepenIcon from './stateless-components/codepen-icon';
+import DribbbleIcon from './stateless-components/dribbble-icon';
 import GitHubIcon from './stateless-components/github-icon';
 import GooglePlusIcon from './stateless-components/google-plus-icon';
 import LinkedInIcon from './stateless-components/linked-in-icon';
@@ -18,8 +19,13 @@ export class Social extends React.Component<{}, void> {
         return (
             <div className="social-root">
                 <span className="social-icon">
-                    <a href="#" target="_blank" title="Codepen">
+                    <a href="#" target="_blank" title="CodePen">
                         <CodepenIcon/>
+                    </a>
+                </span>
+                <span className="social-icon">
+                    <a href="#" target="_blank" title="Dribbble">
+                        <DribbbleIcon/>
                     </a>
                 </span>
                 <span className="social-icon">
