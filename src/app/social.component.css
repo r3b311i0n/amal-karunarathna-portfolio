@@ -3,15 +3,13 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 4.209em;
-    vertical-align: bottom;
-}
-
-.social-icon > a:any-link {
-    cursor: pointer;
-    outline: none;
 }
 
 .social-icon {
     margin: 0 1.777em;
 }
 
+.social-icon > a:any-link {
+    cursor: pointer;
+    outline: none;
+}

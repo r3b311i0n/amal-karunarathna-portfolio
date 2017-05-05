@@ -1,0 +1,14 @@
+.codepen-box {
+    animation: box-spin 750ms ease-out;
+}
+
+@keyframes box-spin {
+    from {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    to {
+        transform: rotate(360deg);
+        transform-origin: 50% 50%;
+    }
+}
