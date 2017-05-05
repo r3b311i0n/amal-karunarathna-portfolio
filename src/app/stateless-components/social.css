@@ -1,12 +1,12 @@
 .social-root {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 4.209em;
+    justify-content: flex-start;
+    justify-items: center;
+    margin-top: 5.61em;
 }
 
 .social-icon {
-    margin: 0 1.777em;
+    margin: 0 1em;
 }
 
 .social-icon > a:any-link {

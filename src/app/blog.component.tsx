@@ -10,7 +10,7 @@ const blogTest = {
     Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
 };
 
-export class Blog extends React.Component<void, void> {
+export class Blog extends React.Component<void, {}> {
     constructor(props: any) {
         super(props);
     }
