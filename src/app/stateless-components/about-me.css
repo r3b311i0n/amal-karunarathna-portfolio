@@ -2,3 +2,7 @@
     font-family: serif;
     font-size: 1.333em;
 }
+
+.about-me > p:first-child::first-letter {
+    font-size: 1.777em;
+}

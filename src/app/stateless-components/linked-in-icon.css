@@ -1,0 +1,41 @@
+.linked-in-i {
+    animation: i-zoom-in 1s linear;
+}
+
+@keyframes i-zoom-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.linked-in-n {
+    animation: n-fade-in 1.5s linear;
+}
+
+@keyframes n-fade-in {
+    0% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.linked-in-tittle {
+    animation: tittle-zoom-in 1s linear;
+}
+
+@keyframes tittle-zoom-in {
+    from {
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
