@@ -8,10 +8,30 @@
 }
 
 .social-icon {
-    margin: 0.317em 0;
+    margin: 0.75em 0;
 }
 
 .social-icon > a:any-link {
     cursor: pointer;
     outline: none;
+}
+
+@media screen and (width <= 1024px) {
+    .social-root {
+        left: 4.209em;
+    }
+
+    .social-icon {
+        margin: 0.317em 0;
+    }
+}
+
+@media screen and (width <= 768px) {
+    .social-root {
+        left: 0.75em;
+    }
+
+    .social-icon {
+        margin: 0 0;
+    }
 }
