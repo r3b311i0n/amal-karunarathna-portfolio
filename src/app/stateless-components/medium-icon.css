@@ -1,5 +1,5 @@
 .green1 {
-    animation: green1 3s;
+    animation: green1 8s;
 }
 
 @keyframes green1 {
@@ -18,7 +18,7 @@
 }
 
 .green2 {
-    animation: green2 3s;
+    animation: green2 8s;
 }
 
 @keyframes green2 {
@@ -37,7 +37,7 @@
 }
 
 .green3 {
-    animation: green3 3s;
+    animation: green3 8s;
 }
 
 @keyframes green3 {
@@ -56,7 +56,7 @@
 }
 
 .green4 {
-    animation: green4 3s;
+    animation: green4 8s;
 }
 
 @keyframes green4 {

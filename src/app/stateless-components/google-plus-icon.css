@@ -1,26 +1,33 @@
 .google-plus-g {
-    animation: google-plus-g 800ms;
+    animation: google-plus-g 2200ms cubic-bezier(.5, .17, .9, .75);
 }
 
 @keyframes google-plus-g {
-    from {
+    0% {
         fill: #DC4E41;
     }
-    to {
+    50% {
+        fill: #DC4E41;
+    }
+    100% {
         fill: #FFFFFF;
     }
 }
 
 .google-plus-plus {
-    animation: google-plus-plus 1.1s cubic-bezier(.8, .27, .83, .67);
+    animation: google-plus-plus 2600ms cubic-bezier(.8, .27, .83, .67);
 }
 
 @keyframes google-plus-plus {
-    from {
+    0% {
         transform: scale(0, 0) rotate(0deg);
         transform-origin: 42px 29px;
     }
-    to {
+    50% {
+        transform: scale(0, 0) rotate(0deg);
+        transform-origin: 42px 29px;
+    }
+    100% {
         transform: scale(1, 1) rotate(360deg);
         transform-origin: 42px 29px;
     }

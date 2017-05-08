@@ -16,40 +16,16 @@
     .about-root {
         padding: 0 9.69em;
     }
-
-    .social-icon {
-        margin: 0 1em;
-    }
-
-    .social-root {
-        margin-top: 3.157em;
-    }
 }
 
 @media screen and (width <= 768px) {
     .about-root {
         padding: 0 5.61em;
     }
-
-    .social-icon {
-        margin: 0 0.422em;
-    }
-
-    .social-root {
-        margin-top: 1.777em;
-    }
 }
 
 @media screen and (width <= 640px) {
     .about-root {
         padding: 0 1em;
-    }
-
-    .social-icon {
-        margin: 0 0.317em;
-    }
-
-    .social-root {
-        margin-top: 1em;
     }
 }
