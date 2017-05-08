@@ -1,5 +1,5 @@
 .evil-eyes {
-    animation: evil-eye-glow 1.75s cubic-bezier(.75, .41, .85, .73);
+    animation: evil-eye-glow 1.75s cubic-bezier(.75, .41, .85, .73) 900ms;
 }
 
 @keyframes evil-eye-glow {

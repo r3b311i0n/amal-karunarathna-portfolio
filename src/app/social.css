@@ -1,0 +1,17 @@
+.social-root {
+    display: flex;
+    flex-direction: column;
+    left: 7.478em;
+    top: 3.157em;
+    position: fixed;
+    width: max-content;
+}
+
+.social-icon {
+    margin: 0.317em 0;
+}
+
+.social-icon > a:any-link {
+    cursor: pointer;
+    outline: none;
+}

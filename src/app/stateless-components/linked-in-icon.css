@@ -1,25 +1,31 @@
 .linked-in-i {
-    animation: i-zoom-in 1s linear;
+    animation: i-zoom-in 1.25s linear 900ms;
 }
 
 @keyframes i-zoom-in {
-    from {
+    0% {
+        opacity: 0;
         transform: translateX(-100%);
     }
-    to {
+    69% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
         transform: translateX(0);
     }
 }
 
 .linked-in-n {
-    animation: n-fade-in 1.5s linear;
+    animation: n-fade-in 1.75s linear 750ms;
 }
 
 @keyframes n-fade-in {
     0% {
         opacity: 0;
     }
-    66% {
+    69% {
         opacity: 0;
     }
     100% {
@@ -28,14 +34,20 @@
 }
 
 .linked-in-tittle {
-    animation: tittle-zoom-in 1s linear;
+    animation: tittle-zoom-in 1.25s linear 900ms;
 }
 
 @keyframes tittle-zoom-in {
-    from {
+    0% {
+        opacity: 0;
         transform: translateX(200%);
     }
-    to {
+    69% {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+    100% {
+        opacity: 1;
         transform: translateX(0);
     }
 }

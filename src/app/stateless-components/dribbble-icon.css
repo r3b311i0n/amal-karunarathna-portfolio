@@ -1,5 +1,5 @@
 .dribbble-ball {
-    animation: ball-move 1s cubic-bezier(.15, .44, .27, 1);
+    animation: ball-move 1.5s cubic-bezier(.15, .44, .27, 1) 100ms;
 }
 
 @keyframes ball-move {

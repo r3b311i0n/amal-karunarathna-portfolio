@@ -1,0 +1,46 @@
+import * as React from 'react';
+import {spring, StaggeredMotion} from 'react-motion';
+import './social.css';
+import SocialIcon from './stateless-components/social-icon';
+
+//    Social links component.
+// todo: Fix responsive design.
+// todo: svg animation delay.
+
+// Seven objects for seven social links.
+const defaultStyles = [{h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}];
+
+const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
+    return i === 0
+        ? {h: spring(0)}
+        : {h: spring(prevInterpolatedStyles[i - 1].h)};
+});
+
+export default class Social extends React.Component<{}, {}> {
+    constructor(props: any) {
+        super(props);
+    }
+
+    public render(): JSX.Element {
+        return (
+            <div className="social-root">
+                <StaggeredMotion
+                    defaultStyles={defaultStyles}
+                    styles={staggerStyles}
+                >
+                    {(interpolatingStyles: object[]) =>
+                        <div>
+                            {interpolatingStyles.map((style: { h: number }, i: number) =>
+                                <div key={i}>
+                                    <div className="social-icon" style={{transform: `translateX(${style.h}px)`}}>
+                                        {SocialIcon[i]}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    }
+                </StaggeredMotion>
+            </div>
+        );
+    }
+}

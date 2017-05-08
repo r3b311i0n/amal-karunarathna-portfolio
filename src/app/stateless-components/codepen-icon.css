@@ -1,5 +1,5 @@
 .codepen-box {
-    animation: box-spin 750ms ease-out;
+    animation: box-spin 750ms ease-out 300ms;
 }
 
 @keyframes box-spin {
