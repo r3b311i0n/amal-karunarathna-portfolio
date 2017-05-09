@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 import * as React from 'react';
-import {Motion, spring} from 'react-motion';
+import {Motion, presets, spring} from 'react-motion';
 import './about.component.css';
 import Social from './social';
 import AboutMe from './stateless-components/about-me';
@@ -66,7 +66,7 @@ export class About extends React.Component<void, IAboutState> {
                         <Motion
                             style={{
                                 alpha: this.state.willAnimateIn ? spring(1) : spring(0),
-                                x: this.state.willAnimateIn ? spring(0) : spring(300)
+                                x: this.state.willAnimateIn ? spring(0, presets.gentle) : spring(300)
                             }}
                         >
                             {(interpolation: any) => <div

@@ -4,11 +4,12 @@
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "browserslist": [
-    "last 2 versions"
+    "last 2 versions",
+    "not ie < 11"
   ],
   "scripts": {
     "test": "mocha",
-    "watch": "webpack-dev-server",
+    "watch": "webpack-dev-server --progress",
     "build": "webpack"
   },
   "keywords": [
@@ -42,7 +43,7 @@
     "karma-webpack": "^2.0.3",
     "mocha": "^3.3.0",
     "postcss-cssnext": "^2.10.0",
-    "postcss-loader": "^2.0.1",
+    "postcss-loader": "^2.0.2",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.17.0",
     "tslint": "^5.2.0",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {spring, StaggeredMotion} from 'react-motion';
+import {presets, spring, StaggeredMotion} from 'react-motion';
 import './social.css';
 import SocialIcon from './stateless-components/social-icon';
 
@@ -11,7 +11,7 @@ const defaultStyles = [{h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}, {h
 
 const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
     return i === 0
-        ? {h: spring(0)}
+        ? {h: spring(0, presets.stiff)}
         : {h: spring(prevInterpolatedStyles[i - 1].h)};
 });
 

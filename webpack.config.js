@@ -51,7 +51,17 @@ module.exports = function (env) {
                                             sourceMap: true
                                         }
                                     },
-                                    'postcss-loader'
+                                    {
+                                        loader: 'postcss-loader',
+                                        options: {
+                                            config: {
+                                                ctx: {
+                                                    cssnext: {}
+                                                }
+                                            },
+                                            sourceMap: true
+                                        }
+                                    }
                                 ]
                             }
                         ),

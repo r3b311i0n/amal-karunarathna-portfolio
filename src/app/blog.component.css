@@ -1,4 +1,6 @@
 .blog-root {
-    padding: 1em;
-    width: max-content;
+}
+
+.blog-article {
+    margin: 0 17.713em;
 }

@@ -1,5 +1,5 @@
 .linked-in-i {
-    animation: i-zoom-in 1.25s linear 900ms;
+    animation: i-zoom-in 1.25s linear 700ms;
 }
 
 @keyframes i-zoom-in {
@@ -18,7 +18,7 @@
 }
 
 .linked-in-n {
-    animation: n-fade-in 1.75s linear 750ms;
+    animation: n-fade-in 1.75s linear 650ms;
 }
 
 @keyframes n-fade-in {
@@ -34,7 +34,7 @@
 }
 
 .linked-in-tittle {
-    animation: tittle-zoom-in 1.25s linear 900ms;
+    animation: tittle-zoom-in 1.25s linear 700ms;
 }
 
 @keyframes tittle-zoom-in {
