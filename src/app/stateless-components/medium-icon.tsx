@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './medium-icon.css';
+import './medium-icon.pcss';
 
 //noinspection TsLint
 const MediumIcon = () => (

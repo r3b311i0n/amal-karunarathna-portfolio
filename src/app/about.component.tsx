@@ -1,10 +1,10 @@
 import * as firebase from 'firebase';
 import * as React from 'react';
 import {Motion, presets, spring} from 'react-motion';
-import './about.component.css';
+import './about.component.pcss';
 import Social from './social';
 import AboutMe from './stateless-components/about-me';
-import NavBar from './stateless-components/nav-bar';
+import NavMenu from './stateless-components/nav-menu';
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
@@ -77,7 +77,7 @@ export class About extends React.Component<void, IAboutState> {
                         </Motion>
                     </main>
                 </div>
-                {NavBar(inactive, inactive, inactive, active)}
+                {NavMenu(inactive, inactive, inactive, active)}
             </div>
         );
     }

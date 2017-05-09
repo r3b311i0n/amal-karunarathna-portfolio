@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './blog-link.css';
+import './blog-link.pcss';
 import Tag from './tag';
 
 const BlogLink = (articleName: string, tags: string[]) =>

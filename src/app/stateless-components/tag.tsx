@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './tag.css';
+import './tag.pcss';
 
 const Tag = (tagName: string) => {
     switch (tagName) {

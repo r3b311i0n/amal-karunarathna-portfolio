@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Motion, presets, spring} from 'react-motion';
-import './blog.component.css';
+import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
-import NavBar from './stateless-components/nav-bar';
+import NavMenu from './stateless-components/nav-menu';
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
@@ -20,6 +20,7 @@ const articleTest = {
 
 interface IBlogState {
     article: string;
+    header: string;
     willAnimateIn: boolean;
 }
 
@@ -27,10 +28,9 @@ export class Blog extends React.Component<void, IBlogState> {
     constructor(props: any) {
         super(props);
 
-        window.addEventListener('onclick', this.handleBlogLinkMouseDown);
-
         this.state = {
             article: '',
+            header: '',
             willAnimateIn: false
         };
     }
@@ -42,7 +42,7 @@ export class Blog extends React.Component<void, IBlogState> {
     }
 
     private handleBlogLinkMouseDown = (): any => {
-        this.setState({article: articleTest.body.para1, willAnimateIn: true});
+        this.setState({article: articleTest.body.para1, header: articleTest.header, willAnimateIn: true});
     };
 
     public render(): JSX.Element {
@@ -50,7 +50,7 @@ export class Blog extends React.Component<void, IBlogState> {
             <div className="blog-root">
                 <div>
                     <aside>
-                        <div onClick={this.handleBlogLinkMouseDown}>
+                        <div className="blog-link-list" onClick={this.handleBlogLinkMouseDown}>
                             {BlogLink(blogTest.Meth.name, blogTest.Meth.tags)}
                         </div>
                     </aside>
@@ -70,12 +70,13 @@ export class Blog extends React.Component<void, IBlogState> {
                                     transform: `translateY(${interpolation.y}px)`
                                 }}
                             >
+                                <h1>{this.state.header}</h1>
                                 <p>{this.state.article}</p>
                             </div>}
                         </Motion>
                     </main>
                 </div>
-                {NavBar(inactive, active, inactive, inactive)}
+                {NavMenu(inactive, active, inactive, inactive)}
             </div>
         );
     }

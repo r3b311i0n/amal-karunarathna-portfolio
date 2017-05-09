@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './twitter-icon.css';
+import './twitter-icon.pcss';
 
 //noinspection TsLint
 const TwitterIcon = () => (

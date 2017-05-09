@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './google-plus-icon.css';
+import './google-plus-icon.pcss';
 
 //noinspection TsLint
 const GooglePlusIcon = () => (

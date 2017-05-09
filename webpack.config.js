@@ -14,7 +14,7 @@ module.exports = function (env) {
             },
 
             resolve: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss']
             },
 
             devtool: 'source-map',
@@ -39,7 +39,7 @@ module.exports = function (env) {
                         exclude: /node_modules/
                     },
                     {
-                        test: /\.css$/,
+                        test: /\.pcss$/,
                         use: ExtractTextPlugin.extract(
                             {
                                 fallback: 'style-loader',

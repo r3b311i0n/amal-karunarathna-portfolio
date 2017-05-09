@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './github-icon.css';
+import './github-icon.pcss';
 
 //noinspection TsLint
 const GitHubIcon = () => (

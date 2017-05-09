@@ -1,4 +1,4 @@
-.nav-bar-root {
+.nav-menu-root {
     & {
         position: fixed;
         right: 7.478em;
@@ -23,12 +23,12 @@
 }
 
 @media screen and (width <= 1024px) {
-    .nav-bar-root {
-        animation: nav-bar-fade-out 300ms ease-in;
+    .nav-menu-root {
+        animation: nav-menu-fade-out 300ms ease-in;
         visibility: hidden;
     }
 
-    @keyframes nav-bar-fade-out {
+    @keyframes nav-menu-fade-out {
         from {
             opacity: 1;
             visibility: visible;
@@ -41,12 +41,12 @@
 }
 
 @media screen and (width >= 1025px) {
-    .nav-bar-root {
-        animation: nav-bar-fade-in 300ms ease-out;
+    .nav-menu-root {
+        animation: nav-menu-fade-in 300ms ease-out;
         visibility: visible;
     }
 
-    @keyframes nav-bar-fade-in {
+    @keyframes nav-menu-fade-in {
         from {
             opacity: 0;
             visibility: hidden;

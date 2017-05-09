@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './codepen-icon.css';
+import './codepen-icon.pcss';
 
 //noinspection TsLint
 const CodePenIcon = () => (

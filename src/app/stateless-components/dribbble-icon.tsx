@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './dribbble-icon.css';
+import './dribbble-icon.pcss';
 
 //noinspection TsLint
 const DribbbleIcon = () => (

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import './nav-bar.css';
+import './nav-menu.pcss';
 import NavBtn from './nav-btn';
 
 // This is the global navigation bar component. It imports nav-btn.
 
-const NavBar = (home: object, blog: object, code: object, about: object) => (
-    <div className="nav-bar-root">
+const NavMenu = (home: object, blog: object, code: object, about: object) => (
+    <div className="nav-menu-root">
         <nav>
             <ul>
                 <li>{NavBtn('HOME', home, '/')}</li>
@@ -17,4 +17,4 @@ const NavBar = (home: object, blog: object, code: object, about: object) => (
     </div>
 );
 
-export default NavBar;
+export default NavMenu;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './linked-in-icon.css';
+import './linked-in-icon.pcss';
 
 //noinspection TsLint
 const LinkedInIcon = () => (

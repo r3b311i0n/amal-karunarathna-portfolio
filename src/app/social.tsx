@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {presets, spring, StaggeredMotion} from 'react-motion';
-import './social.css';
+import './social.pcss';
 import SocialIcon from './stateless-components/social-icon';
 
 //    Social links component.

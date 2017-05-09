@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './about-me.css';
+import './about-me.pcss';
 
 // My stateless component.
 

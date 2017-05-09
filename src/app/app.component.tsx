@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './app.component.css';
-import NavBar from './stateless-components/nav-bar';
+import './app.component.pcss';
+import NavMenu from './stateless-components/nav-menu';
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
@@ -18,7 +18,7 @@ export class App extends React.Component<void, {}> {
                 <div className="app-content">
                     <main></main>
                 </div>
-                {NavBar(active, inactive, inactive, inactive)}
+                {NavMenu(active, inactive, inactive, inactive)}
             </div>
         );
     }

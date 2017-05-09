@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NavBar from './stateless-components/nav-bar';
+import NavMenu from './stateless-components/nav-menu';
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
@@ -17,7 +17,7 @@ export class Code extends React.Component<void, {}> {
                 <div className="code-content">
                     <main></main>
                 </div>
-                {NavBar(inactive, inactive, active, inactive)}
+                {NavMenu(inactive, inactive, active, inactive)}
             </div>
         );
     }
