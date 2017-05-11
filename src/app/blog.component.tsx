@@ -16,6 +16,13 @@ const blogIndexTest = {
     Meth2: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
 };
 
+const cocaineArticle = {
+    body: {
+        para1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci amet corporis distinctio error itaque laboriosam molestias mollitia nisi officia perferendis placeat, quae quia quod, ratione reiciendis sit veniam? Quasi?'
+    },
+    header: 'Coke is love, Coke is life!'
+};
+
 const methArticle = {
     body: {
         para1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam consectetur cumque deleniti deserunt dolore doloribus ducimus facere in itaque laudantium mollitia, nemo obcaecati perspiciatis quidem quos sed sunt ullam!'
@@ -39,6 +46,7 @@ export class Blog extends React.Component<void, IBlogState> {
     constructor(props: any) {
         super(props);
 
+        // Initialises blog entries.
         this.blogLinkList = Object.entries(blogIndexTest).map(([key, value]) => (
             <div
                 key={key}
@@ -66,7 +74,9 @@ export class Blog extends React.Component<void, IBlogState> {
 
     private handleBlogLinkClick = (key: string): any => {
         console.log(key);
-        this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
+        (key === 'Cocaine') ?
+            this.setState({article: cocaineArticle.body.para1, header: cocaineArticle.header, willAnimateIn: true}) :
+            this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
         // this.handleTagSort();
     };
 
