@@ -7,12 +7,12 @@ import NavMenu from './stateless-components/nav-menu';
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
 
-const blogTest = {
+const blogIndexTest = {
     Cocaine: {name: 'Cocaine for the rich.', tags: ['drugs']},
     Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
 };
 
-const articleTest = {
+const methArticle = {
     body: {
         para1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam consectetur cumque deleniti deserunt dolore doloribus ducimus facere in itaque laudantium mollitia, nemo obcaecati perspiciatis quidem quos sed sunt ullam!'
     },
@@ -43,7 +43,7 @@ export class Blog extends React.Component<void, IBlogState> {
     }
 
     private handleBlogLinkMouseDown = (): any => {
-        this.setState({article: articleTest.body.para1, header: articleTest.header, willAnimateIn: true});
+        this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
     };
 
     public render(): JSX.Element {
@@ -52,7 +52,7 @@ export class Blog extends React.Component<void, IBlogState> {
                 <div>
                     <aside>
                         <div className="blog-link-list">
-                            {Object.entries(blogTest).map(([key, value]) => (
+                            {Object.entries(blogIndexTest).map(([key, value]) => (
                                 <div
                                     key={key}
                                     onClick={this.handleBlogLinkMouseDown}
