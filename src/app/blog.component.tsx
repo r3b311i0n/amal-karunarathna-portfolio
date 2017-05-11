@@ -8,6 +8,7 @@ const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
 
 const blogTest = {
+    Cocaine: {name: 'Cocaine for the rich.', tags: ['drugs']},
     Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
 };
 
@@ -50,8 +51,13 @@ export class Blog extends React.Component<void, IBlogState> {
             <div className="blog-root">
                 <div>
                     <aside>
-                        <div className="blog-link-list" onClick={this.handleBlogLinkMouseDown}>
-                            {BlogLink(blogTest.Meth.name, blogTest.Meth.tags)}
+                        <div className="blog-link-list">
+                            {Object.entries(blogTest).map(([key, value]) => (
+                                <div
+                                    key={key}
+                                    onClick={this.handleBlogLinkMouseDown}
+                                >{BlogLink(value.name, value.tags)}
+                                </div>))}
                         </div>
                     </aside>
                     <main>
