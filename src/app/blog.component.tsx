@@ -4,6 +4,8 @@ import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
 import NavMenu from './stateless-components/nav-menu';
 
+// todo: Scrollable blog link list.
+
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
 
@@ -42,7 +44,8 @@ export class Blog extends React.Component<void, IBlogState> {
         // this.setState({willAnimateIn: true});
     }
 
-    private handleBlogLinkMouseDown = (): any => {
+    private handleBlogLinkMouseDown = (key: string): any => {
+        console.log(key);
         this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
     };
 
@@ -55,7 +58,7 @@ export class Blog extends React.Component<void, IBlogState> {
                             {Object.entries(blogIndexTest).map(([key, value]) => (
                                 <div
                                     key={key}
-                                    onClick={this.handleBlogLinkMouseDown}
+                                    onClick={() => this.handleBlogLinkMouseDown(key)}
                                 >{BlogLink(value.name, value.tags)}
                                 </div>))}
                         </div>

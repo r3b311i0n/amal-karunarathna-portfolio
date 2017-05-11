@@ -3,6 +3,7 @@ import './nav-menu.pcss';
 import NavBtn from './nav-btn';
 
 // This is the global navigation bar component. It imports nav-btn.
+// todo: Implement collapse into button.
 
 const NavMenu = (home: object, blog: object, code: object, about: object) => (
     <div className="nav-menu-root">
