@@ -6,6 +6,7 @@ import NavMenu from './stateless-components/nav-menu';
 
 // todo: Scrollable blog link list.
 // todo: Put all constants in in their own file.
+
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
 
@@ -75,25 +76,16 @@ export class Blog extends React.Component<void, IBlogState> {
 
 //    Blog article presentational-component.
 
-    // private static articleDefaultStyle = {
-    //     alpha: 0,
-    //     y: -200
-    // };
-    // private static articleStyle = {
-    //     alpha: spring(1, presets.gentle),
-    //     y: spring(0, presets.gentle)
-    // };
-
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
     private componentDidMount() {
+        // Animate in latest article.
         this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
     }
 
     private handleBlogLinkClick = async (key: string): Promise<any> => {
-        console.log(key);
-
+        // Transition-out previous article.
         await new Promise((resolve) => {
             this.setState({
                 articleDefaultStyle: {
@@ -108,6 +100,7 @@ export class Blog extends React.Component<void, IBlogState> {
 
             window.setTimeout(() => resolve(), 500);
         });
+        // Transition-in new article.
         this.setState({
             articleDefaultStyle: {
                 alpha: 0,
