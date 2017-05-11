@@ -65,6 +65,15 @@ export class Blog extends React.Component<void, IBlogState> {
 
 //    Blog article presentational-component.
 
+    private static articleDefaultStyle = {
+        alpha: 0,
+        y: -200
+    };
+    private static articleStyle = {
+        alpha: spring(1, presets.gentle),
+        y: spring(0, presets.gentle)
+    };
+
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
@@ -78,6 +87,17 @@ export class Blog extends React.Component<void, IBlogState> {
             this.setState({article: cocaineArticle.body.para1, header: cocaineArticle.header, willAnimateIn: true}) :
             this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
         // this.handleTagSort();
+        window.setTimeout(() => {
+            console.log('ran');
+            Blog.articleDefaultStyle = {
+                alpha: 1,
+                y: 0
+            };
+            Blog.articleStyle = {
+                alpha: spring(0, presets.gentle),
+                y: spring(-200, presets.gentle)
+            };
+        }, 1000);
     };
 
     // private handleTagSort = (tag: string): any => {
@@ -125,12 +145,8 @@ export class Blog extends React.Component<void, IBlogState> {
                     </aside>
                     <main>
                         <Motion
-                            style={{
-                                alpha: this.state.willAnimateIn ?
-                                    spring(1, presets.gentle) : spring(0, presets.gentle),
-                                y: this.state.willAnimateIn ?
-                                    spring(0, presets.gentle) : spring(-200, presets.gentle)
-                            }}
+                            defaultStyle={Blog.articleDefaultStyle}
+                            style={Blog.articleStyle}
                         >
                             {(interpolation: any) => <div
                                 className="blog-article"
