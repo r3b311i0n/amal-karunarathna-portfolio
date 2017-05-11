@@ -38,6 +38,8 @@ const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.ma
 
 interface IBlogState {
     article: string;
+    articleDefaultStyle: any;
+    articleStyle: any;
     header: string;
     willAnimateIn: boolean;
 }
@@ -56,6 +58,14 @@ export class Blog extends React.Component<void, IBlogState> {
 
         this.state = {
             article: '',
+            articleDefaultStyle: {
+                alpha: 0,
+                y: -200
+            },
+            articleStyle: {
+                alpha: spring(1, presets.gentle),
+                y: spring(0, presets.gentle)
+            },
             header: '',
             willAnimateIn: false
         };
@@ -65,14 +75,14 @@ export class Blog extends React.Component<void, IBlogState> {
 
 //    Blog article presentational-component.
 
-    private static articleDefaultStyle = {
-        alpha: 0,
-        y: -200
-    };
-    private static articleStyle = {
-        alpha: spring(1, presets.gentle),
-        y: spring(0, presets.gentle)
-    };
+    // private static articleDefaultStyle = {
+    //     alpha: 0,
+    //     y: -200
+    // };
+    // private static articleStyle = {
+    //     alpha: spring(1, presets.gentle),
+    //     y: spring(0, presets.gentle)
+    // };
 
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
@@ -81,21 +91,42 @@ export class Blog extends React.Component<void, IBlogState> {
         this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
     }
 
-    private handleBlogLinkClick = (key: string): any => {
+    private handleBlogLinkClick = async (key: string): Promise<any> => {
         console.log(key);
-        (key === 'Cocaine') ?
-            this.setState({article: cocaineArticle.body.para1, header: cocaineArticle.header, willAnimateIn: true}) :
-            this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
-        // this.handleTagSort();
 
-        Blog.articleDefaultStyle = {
-            alpha: 1,
-            y: 0
-        };
-        Blog.articleStyle = {
-            alpha: spring(0, presets.gentle),
-            y: spring(-200, presets.gentle)
-        };
+        await new Promise((resolve) => {
+            this.setState({
+                articleDefaultStyle: {
+                    alpha: 1,
+                    y: 0
+                },
+                articleStyle: {
+                    alpha: spring(0, presets.gentle),
+                    y: spring(-200, presets.gentle)
+                }
+            });
+
+            window.setTimeout(() => resolve(), 500);
+        });
+        this.setState({
+            articleDefaultStyle: {
+                alpha: 0,
+                y: -200
+            },
+            articleStyle: {
+                alpha: spring(1, presets.gentle),
+                y: spring(0, presets.gentle)
+            }
+        });
+        (key === 'Cocaine') ?
+            this.setState({
+                article: cocaineArticle.body.para1,
+                header: cocaineArticle.header,
+                willAnimateIn: true
+            }) :
+            this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
+
+        // this.handleTagSort();
     };
 
     // private handleTagSort = (tag: string): any => {
@@ -143,8 +174,8 @@ export class Blog extends React.Component<void, IBlogState> {
                     </aside>
                     <main>
                         <Motion
-                            defaultStyle={Blog.articleDefaultStyle}
-                            style={Blog.articleStyle}
+                            defaultStyle={this.state.articleDefaultStyle}
+                            style={this.state.articleStyle}
                         >
                             {(interpolation: any) => <div
                                 className="blog-article"
