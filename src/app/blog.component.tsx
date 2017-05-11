@@ -1,17 +1,19 @@
 import * as React from 'react';
-import {Motion, presets, spring} from 'react-motion';
+import {Motion, presets, spring, StaggeredMotion} from 'react-motion';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
 import NavMenu from './stateless-components/nav-menu';
 
 // todo: Scrollable blog link list.
-
+// todo: Put all constants in in their own file.
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
 
 const blogIndexTest = {
-    Cocaine: {name: 'Cocaine for the rich.', tags: ['drugs']},
-    Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
+    Cocaine: {name: 'Cocaine for the rich', tags: ['drugs']},
+    Heroine: {name: 'HARDCORE!!!', tags: ['drugs']},
+    Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
+    Meth2: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
 };
 
 const methArticle = {
@@ -20,6 +22,12 @@ const methArticle = {
     },
     header: 'Meth is the Greatest Thing Ever!'
 };
+
+const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
+    return i === 0
+        ? {h: spring(0, presets.stiff)}
+        : {h: spring(prevInterpolatedStyles[i - 1].h)};
+});
 
 interface IBlogState {
     article: string;
@@ -31,23 +39,53 @@ export class Blog extends React.Component<void, IBlogState> {
     constructor(props: any) {
         super(props);
 
+        this.blogLinkList = Object.entries(blogIndexTest).map(([key, value]) => (
+            <div
+                key={key}
+                onClick={() => this.handleBlogLinkClick(key)}
+            >{BlogLink(value.name, value.tags)}
+            </div>));
+
         this.state = {
             article: '',
             header: '',
             willAnimateIn: false
         };
+
+        this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
     }
 
 //    Blog article presentational-component.
 
+    private blogLinkList: JSX.Element[];
+    private defaultStyles: Array<{ h: number }> = [];
+
     private componentDidMount() {
-        // this.setState({willAnimateIn: true});
+        this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
     }
 
-    private handleBlogLinkMouseDown = (key: string): any => {
+    private handleBlogLinkClick = (key: string): any => {
         console.log(key);
         this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
+        // this.handleTagSort();
     };
+
+    // private handleTagSort = (tag: string): any => {
+    //     let linkList: JSX.Element[] = [];
+    //
+    //     Object.entries(blogIndexTest).map(([key, value]) => {
+    //         if (value.tags.includes(tag)) {
+    //             linkList.push((
+    //                 <div
+    //                     key={key}
+    //                     onClick={() => this.handleBlogLinkClick(key)}
+    //                 >{BlogLink(value.name, value.tags)}
+    //                 </div>));
+    //         }
+    //     });
+    //
+    //     this.setState({blogLinkList: linkList});
+    // };
 
     public render(): JSX.Element {
         return (
@@ -55,12 +93,24 @@ export class Blog extends React.Component<void, IBlogState> {
                 <div>
                     <aside>
                         <div className="blog-link-list">
-                            {Object.entries(blogIndexTest).map(([key, value]) => (
-                                <div
-                                    key={key}
-                                    onClick={() => this.handleBlogLinkMouseDown(key)}
-                                >{BlogLink(value.name, value.tags)}
-                                </div>))}
+                            <StaggeredMotion
+                                defaultStyles={this.defaultStyles}
+                                styles={staggerStyles}
+                            >
+                                {(interpolatingStyles: object[]) =>
+                                    <div>
+                                        {interpolatingStyles.map((style: { h: number }, i: number) =>
+                                            <div key={i}>
+                                                <div
+                                                    style={{transform: `translateX(${style.h}px)`}}
+                                                >
+                                                    {this.blogLinkList[i]}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                }
+                            </StaggeredMotion>
                         </div>
                     </aside>
                     <main>
