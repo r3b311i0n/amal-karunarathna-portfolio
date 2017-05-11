@@ -87,17 +87,15 @@ export class Blog extends React.Component<void, IBlogState> {
             this.setState({article: cocaineArticle.body.para1, header: cocaineArticle.header, willAnimateIn: true}) :
             this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
         // this.handleTagSort();
-        window.setTimeout(() => {
-            console.log('ran');
-            Blog.articleDefaultStyle = {
-                alpha: 1,
-                y: 0
-            };
-            Blog.articleStyle = {
-                alpha: spring(0, presets.gentle),
-                y: spring(-200, presets.gentle)
-            };
-        }, 1000);
+
+        Blog.articleDefaultStyle = {
+            alpha: 1,
+            y: 0
+        };
+        Blog.articleStyle = {
+            alpha: spring(0, presets.gentle),
+            y: spring(-200, presets.gentle)
+        };
     };
 
     // private handleTagSort = (tag: string): any => {
