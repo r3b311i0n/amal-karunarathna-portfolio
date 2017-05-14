@@ -12,9 +12,17 @@ const inactive = {color: 'inherit', fontSize: '1em'};
 
 const blogIndexTest = {
     Cocaine: {name: 'Cocaine for the rich', tags: ['drugs']},
+    Cocaine2: {name: 'Cocaine for the rich', tags: ['drugs']},
+    Cocaine3: {name: 'Cocaine for the rich', tags: ['drugs']},
     Heroine: {name: 'HARDCORE!!!', tags: ['drugs']},
+    Heroine2: {name: 'HARDCORE!!!', tags: ['drugs']},
+    Heroine3: {name: 'HARDCORE!!!', tags: ['drugs']},
     Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
-    Meth2: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
+    Meth2: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
+    Meth3: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
+    Meth4: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
+    Meth5: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
+    Meth6: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
 };
 
 const cocaineArticle = {
