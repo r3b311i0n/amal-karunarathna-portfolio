@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Scrollbars from 'react-custom-scrollbars';
 import {Motion, presets, spring, StaggeredMotion} from 'react-motion';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
@@ -153,24 +154,33 @@ export class Blog extends React.Component<void, IBlogState> {
                 <div>
                     <aside>
                         <div className="blog-link-list">
-                            <StaggeredMotion
-                                defaultStyles={this.defaultStyles}
-                                styles={staggerStyles}
+                            <Scrollbars
+                                autoHeight={true}
+                                autoHeightMin={100}
+                                autoHeightMax={window.innerHeight}
+                                autoHide={true}
+                                autoHideDuration={200}
+                                autoHideTimeout={1000}
                             >
-                                {(interpolatingStyles: object[]) =>
-                                    <div>
-                                        {interpolatingStyles.map((style: { h: number }, i: number) =>
-                                            <div key={i}>
-                                                <div
-                                                    style={{transform: `translateX(${style.h}px)`}}
-                                                >
-                                                    {this.blogLinkList[i]}
+                                <StaggeredMotion
+                                    defaultStyles={this.defaultStyles}
+                                    styles={staggerStyles}
+                                >
+                                    {(interpolatingStyles: object[]) =>
+                                        <div>
+                                            {interpolatingStyles.map((style: { h: number }, i: number) =>
+                                                <div key={i}>
+                                                    <div
+                                                        style={{transform: `translateX(${style.h}px)`}}
+                                                    >
+                                                        {this.blogLinkList[i]}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                }
-                            </StaggeredMotion>
+                                            )}
+                                        </div>
+                                    }
+                                </StaggeredMotion>
+                            </Scrollbars>
                         </div>
                     </aside>
                     <main>
