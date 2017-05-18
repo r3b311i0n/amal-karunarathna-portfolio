@@ -1,3 +1,4 @@
+import {parse} from 'marked';
 import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import {Motion, presets, spring, StaggeredMotion} from 'react-motion';
@@ -33,9 +34,11 @@ const cocaineArticle = {
     header: 'Coke is love, Coke is life!'
 };
 
+const md: string = 'An h1 header<br> ============ Paragraphs are separated by a blank line. 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized list look like: * this one * that one * the other oneNote that --- not considering the asterisk --- the actual textcontent starts at 4-columns in. > Block quotes are > written like so. > > They can span multiple paragraphs, > if you like.Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it\'s all in chapters 12--14"). Three dots ... will be converted to an ellipsis Unicode is supported. ☺ <img src=https://www.slt.lk//sites/default/files/landing_page_banners/Mega-Web-Banner2_0_0.jpg>';
+
 const methArticle = {
     body: {
-        para1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam consectetur cumque deleniti deserunt dolore doloribus ducimus facere in itaque laudantium mollitia, nemo obcaecati perspiciatis quidem quos sed sunt ullam!'
+        para1: md
     },
     header: 'Meth is the Greatest Thing Ever!'
 };
@@ -196,7 +199,7 @@ export class Blog extends React.Component<void, IBlogState> {
                                 }}
                             >
                                 <h1>{this.state.header}</h1>
-                                <p>{this.state.article}</p>
+                                <div dangerouslySetInnerHTML={{__html: parse(this.state.article)}}></div>
                             </div>}
                         </Motion>
                     </main>
