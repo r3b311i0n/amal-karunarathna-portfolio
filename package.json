@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "browserslist": [
@@ -44,7 +44,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.3",
     "mocha": "^3.3.0",
-    "postcss-cssnext": "^2.10.0",
+    "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.5",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.17.0",
