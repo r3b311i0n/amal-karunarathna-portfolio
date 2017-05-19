@@ -79,8 +79,8 @@ export class Blog extends React.Component<void, IBlogState> {
                 y: -200
             },
             articleStyle: {
-                alpha: spring(0),
-                y: spring(-200)
+                alpha: 0,
+                y: -200
             },
             header: '',
             willAnimateInBlogLinkList: false
