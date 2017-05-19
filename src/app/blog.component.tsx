@@ -57,7 +57,7 @@ interface IBlogState {
     articleDefaultStyle: any;
     articleStyle: any;
     header: string;
-    willAnimateIn: boolean;
+    willAnimateInBlogLinkList: boolean;
 }
 
 export class Blog extends React.Component<void, IBlogState> {
@@ -79,13 +79,14 @@ export class Blog extends React.Component<void, IBlogState> {
                 y: -200
             },
             articleStyle: {
-                alpha: spring(1, presets.gentle),
-                y: spring(0, presets.gentle)
+                alpha: spring(0),
+                y: spring(-200)
             },
             header: '',
-            willAnimateIn: false
+            willAnimateInBlogLinkList: false
         };
 
+        // Push style objects into array for StaggerMotion of Blog List.
         this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
     }
 
@@ -94,10 +95,17 @@ export class Blog extends React.Component<void, IBlogState> {
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
-    private async componentDidMount() {
+    private componentDidMount() {
         // Animate in latest article.
-        await methRef.once('value').then((snapshot) =>
-            this.setState({article: snapshot.val(), header: methArticle.header, willAnimateIn: true}));
+        methRef.once('value').then((snapshot) =>
+            this.setState({
+                article: snapshot.val(), articleStyle: {
+                    alpha: spring(1, presets.gentle),
+                    y: spring(0, presets.gentle)
+                },
+                header: methArticle.header,
+                willAnimateInBlogLinkList: true
+            }));
     }
 
     private handleBlogLinkClick = async (key: string): Promise<any> => {
@@ -131,9 +139,11 @@ export class Blog extends React.Component<void, IBlogState> {
             this.setState({
                 article: cocaineArticle.body.para1,
                 header: cocaineArticle.header,
-                willAnimateIn: true
+                willAnimateInBlogLinkList: true
             }) :
-            this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
+            this.setState({
+                article: methArticle.body.para1, header: methArticle.header, willAnimateInBlogLinkList: true
+            });
 
         // this.handleTagSort();
     };
