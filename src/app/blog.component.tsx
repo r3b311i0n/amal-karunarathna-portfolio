@@ -1,4 +1,4 @@
-import {parse} from 'marked';
+import * as firebase from 'firebase';
 import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import {Motion, presets, spring, StaggeredMotion} from 'react-motion';
@@ -11,6 +11,9 @@ import NavMenu from './stateless-components/nav-menu';
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
+
+const database = firebase.database();
+const methRef = database.ref('methArticle/');
 
 const blogIndexTest = {
     Cocaine: {name: 'Cocaine for the rich', tags: ['drugs']},
@@ -34,7 +37,7 @@ const cocaineArticle = {
     header: 'Coke is love, Coke is life!'
 };
 
-const md: string = 'An h1 header<br> ============ Paragraphs are separated by a blank line. 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized list look like: * this one * that one * the other oneNote that --- not considering the asterisk --- the actual textcontent starts at 4-columns in. > Block quotes are > written like so. > > They can span multiple paragraphs, > if you like.Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it\'s all in chapters 12--14"). Three dots ... will be converted to an ellipsis Unicode is supported. ☺ <img src=https://www.slt.lk//sites/default/files/landing_page_banners/Mega-Web-Banner2_0_0.jpg>';
+const md: string = 'An h1 header ============ Paragraphs are separated by a blank line. 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized list look like: * this one * that one * the other oneNote that --- not considering the asterisk --- the actual textcontent starts at 4-columns in. > Block quotes are > written like so. > > They can span multiple paragraphs, > if you like.Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it\'s all in chapters 12--14"). Three dots ... will be converted to an ellipsis Unicode is supported. ☺ <img src=https://www.slt.lk//sites/default/files/landing_page_banners/Mega-Web-Banner2_0_0.jpg>';
 
 const methArticle = {
     body: {
@@ -91,9 +94,10 @@ export class Blog extends React.Component<void, IBlogState> {
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
-    private componentDidMount() {
+    private async componentDidMount() {
         // Animate in latest article.
-        this.setState({article: methArticle.body.para1, header: methArticle.header, willAnimateIn: true});
+        await methRef.once('value').then((snapshot) =>
+            this.setState({article: snapshot.val(), header: methArticle.header, willAnimateIn: true}));
     }
 
     private handleBlogLinkClick = async (key: string): Promise<any> => {
@@ -199,7 +203,10 @@ export class Blog extends React.Component<void, IBlogState> {
                                 }}
                             >
                                 <h1>{this.state.header}</h1>
-                                <div dangerouslySetInnerHTML={{__html: parse(this.state.article)}}></div>
+                                <div
+                                    className="blog-article-body"
+                                    dangerouslySetInnerHTML={{__html: this.state.article}}
+                                />
                             </div>}
                         </Motion>
                     </main>
