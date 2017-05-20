@@ -29,7 +29,7 @@ const Tag = (tagName: string) => {
             );
         default:
             return (
-                <div className="tag-root" key={tagName}>
+                <div className="tag-root black" key={tagName}>
                     {tagName}
                 </div>
             );

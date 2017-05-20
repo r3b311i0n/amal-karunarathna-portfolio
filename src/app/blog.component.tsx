@@ -50,15 +50,6 @@ interface IBlogState {
 export class Blog extends React.Component<void, IBlogState> {
     constructor(props: any) {
         super(props);
-
-        // Initialises blog entries.
-        // this.blogLinkList = Object.entries(blogIndexTest).map(([key, value]) => (
-        //     <div
-        //         key={key}
-        //         onClick={() => this.handleBlogLinkClick(key)}
-        //     >{BlogLink(value.name, value.tags)}
-        //     </div>));
-
         this.state = {
             article: '',
             articleDefaultStyle: {
@@ -72,9 +63,6 @@ export class Blog extends React.Component<void, IBlogState> {
             header: '',
             willAnimateInBlogLinkList: false
         };
-
-        // Push style objects into array for StaggerMotion of Blog List.
-        // this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
     }
 
 //    Blog article component.
@@ -86,7 +74,6 @@ export class Blog extends React.Component<void, IBlogState> {
 
     private async componentDidMount() {
         await this.fetchIndex();
-        // console.log(this.index);
     }
 
     private fetchIndex(): Promise<{}> {
