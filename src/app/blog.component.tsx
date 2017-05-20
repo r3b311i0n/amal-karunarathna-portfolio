@@ -102,7 +102,7 @@ export class Blog extends React.Component<void, IBlogState> {
         indexRef.once('value').then((snapshot) => {
             Blog.index = snapshot.val();
             // Fetch latest article using blog index length.
-            database.ref(Blog.index[Object.keys(Blog.index).length][`article`].toString())
+            database.ref(Blog.index[Blog.index.length - 1][`article`].toString())
                 .once('value').then((articleSnapshot) =>
                 // Animate in latest article.
                 this.setState({
@@ -110,7 +110,7 @@ export class Blog extends React.Component<void, IBlogState> {
                         alpha: spring(1, presets.gentle),
                         y: spring(0, presets.gentle)
                     },
-                    header: methArticle.header,
+                    header: Blog.index[Blog.index.length - 1][`header`],
                     willAnimateInBlogLinkList: true
                 }));
         });
