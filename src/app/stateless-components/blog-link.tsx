@@ -12,7 +12,7 @@ const BlogLink = (articleName: string, tags: string[]) =>
             <div className="blog-link-tags">
                 {
                     tags.map((value: string) => (
-                        Tag(value)
+                        Tag(value.trim())
                     ))
                 }
             </div>

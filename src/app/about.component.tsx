@@ -41,7 +41,7 @@ export class About extends React.Component<void, IAboutState> {
         });
     }
 
-    // Presentational-component of ME!!!.
+    // Component of ME!!!.
 
     public render(): JSX.Element {
         return (

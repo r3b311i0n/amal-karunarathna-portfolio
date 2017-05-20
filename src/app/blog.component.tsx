@@ -17,21 +17,6 @@ const inactive = {color: 'inherit', fontSize: '1em'};
 
 const database = firebase.database();
 
-const blogIndexTest = {
-    Cocaine: {name: 'Cocaine for the rich', tags: ['drugs']},
-    Cocaine2: {name: 'Cocaine for the rich', tags: ['drugs']},
-    Cocaine3: {name: 'Cocaine for the rich', tags: ['drugs']},
-    Heroine: {name: 'HARDCORE!!!', tags: ['drugs']},
-    Heroine2: {name: 'HARDCORE!!!', tags: ['drugs']},
-    Heroine3: {name: 'HARDCORE!!!', tags: ['drugs']},
-    Meth: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
-    Meth2: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
-    Meth3: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
-    Meth4: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
-    Meth5: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']},
-    Meth6: {name: 'Meth is for peasants', tags: ['drugs', 'meth', 'poverty', 'white trash']}
-};
-
 const cocaineArticle = {
     body: {
         para1: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci amet corporis distinctio error itaque laboriosam molestias mollitia nisi officia perferendis placeat, quae quia quod, ratione reiciendis sit veniam? Quasi?'
@@ -67,12 +52,12 @@ export class Blog extends React.Component<void, IBlogState> {
         super(props);
 
         // Initialises blog entries.
-        this.blogLinkList = Object.entries(blogIndexTest).map(([key, value]) => (
-            <div
-                key={key}
-                onClick={() => this.handleBlogLinkClick(key)}
-            >{BlogLink(value.name, value.tags)}
-            </div>));
+        // this.blogLinkList = Object.entries(blogIndexTest).map(([key, value]) => (
+        //     <div
+        //         key={key}
+        //         onClick={() => this.handleBlogLinkClick(key)}
+        //     >{BlogLink(value.name, value.tags)}
+        //     </div>));
 
         this.state = {
             article: '',
@@ -89,28 +74,39 @@ export class Blog extends React.Component<void, IBlogState> {
         };
 
         // Push style objects into array for StaggerMotion of Blog List.
-        this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
+        // this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
     }
 
-//    Blog article presentational-component.
+//    Blog article component.
 
-    private static index: any;
+    private index: any;
 
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
     private async componentDidMount() {
-        await this.fetchLatestArticle();
+        await this.fetchIndex();
+        // console.log(this.index);
     }
 
-    private fetchLatestArticle(): Promise<{}> {
+    private fetchIndex(): Promise<{}> {
         return new Promise((resolve) => {
             const indexRef = database.ref('index/');
             // Fetch index.
             indexRef.once('value').then((snapshot) => {
-                Blog.index = snapshot.val();
+                this.index = snapshot.val();
+                // Initialises blog entries.
+                this.blogLinkList = Object.entries(this.index).map(([key, value]) => (
+                    <div
+                        key={key}
+                        onClick={() => this.handleBlogLinkClick(key)}
+                    >
+                        {BlogLink(value[`header`], value[`tags`].split(','))}
+                    </div>));
+                // Push style objects into array for StaggerMotion of Blog List.
+                this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
                 // Fetch latest article using blog index length.
-                database.ref(Blog.index[Blog.index.length - 1][`article`].toString())
+                database.ref(this.index[this.index.length - 1][`article`].toString())
                     .once('value').then((articleSnapshot) =>
                     // Animate in latest article.
                     this.setState({
@@ -118,7 +114,7 @@ export class Blog extends React.Component<void, IBlogState> {
                             alpha: spring(1, presets.gentle),
                             y: spring(0, presets.gentle)
                         },
-                        header: Blog.index[Blog.index.length - 1][`header`],
+                        header: this.index[this.index.length - 1][`header`],
                         willAnimateInBlogLinkList: true
                     }));
             }).catch((err) => console.log(err));
@@ -197,7 +193,7 @@ export class Blog extends React.Component<void, IBlogState> {
                                 autoHideDuration={200}
                                 autoHideTimeout={1000}
                             >
-                                <StaggeredMotion
+                                {this.state.willAnimateInBlogLinkList ? <StaggeredMotion
                                     defaultStyles={this.defaultStyles}
                                     styles={staggerStyles}
                                 >
@@ -214,7 +210,7 @@ export class Blog extends React.Component<void, IBlogState> {
                                             )}
                                         </div>
                                     }
-                                </StaggeredMotion>
+                                </StaggeredMotion> : <div/>}
                             </Scrollbars>
                         </div>
                     </aside>
