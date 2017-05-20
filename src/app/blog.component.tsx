@@ -9,6 +9,8 @@ import NavMenu from './stateless-components/nav-menu';
 // todo: Scrollable blog link list.
 // todo: Put all constants in in their own file.
 // todo: shrink Blog List for small screens.
+// todo: Animate heading separately.
+// todo: Maybe remove routing.
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
@@ -101,9 +103,10 @@ export class Blog extends React.Component<void, IBlogState> {
         await this.fetchLatestArticle();
     }
 
-    private fetchLatestArticle(): Promise<any> {
+    private fetchLatestArticle(): Promise<{}> {
         return new Promise((resolve) => {
             const indexRef = database.ref('index/');
+            // Fetch index.
             indexRef.once('value').then((snapshot) => {
                 Blog.index = snapshot.val();
                 // Fetch latest article using blog index length.
@@ -118,7 +121,7 @@ export class Blog extends React.Component<void, IBlogState> {
                         header: Blog.index[Blog.index.length - 1][`header`],
                         willAnimateInBlogLinkList: true
                     }));
-            });
+            }).catch((err) => console.log(err));
             resolve();
         });
     }
