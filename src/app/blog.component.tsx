@@ -97,22 +97,29 @@ export class Blog extends React.Component<void, IBlogState> {
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
-    private componentDidMount() {
-        const indexRef = database.ref('index/');
-        indexRef.once('value').then((snapshot) => {
-            Blog.index = snapshot.val();
-            // Fetch latest article using blog index length.
-            database.ref(Blog.index[Blog.index.length - 1][`article`].toString())
-                .once('value').then((articleSnapshot) =>
-                // Animate in latest article.
-                this.setState({
-                    article: articleSnapshot.val(), articleStyle: {
-                        alpha: spring(1, presets.gentle),
-                        y: spring(0, presets.gentle)
-                    },
-                    header: Blog.index[Blog.index.length - 1][`header`],
-                    willAnimateInBlogLinkList: true
-                }));
+    private async componentDidMount() {
+        await this.fetchLatestArticle();
+    }
+
+    private fetchLatestArticle(): Promise<any> {
+        return new Promise((resolve) => {
+            const indexRef = database.ref('index/');
+            indexRef.once('value').then((snapshot) => {
+                Blog.index = snapshot.val();
+                // Fetch latest article using blog index length.
+                database.ref(Blog.index[Blog.index.length - 1][`article`].toString())
+                    .once('value').then((articleSnapshot) =>
+                    // Animate in latest article.
+                    this.setState({
+                        article: articleSnapshot.val(), articleStyle: {
+                            alpha: spring(1, presets.gentle),
+                            y: spring(0, presets.gentle)
+                        },
+                        header: Blog.index[Blog.index.length - 1][`header`],
+                        willAnimateInBlogLinkList: true
+                    }));
+            });
+            resolve();
         });
     }
 
