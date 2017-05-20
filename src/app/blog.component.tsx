@@ -8,12 +8,12 @@ import NavMenu from './stateless-components/nav-menu';
 
 // todo: Scrollable blog link list.
 // todo: Put all constants in in their own file.
+// todo: shrink Blog List for small screens.
 
 const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
 const inactive = {color: 'inherit', fontSize: '1em'};
 
 const database = firebase.database();
-const methRef = database.ref('methArticle/');
 
 const blogIndexTest = {
     Cocaine: {name: 'Cocaine for the rich', tags: ['drugs']},
@@ -92,20 +92,28 @@ export class Blog extends React.Component<void, IBlogState> {
 
 //    Blog article presentational-component.
 
+    private static index: any;
+
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
 
     private componentDidMount() {
-        // Animate in latest article.
-        methRef.once('value').then((snapshot) =>
-            this.setState({
-                article: snapshot.val(), articleStyle: {
-                    alpha: spring(1, presets.gentle),
-                    y: spring(0, presets.gentle)
-                },
-                header: methArticle.header,
-                willAnimateInBlogLinkList: true
-            }));
+        const indexRef = database.ref('index/');
+        indexRef.once('value').then((snapshot) => {
+            Blog.index = snapshot.val();
+            // Fetch latest article using blog index length.
+            database.ref(Blog.index[Object.keys(Blog.index).length][`article`].toString())
+                .once('value').then((articleSnapshot) =>
+                // Animate in latest article.
+                this.setState({
+                    article: articleSnapshot.val(), articleStyle: {
+                        alpha: spring(1, presets.gentle),
+                        y: spring(0, presets.gentle)
+                    },
+                    header: methArticle.header,
+                    willAnimateInBlogLinkList: true
+                }));
+        });
     }
 
     private handleBlogLinkClick = async (key: string): Promise<any> => {
