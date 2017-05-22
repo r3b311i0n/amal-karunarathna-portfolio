@@ -145,7 +145,7 @@ export class Blog extends React.Component<void, IBlogState> {
 
     public render(): JSX.Element {
         return (
-            <div className="blog-root">
+            <div>
                 <div>
                     <aside>
                         <div className="blog-link-list">
@@ -187,7 +187,7 @@ export class Blog extends React.Component<void, IBlogState> {
                                 {(interpolation: any) => <div
                                     style={{
                                         opacity: interpolation.alpha,
-                                        transform: `translateX(${interpolation.y}px)`
+                                        transform: `translateX(${-interpolation.y}px)`
                                     }}
                                 >
                                     <h1>{this.state.articleHeading}</h1>
