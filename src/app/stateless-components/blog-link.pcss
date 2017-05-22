@@ -24,3 +24,33 @@
     flex-wrap: wrap;
     padding: 0 0.25em;
 }
+
+@media screen and (width <= 1024px) {
+    .blog-link-article-name {
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (width <= 768px) {
+    .blog-link-root {
+        margin: 0.25em 0;
+    }
+
+    .blog-link-article-name {
+        margin: 0.25em 0.25em 0 0.25em;
+    }
+}
+
+@media screen and (width <= 480px) {
+    .blog-link-root {
+        margin: 0.125em 0;
+    }
+
+    .blog-link-article-name {
+        margin: 0.125em 0.125em 0 0.125em;
+    }
+
+    .blog-link-tags {
+        padding: 0 0.125em;
+    }
+}

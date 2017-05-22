@@ -14,22 +14,38 @@
     top: 0;
 }
 
-@media screen and (width <= 640px) {
+@media screen and (width <= 1024px) {
+    .blog-article {
+        margin: 0 13.288em;
+    }
+
+    .blog-link-list {
+        max-width: 9.969em;
+    }
+}
+
+@media screen and (width <= 768px) {
     .blog-article {
         margin: 0 5.61em;
     }
 
     .blog-link-list {
+        left: 0.5em;
+        max-width: 3.157em;
+    }
+}
+
+@media screen and (width <= 480px) {
+    .blog-article {
+        margin: 0 3.157em;
+    }
+
+    .blog-link-list {
         left: 0;
-        max-width: 5.61em;
     }
 }
 
 /* Markdown Styles */
-
-body .markdown-body {
-    padding: 30px;
-}
 
 @font-face {
     font-family: fontawesome-mini;
@@ -894,103 +910,5 @@ body .markdown-body {
     vertical-align: middle;
 }
 
-/* Media */
-@media only screen and (min-width: 480px) {
-    .markdown-body {
-        font-size: 14px;
-    }
-}
+/* Media for Markdown */
 
-@media only screen and (min-width: 768px) {
-    .markdown-body {
-        font-size: 16px;
-    }
-}
-
-@media print {
-    .markdown-body * {
-        background: transparent !important;
-        color: black !important;
-        filter: none !important;
-    }
-
-    .markdown-body {
-        font-size: 12pt;
-        max-width: 100%;
-        outline: none;
-        border: 0;
-    }
-
-    .markdown-body a,
-    .markdown-body a:visited {
-        text-decoration: underline;
-    }
-
-    .markdown-body .headeranchor-link {
-        display: none;
-    }
-
-    .markdown-body a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    .markdown-body abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    .markdown-body .ir a:after,
-    .markdown-body a[href^="javascript:"]:after,
-    .markdown-body a[href^="#"]:after {
-        content: "";
-    }
-
-    .markdown-body pre {
-        white-space: pre;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-    }
-
-    .markdown-body pre,
-    .markdown-body blockquote {
-        border: 1px solid #999;
-        padding-right: 1em;
-        page-break-inside: avoid;
-    }
-
-    .markdown-body .progress,
-    .markdown-body .progress-bar {
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-
-    .markdown-body .progress {
-        border: 1px solid #ddd;
-    }
-
-    .markdown-body .progress-bar {
-        height: 22px;
-        border-right: 1px solid #ddd;
-    }
-
-    .markdown-body tr,
-    .markdown-body img {
-        page-break-inside: avoid;
-    }
-
-    .markdown-body img {
-        max-width: 100% !important;
-    }
-
-    .markdown-body p,
-    .markdown-body h2,
-    .markdown-body h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    .markdown-body h2,
-    .markdown-body h3 {
-        page-break-after: avoid;
-    }
-}
