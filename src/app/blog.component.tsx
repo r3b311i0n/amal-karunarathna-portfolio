@@ -28,6 +28,7 @@ interface IBlogState {
     articleStyle: any;
     articleHeading: string;
     willAnimateInBlogLinkList: boolean;
+    windowHeight: number;
 }
 
 export class Blog extends React.Component<void, IBlogState> {
@@ -44,8 +45,10 @@ export class Blog extends React.Component<void, IBlogState> {
                 alpha: 0,
                 y: -200
             },
-            willAnimateInBlogLinkList: false
+            willAnimateInBlogLinkList: false,
+            windowHeight: window.innerHeight
         };
+        this.setWindowHeight = this.setWindowHeight.bind(this);
     }
 
 //    Blog article component.
@@ -56,6 +59,16 @@ export class Blog extends React.Component<void, IBlogState> {
 
     private async componentDidMount() {
         await this.fetchIndex();
+        window.addEventListener('resize', this.setWindowHeight);
+    }
+
+    //noinspection JSMethodCanBeStatic
+    private componentWillUnmount() {
+        window.removeEventListener('resize', this.setWindowHeight);
+    }
+
+    private setWindowHeight(): void {
+        this.setState({windowHeight: window.innerHeight});
     }
 
     private fetchIndex(): Promise<{}> {
@@ -152,7 +165,7 @@ export class Blog extends React.Component<void, IBlogState> {
                             <Scrollbars
                                 autoHeight={true}
                                 autoHeightMin={100}
-                                autoHeightMax={window.innerHeight}
+                                autoHeightMax={this.state.windowHeight}
                                 autoHide={true}
                                 autoHideDuration={200}
                                 autoHideTimeout={1000}
