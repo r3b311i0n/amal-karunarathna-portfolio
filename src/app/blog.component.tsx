@@ -68,19 +68,19 @@ export class Blog extends React.Component<void, IBlogState> {
                 Blog.blogLinkList = Object.entries(Blog.index).map(([key, value]) => (
                     <div
                         key={key}
-                        onClick={() => this.handleBlogLinkClick(value[`article`], value[`header`])}
+                        onClick={() => this.handleBlogLinkClick(value.article, value.header)}
                     >
-                        {BlogLink(value[`header`], value[`tags`].split(','))}
+                        {BlogLink(value.header, value.tags.split(','))}
                     </div>));
                 // Push style objects into array for StaggerMotion of Blog List.
                 Blog.blogLinkList.forEach(() => Blog.defaultStyles.push({h: -640}));
                 // Fetch latest article using blog index length.
-                database.ref(Blog.index[Blog.index.length - 1][`article`].toString())
+                database.ref(Blog.index[Blog.index.length - 1].article.toString())
                     .once('value').then((articleSnapshot) =>
                     // Animate in latest article.
                     this.setState({
                         articleBody: articleSnapshot.val(),
-                        articleHeading: Blog.index[Blog.index.length - 1][`header`],
+                        articleHeading: Blog.index[Blog.index.length - 1].header,
                         articleStyle: {
                             alpha: spring(1, presets.gentle),
                             y: spring(0, presets.gentle)
@@ -190,7 +190,7 @@ export class Blog extends React.Component<void, IBlogState> {
                                         transform: `translateX(${-interpolation.y}px)`
                                     }}
                                 >
-                                    <h1>{this.state.articleHeading}</h1>
+                                    <h1 className="blog-article-heading">{this.state.articleHeading}</h1>
                                 </div>}
                             </Motion>
                             <Motion
@@ -204,7 +204,6 @@ export class Blog extends React.Component<void, IBlogState> {
                                     }}
                                 >
                                     <div
-                                        className="blog-article-body"
                                         dangerouslySetInnerHTML={{__html: this.state.articleBody}}
                                     />
                                 </div>}
