@@ -164,7 +164,8 @@
       true,
       "single",
       "jsx-double",
-      "avoid-escape"
+      "avoid-escape",
+      "avoid-template"
     ],
     "semicolon": [
       true,
@@ -191,6 +192,11 @@
     "jsx-no-lambda": true,
     "jsx-no-string-ref": true,
     "jsx-wrap-multiline": true,
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "no-object-literal-type-assertion": true,
+    "object-literal-sort-keys": true,
+    "await-promise": true,
+    "prefer-conditional-expression": true,
+    "prefer-object-spread": true
   }
 }

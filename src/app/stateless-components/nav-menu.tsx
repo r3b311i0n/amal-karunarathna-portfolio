@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './nav-menu.pcss';
 import NavBtn from './nav-btn';
+import './nav-menu.pcss';
 
 // This is the global navigation bar component. It imports nav-btn.
 // todo: Implement collapse into button.

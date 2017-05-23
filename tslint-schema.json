@@ -469,10 +469,17 @@
 				},
 				"semicolon": {
 					"description": "Enforces semicolons at the end of every statement",
-          			"type": "array",
-          			"items": {
-            			"enum": [ true, false, "always", "never", "ignore-bound-class-methods", "ignore-interfaces"]
-          			}
+					"type": "array",
+					"items": {
+						"enum": [
+							true,
+							false,
+							"always",
+							"never",
+							"ignore-bound-class-methods",
+							"ignore-interfaces"
+						]
+					}
 				},
 				"switch-default": {
 					"description": "Enforces a default case in switch statements",
@@ -498,14 +505,14 @@
 					"type": "array",
 					"items": {
 						"enum": [
-						  true,
-						  false,
-						  "call-signature",
-              			  "parameter",
-              			  "arrow-parameter",
-              			  "property-declaration",
-              			  "variable-declaration",
-              			  "member-variable-declaration"
+							true,
+							false,
+							"call-signature",
+							"parameter",
+							"arrow-parameter",
+							"property-declaration",
+							"variable-declaration",
+							"member-variable-declaration"
 						]
 					}
 				},
@@ -893,10 +900,17 @@
 				},
 				"semicolon": {
 					"description": "Enforces semicolons at the end of every statement",
-          			"type": "array",
-          			"items": {
-            			"enum": [ true, false, "always", "never", "ignore-bound-class-methods", "ignore-interfaces"]
-          			}
+					"type": "array",
+					"items": {
+						"enum": [
+							true,
+							false,
+							"always",
+							"never",
+							"ignore-bound-class-methods",
+							"ignore-interfaces"
+						]
+					}
 				},
 				"switch-default": {
 					"description": "Enforces a default case in switch statements",
