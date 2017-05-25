@@ -30,7 +30,7 @@ export class About extends React.Component<void, IAboutState> {
     private static myDescription2: string;
     private static myDescription3: string;
 
-    private componentDidMount() {
+    public componentDidMount() {
         meRef.once('value').then((snapshot) => {
             About.myDescription1 = snapshot.child('para1').val();
             About.myDescription2 = snapshot.child('para2').val();

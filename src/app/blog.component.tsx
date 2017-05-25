@@ -57,16 +57,6 @@ export class Blog extends React.Component<void, IBlogState> {
     private static defaultStyles: Array<{ h: number }> = [];
     private static index: any;
 
-    private async componentDidMount() {
-        await this.fetchIndex();
-        window.addEventListener('resize', this.setWindowHeight);
-    }
-
-    //noinspection JSMethodCanBeStatic
-    private componentWillUnmount() {
-        window.removeEventListener('resize', this.setWindowHeight);
-    }
-
     private setWindowHeight(): void {
         this.setState({windowHeight: window.innerHeight});
     }
@@ -155,6 +145,16 @@ export class Blog extends React.Component<void, IBlogState> {
     //
     //     this.setState({blogLinkList: linkList});
     // };
+
+    public async componentDidMount() {
+        await this.fetchIndex();
+        window.addEventListener('resize', this.setWindowHeight);
+    }
+
+    //noinspection JSMethodCanBeStatic
+    public componentWillUnmount() {
+        window.removeEventListener('resize', this.setWindowHeight);
+    }
 
     public render(): JSX.Element {
         return (
