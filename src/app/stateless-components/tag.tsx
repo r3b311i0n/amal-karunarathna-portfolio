@@ -5,7 +5,7 @@ const Tag = (tagName: string) => {
     switch (tagName) {
         case 'drugs':
             return (
-                <div className="tag-root yellow" key={tagName}>
+                <div className="tag-root blue" key={tagName}>
                     {tagName}
                 </div>
             );
@@ -23,13 +23,13 @@ const Tag = (tagName: string) => {
             );
         case 'white trash':
             return (
-                <div className="tag-root purple" key={tagName}>
+                <div className="tag-root yellow" key={tagName}>
                     {tagName}
                 </div>
             );
         default:
             return (
-                <div className="tag-root black" key={tagName}>
+                <div className="tag-root white" key={tagName}>
                     {tagName}
                 </div>
             );
