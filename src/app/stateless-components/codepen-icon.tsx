@@ -3,7 +3,8 @@ import './codepen-icon.pcss';
 
 //noinspection TsLint
 const CodePenIcon = () => (
-    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><title>CodePen</title>
+    <svg className="codepen-root" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><title>
+        CodePen</title>
         <g fill="none" fillRule="evenodd">
             <path
                 d="M.217 30C.217 13.551 13.551.218 30 .218S59.782 13.55 59.782 30c0 16.449-13.333 29.782-29.782 29.782C13.551 59.782.218 46.45.218 30z"

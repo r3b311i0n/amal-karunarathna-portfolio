@@ -3,7 +3,7 @@ import './twitter-icon.pcss';
 
 //noinspection TsLint
 const TwitterIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><title>
+    <svg className="twitter-root" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><title>
         Twitter</title>
         <g fill="none" fillRule="evenodd">
             <path

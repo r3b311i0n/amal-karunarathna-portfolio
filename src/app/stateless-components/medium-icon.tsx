@@ -3,7 +3,7 @@ import './medium-icon.pcss';
 
 //noinspection TsLint
 const MediumIcon = () => (
-    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <svg className="medium-root" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
         <title>Medium</title>
         <g fill="none" fillRule="evenodd">
             <path

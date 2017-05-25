@@ -126,7 +126,7 @@ export class Blog extends React.Component<void, IBlogState> {
                     y: spring(0, presets.gentle)
                 }
             });
-        });
+        }).catch((err) => this.setState({articleHeading: err.message}));
     };
 
     // private handleTagSort = (tag: string): any => {

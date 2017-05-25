@@ -3,7 +3,8 @@ import './linked-in-icon.pcss';
 
 //noinspection TsLint
 const LinkedInIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><title>LinkedIn</title>
+    <svg className="linked-in-root" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+        <title>LinkedIn</title>
         <g fill="#0077b5" fillRule="evenodd">
             <path
                 d="M 0,30 C 0,13.431457 13.431457,0 30,0 46.568543,0 60,13.431457 60,30 60,46.568543 46.568543,60 30,60 13.431457,60 0,46.568543 0,30 Z"
