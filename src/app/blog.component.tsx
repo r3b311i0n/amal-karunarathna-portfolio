@@ -112,7 +112,6 @@ export class Blog extends React.Component<void, IBlogState> {
             window.setTimeout(() => resolve(), 500);
         });
         // Transition-in new article.
-        this.setState({});
         database.ref(article).once('value').then((snapshot) => {
             this.setState({
                 articleBody: snapshot.val(),
