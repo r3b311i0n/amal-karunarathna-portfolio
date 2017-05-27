@@ -1,24 +1,35 @@
 import * as React from 'react';
+import {About} from './about.component';
 import './app.component.pcss';
-import NavMenu from './stateless-components/nav-menu';
+import {Blog} from './blog.component';
+import NavBtn from './stateless-components/nav-btn';
 
-const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
-const inactive = {color: 'inherit', fontSize: '1em'};
+interface IAppState {
+    showAbout: boolean;
+}
 
-export class App extends React.Component<void, {}> {
+export class App extends React.Component<{}, IAppState> {
     constructor(props: any) {
         super(props);
+
+        this.state = {showAbout: false};
     }
 
 //    Index presentational-component.
+
+    private handleNavBtnClick = () => this.setState({
+        showAbout: !this.state.showAbout
+    });
 
     public render(): JSX.Element {
         return (
             <div>
                 <div className="app-content">
-                    <main></main>
+                    {(this.state.showAbout) ? <About/> : <Blog/>}
                 </div>
-                {NavMenu(active, inactive, inactive, inactive)}
+                <div onClick={this.handleNavBtnClick}>
+                    {NavBtn(this.state.showAbout)}
+                </div>
             </div>
         );
     }

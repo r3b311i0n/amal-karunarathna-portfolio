@@ -4,10 +4,6 @@ import {Motion, presets, spring} from 'react-motion';
 import './about.component.pcss';
 import Social from './social';
 import AboutMe from './stateless-components/about-me';
-import NavMenu from './stateless-components/nav-menu';
-
-const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
-const inactive = {color: 'inherit', fontSize: '1em'};
 
 const database = firebase.database();
 const meRef = database.ref('me/');
@@ -16,7 +12,7 @@ interface IAboutState {
     willAnimateIn: boolean;
 }
 
-export class About extends React.Component<void, IAboutState> {
+export class About extends React.Component<{}, IAboutState> {
     constructor(props: any) {
         super(props);
 
@@ -77,7 +73,6 @@ export class About extends React.Component<void, IAboutState> {
                         </Motion>
                     </main>
                 </div>
-                {NavMenu(inactive, inactive, inactive, active)}
             </div>
         );
     }

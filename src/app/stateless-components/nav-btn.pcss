@@ -1,9 +1,35 @@
 .nav-btn-root {
-    display: block;
-    background-color: transparent;
-    color: inherit;
-    font-size: 1em;
-    letter-spacing: 0.1em;
-    outline: none;
-    text-decoration: none;
+    cursor: pointer;
+    outline: hidden;
+    position: fixed;
+    right: 7.478em;
+    top: 3.157em;
+    transition: filter 200ms, transform 200ms;
+}
+
+.nav-btn-root:hover {
+    filter: drop-shadow(3px -2px 3px rgb(54, 54, 54)) invert(100%);
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(-2px, 2px, 2px);
+}
+
+.nav-btn-arrow {
+    transition: transform 1500ms;
+}
+
+.nav-btn-arrow-shaft {
+    transition: transform 1500ms;
+}
+
+@media screen and (width <= 1024px) {
+    .nav-btn-root {
+        right: 5.61em;
+    }
+}
+
+@media screen and (width <= 768px) {
+    .nav-btn-root {
+        right: 0.75em;
+        height: 45px;
+        width: 45px;
+    }
 }

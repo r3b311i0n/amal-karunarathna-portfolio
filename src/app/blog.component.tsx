@@ -4,15 +4,11 @@ import Scrollbars from 'react-custom-scrollbars';
 import {Motion, presets, spring, StaggeredMotion} from 'react-motion';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
-import NavMenu from './stateless-components/nav-menu';
 
 // todo: Put all constants in in their own file.
 // todo: shrink Blog List for small screens.
 // todo: Animate heading separately.
 // todo: Maybe remove routing.
-
-const active = {color: 'rgba(0, 0, 0, 1)', fontSize: '1.333em'};
-const inactive = {color: 'inherit', fontSize: '1em'};
 
 const database = firebase.database();
 
@@ -31,7 +27,7 @@ interface IBlogState {
     windowHeight: number;
 }
 
-export class Blog extends React.Component<void, IBlogState> {
+export class Blog extends React.Component<{}, IBlogState> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -223,7 +219,6 @@ export class Blog extends React.Component<void, IBlogState> {
                         </div>
                     </main>
                 </div>
-                {NavMenu(inactive, active, inactive, inactive)}
             </div>
         );
     }
