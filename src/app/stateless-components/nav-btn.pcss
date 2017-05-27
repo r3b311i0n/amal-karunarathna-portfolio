@@ -1,6 +1,5 @@
 .nav-btn-root {
     cursor: pointer;
-    outline: hidden;
     position: fixed;
     right: 7.478em;
     top: 3.157em;
@@ -10,6 +9,7 @@
 .nav-btn-root:hover {
     filter: drop-shadow(3px -2px 3px rgb(54, 54, 54)) invert(100%);
     transform: scale3d(1.1, 1.1, 1.1) translate3d(-2px, 2px, 2px);
+    transform-style: preserve-3d;
 }
 
 .nav-btn-arrow {
@@ -18,6 +18,10 @@
 
 .nav-btn-arrow-shaft {
     transition: transform 1500ms;
+}
+
+.nav-btn-home-props {
+    transition: fill-opacity 500ms;
 }
 
 @media screen and (width <= 1024px) {
