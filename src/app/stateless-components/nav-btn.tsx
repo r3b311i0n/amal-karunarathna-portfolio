@@ -40,7 +40,7 @@ const NavBtn = (isAboutShown: boolean) => {
                 <path d="M7.973 3.175l4.057 4.056-.706.707L7.268 3.88z" className="nav-btn-lower-head"/>
             </g>
             <g className="nav-btn-home-props" fill="#333" fillOpacity={homePropsOpacity}>
-                <path d="M5.82 10.954h4.234v.529H5.821zM6.085 6.88h1.059v1.057H6.085zM8.731 6.88H9.79v1.057H8.73z"/>
+                <path d="M5.556 10.954h4.763v.529H5.556zM6.085 6.88h1.059v1.057H6.085zM8.731 6.88H9.79v1.057H8.73z"/>
                 <path d="M7.144 8.839H8.73v2.117H7.144z"/>
             </g>
         </svg>
