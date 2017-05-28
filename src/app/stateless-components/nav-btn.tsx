@@ -45,8 +45,8 @@ const NavBtn = (isAboutShown: boolean) => {
                       style={transformArrowShaftLeft}/>
                 <path d="M10.848 6.191v5.292h-.794V6.192z" className="nav-btn-arrow-shaft"
                       style={transformArrowShaftRight}/>
-                <path d="M8.678 3.881L4.621 7.938l-.705-.707 4.057-4.056z" className="nav-btn-upper-head"/>
-                <path d="M7.973 3.175l4.057 4.056-.706.707L7.268 3.88z" className="nav-btn-lower-head"/>
+                <path d="M8.678 3.881L4.621 7.938l-.705-.707 4.057-4.056z"/>
+                <path d="M7.973 3.175l4.057 4.056-.706.707L7.268 3.88z"/>
             </g>
             <g className="nav-btn-home-props" fill="#333" fillOpacity={homePropsOpacity}>
                 <path d="M5.556 10.954h4.763v.529H5.556zM6.085 6.88h1.059v1.057H6.085zM8.731 6.88H9.79v1.057H8.73z"/>
