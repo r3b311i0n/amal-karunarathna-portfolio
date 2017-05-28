@@ -7,7 +7,8 @@ const NavBtn = (isAboutShown: boolean) => {
     // Animate nav btn.
     let homePropsOpacity: number;
     let transformArrow: { transform: string, transformOrigin: string };
-    let transformArrowShaft: { transform: string, transformOrigin: string };
+    let transformArrowShaftLeft: { transform: string, transformOrigin: string };
+    let transformArrowShaftRight: { transform: string, transformOrigin: string };
 
     // todo: Use a timeout for fillOpacity on homeProps.
     // todo: Use a var for home-props transition timing.
@@ -16,12 +17,20 @@ const NavBtn = (isAboutShown: boolean) => {
     if (isAboutShown) {
         homePropsOpacity = 0;
         transformArrow = {transform: 'rotate(270deg) translateX(1px)', transformOrigin: '50% 50%'};
-        transformArrowShaft = {transform: 'scaleY(1.8)', transformOrigin: '0% 0%'};
+        transformArrowShaftLeft = {
+            transform: 'scaleY(1.8) translateX(1.8px) translateY(-1px)',
+            transformOrigin: '0% 0%'
+        };
+        transformArrowShaftRight = {
+            transform: 'scaleY(1.8) translateX(-1.8px) translateY(-1px)',
+            transformOrigin: '0% 0%'
+        };
     }
     else {
         homePropsOpacity = 1;
         transformArrow = {transform: 'rotate(0) translateX(0px)', transformOrigin: '50% 50%'};
-        transformArrowShaft = {transform: 'scaleY(1)', transformOrigin: '0% 0%'};
+        transformArrowShaftLeft = {transform: 'scaleY(1)', transformOrigin: '0% 0%'};
+        transformArrowShaftRight = {transform: 'scaleY(1)', transformOrigin: '0% 0%'};
     }
 
     //noinspection TsLint
@@ -33,9 +42,9 @@ const NavBtn = (isAboutShown: boolean) => {
                   fill="#fff"/>
             <g className="nav-btn-arrow" fill="#333" style={transformArrow}>
                 <path d="M5.82 6.191v5.292h-.793V6.192z" className="nav-btn-arrow-shaft"
-                      style={transformArrowShaft}/>
+                      style={transformArrowShaftLeft}/>
                 <path d="M10.848 6.191v5.292h-.794V6.192z" className="nav-btn-arrow-shaft"
-                      style={transformArrowShaft}/>
+                      style={transformArrowShaftRight}/>
                 <path d="M8.678 3.881L4.621 7.938l-.705-.707 4.057-4.056z" className="nav-btn-upper-head"/>
                 <path d="M7.973 3.175l4.057 4.056-.706.707L7.268 3.88z" className="nav-btn-lower-head"/>
             </g>
