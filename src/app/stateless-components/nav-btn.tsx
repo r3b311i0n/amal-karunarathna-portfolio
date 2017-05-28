@@ -14,6 +14,7 @@ const NavBtn = (isAboutShown: boolean) => {
     // todo: Use a var for home-props transition timing.
     // todo: Take care of jaggies in home icon.
 
+    // Animation rules for nav-btn.
     if (isAboutShown) {
         homePropsOpacity = 0;
         transformArrow = {transform: 'rotate(270deg) translateX(1px)', transformOrigin: '50% 50%'};
