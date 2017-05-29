@@ -3,27 +3,33 @@ import './tag.pcss';
 
 const Tag = (tagName: string) => {
     switch (tagName) {
-        case 'drugs':
+        case 'TypeScript':
             return (
                 <div className="tag-root blue" key={tagName}>
                     {tagName}
                 </div>
             );
-        case 'meth':
+        case 'Java':
             return (
-                <div className="tag-root orange" key={tagName}>
+                <div className="tag-root red" key={tagName}>
                     {tagName}
                 </div>
             );
-        case 'poverty':
+        case 'Web':
             return (
-                <div className="tag-root turquoise" key={tagName}>
+                <div className="tag-root green" key={tagName}>
                     {tagName}
                 </div>
             );
-        case 'white trash':
+        case 'JavaScript':
             return (
                 <div className="tag-root yellow" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'C#':
+            return (
+                <div className="tag-root purple" key={tagName}>
                     {tagName}
                 </div>
             );
