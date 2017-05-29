@@ -18,7 +18,10 @@
     "emitDecoratorMetadata": true,
     "jsx": "react",
     "noImplicitAny": true,
-    "removeComments": true
+    "removeComments": true,
+    "typeRoots": [
+      "./typings/"
+    ]
   },
   "include": [
     "./src/**/*",

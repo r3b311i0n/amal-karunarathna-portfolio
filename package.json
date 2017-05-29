@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "browserslist": [
@@ -63,6 +63,7 @@
     "react-motion": "^0.5.0",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
+    "react-router-transition": "^0.1.1",
     "redux": "^3.6.0"
   }
 }

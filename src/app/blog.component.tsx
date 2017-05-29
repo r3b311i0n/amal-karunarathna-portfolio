@@ -8,9 +8,6 @@ import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
 
 // todo: Put all constants in in their own file.
-// todo: shrink Blog List for small screens.
-// todo: Animate heading separately.
-// todo: Maybe remove routing.
 
 const database = firebase.database();
 
@@ -56,6 +53,7 @@ export class Blog extends React.Component<void, IBlogState> {
                 const routes: JSX.Element[] = [];
                 this.blogLinkList = Object.entries(this.index).map(([key, value]) => {
                     // Initialise and array of routes.
+                    //noinspection TsLint
                     routes.push((
                             <Route
                                 key={key}
@@ -82,7 +80,7 @@ export class Blog extends React.Component<void, IBlogState> {
                 // Sort blog list from older to newer posts.
                 this.blogLinkList = this.blogLinkList.reverse();
                 // Add redirect to last post.
-                routes.push(<Redirect key={routes.length + 1} from="/" to="/6"/>);
+                routes.push(<Redirect key={routes.length + 1} from="/" to={`/${routes.length}`}/>);
                 // Populate render() with Route list.
                 this.setState({articleRoutes: routes});
                 // Push style objects into array for StaggerMotion of Blog List.
