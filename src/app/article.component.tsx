@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 import * as React from 'react';
-import {Motion, OpaqueConfig, presets, spring, TransitionMotion} from 'react-motion';
+import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 import './article.component.pcss';
 
 const database = firebase.database();
