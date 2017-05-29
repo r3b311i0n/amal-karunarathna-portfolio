@@ -13,6 +13,7 @@ const NavBtn = (isAboutShown: boolean) => {
     // todo: Use a timeout for fillOpacity on homeProps.
     // todo: Use a var for home-props transition timing.
     // todo: Take care of jaggies in home icon.
+    // todo: Fix arrow on Firefox.
 
     // Animation rules for nav-btn.
     if (isAboutShown) {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Redirect, Route} from 'react-router-dom';
 import {About} from './about.component';
 import './app.component.pcss';
 import {Blog} from './blog.component';
@@ -15,8 +16,6 @@ export class App extends React.Component<{}, IAppState> {
         this.state = {showAbout: false};
     }
 
-//    Index presentational-component.
-
     private handleNavBtnClick = () => this.setState({
         showAbout: !this.state.showAbout
     });
@@ -25,7 +24,7 @@ export class App extends React.Component<{}, IAppState> {
         return (
             <div>
                 <div className="app-content">
-                    {(this.state.showAbout) ? <About/> : <Blog/>}
+                    {(this.state.showAbout) ? <About/> : <Route component={Blog}/>}
                 </div>
                 <div onClick={this.handleNavBtnClick}>
                     {NavBtn(this.state.showAbout)}

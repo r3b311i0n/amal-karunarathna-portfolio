@@ -1,7 +1,9 @@
 import * as firebase from 'firebase';
 import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
-import {Motion, presets, spring, StaggeredMotion} from 'react-motion';
+import {presets, spring, StaggeredMotion} from 'react-motion';
+import {Link, Redirect, Route, Switch} from 'react-router-dom';
+import {Article} from './article.component';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
 
@@ -19,28 +21,16 @@ const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.ma
 });
 
 interface IBlogState {
-    articleBody: string;
-    articleDefaultStyle: any;
-    articleStyle: any;
-    articleHeading: string;
+    articleRoutes: JSX.Element[];
     willAnimateInBlogLinkList: boolean;
     windowHeight: number;
 }
 
-export class Blog extends React.Component<{}, IBlogState> {
+export class Blog extends React.Component<void, IBlogState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            articleBody: '',
-            articleDefaultStyle: {
-                alpha: 0,
-                y: -200
-            },
-            articleHeading: '',
-            articleStyle: {
-                alpha: 0,
-                y: -200
-            },
+            articleRoutes: [],
             willAnimateInBlogLinkList: false,
             windowHeight: window.innerHeight
         };
@@ -49,9 +39,9 @@ export class Blog extends React.Component<{}, IBlogState> {
 
 //    Blog article component.
 
-    private static blogLinkList: JSX.Element[];
-    private static defaultStyles: Array<{ h: number }> = [];
-    private static index: any;
+    private blogLinkList: JSX.Element[];
+    private defaultStyles: Array<{ h: number }> = [];
+    private index: any;
 
     private setWindowHeight(): void {
         this.setState({windowHeight: window.innerHeight});
@@ -62,84 +52,48 @@ export class Blog extends React.Component<{}, IBlogState> {
             const indexRef = database.ref('index/');
             // Fetch index.
             indexRef.once('value').then((snapshot) => {
-                Blog.index = snapshot.val();
-                // Initialises blog entries.
-                Blog.blogLinkList = Object.entries(Blog.index).map(([key, value]) => (
-                    <div
-                        key={key}
-                        onClick={() => this.handleBlogLinkClick(value.article, value.header)}
-                    >
-                        {BlogLink(value.header, value.tags.split(','))}
-                    </div>));
+                this.index = snapshot.val();
+                const routes: JSX.Element[] = [];
+                this.blogLinkList = Object.entries(this.index).map(([key, value]) => {
+                    // Initialise and array of routes.
+                    routes.push((
+                            <Route
+                                key={key}
+                                path={`/${key}`}
+                                render={() =>
+                                    <Article articleAddress={value.article} articleHeading={value.header}/>}
+                            />
+                        )
+                    );
+
+                    // Initialises blog entries.
+                    return (
+                        <div
+                            key={key}
+                        >
+                            <Link
+                                key={key}
+                                to={key}
+                            >
+                                {BlogLink(value.header, value.tags.split(','))}
+                            </Link>
+                        </div>);
+                });
+                // Sort blog list from older to newer posts.
+                this.blogLinkList = this.blogLinkList.reverse();
+                // Add redirect to last post.
+                routes.push(<Redirect key={routes.length + 1} from="/" to="/6"/>);
+                // Populate render() with Route list.
+                this.setState({articleRoutes: routes});
                 // Push style objects into array for StaggerMotion of Blog List.
-                Blog.blogLinkList.forEach(() => Blog.defaultStyles.push({h: -640}));
-                // Fetch latest article using blog index length.
-                database.ref(Blog.index[Blog.index.length - 1].article.toString())
-                    .once('value').then((articleSnapshot) =>
-                    // Animate in latest article.
-                    this.setState({
-                        articleBody: articleSnapshot.val(),
-                        articleHeading: Blog.index[Blog.index.length - 1].header,
-                        articleStyle: {
-                            alpha: spring(1, presets.gentle),
-                            y: spring(0, presets.gentle)
-                        },
-                        willAnimateInBlogLinkList: true
-                    }));
-            }).catch((err) => this.setState({articleBody: err.message, articleHeading: err.name}));
+                this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
+                this.setState({
+                    willAnimateInBlogLinkList: true
+                });
+            });
             resolve();
         });
     }
-
-    private handleBlogLinkClick = async (article: string, header: string): Promise<any> => {
-        // Transition-out previous article.
-        await new Promise((resolve) => {
-            this.setState({
-                articleDefaultStyle: {
-                    alpha: 1,
-                    y: 0
-                },
-                articleStyle: {
-                    alpha: spring(0, presets.gentle),
-                    y: spring(-200, presets.gentle)
-                }
-            });
-
-            window.setTimeout(() => resolve(), 500);
-        });
-        // Transition-in new article.
-        database.ref(article).once('value').then((snapshot) => {
-            this.setState({
-                articleBody: snapshot.val(),
-                articleDefaultStyle: {
-                    alpha: 0,
-                    y: -200
-                },
-                articleHeading: header.toString(),
-                articleStyle: {
-                    alpha: spring(1, presets.gentle),
-                    y: spring(0, presets.gentle)
-                }
-            });
-        }).catch((err) => this.setState({articleHeading: err.message}));
-    };
-
-    // private handleTagSort = (tag: string): any => {
-    //     let linkList: JSX.Element[] = [];
-    //
-    //     Object.entries(blogIndexTest).map(([key, value]) => {
-    //         if (value.tags.includes(tag)) {
-    //             linkList.push((
-    //                 <div
-    //                     key={key}
-    //                     onClick={() => this.handleBlogLinkClick(key)}
-    //                 >{BlogLink(value.name, value.tags)}
-    //                 </div>));
-    //         }
-    //     });
-    //
-    //     this.setState({blogLinkList: linkList});
-    // };
 
     public async componentDidMount() {
         await this.fetchIndex();
@@ -166,7 +120,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                                 autoHideTimeout={1000}
                             >
                                 {this.state.willAnimateInBlogLinkList ? <StaggeredMotion
-                                    defaultStyles={Blog.defaultStyles}
+                                    defaultStyles={this.defaultStyles}
                                     styles={staggerStyles}
                                 >
                                     {(interpolatingStyles: object[]) =>
@@ -176,7 +130,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                                                     <div
                                                         style={{transform: `translateX(${style.h}px)`}}
                                                     >
-                                                        {Blog.blogLinkList[i]}
+                                                        {this.blogLinkList[i]}
                                                     </div>
                                                 </div>
                                             )}
@@ -187,36 +141,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                         </div>
                     </aside>
                     <main>
-                        <div className="blog-article">
-                            <Motion
-                                defaultStyle={this.state.articleDefaultStyle}
-                                style={this.state.articleStyle}
-                            >
-                                {(interpolation: any) => <div
-                                    style={{
-                                        opacity: interpolation.alpha,
-                                        transform: `translateX(${-interpolation.y}px)`
-                                    }}
-                                >
-                                    <h1 className="blog-article-heading">{this.state.articleHeading}</h1>
-                                </div>}
-                            </Motion>
-                            <Motion
-                                defaultStyle={this.state.articleDefaultStyle}
-                                style={this.state.articleStyle}
-                            >
-                                {(interpolation: any) => <div
-                                    style={{
-                                        opacity: interpolation.alpha,
-                                        transform: `translateY(${interpolation.y}px)`
-                                    }}
-                                >
-                                    <div
-                                        dangerouslySetInnerHTML={{__html: this.state.articleBody}}
-                                    />
-                                </div>}
-                            </Motion>
-                        </div>
+                        <Switch>{this.state.articleRoutes}</Switch>
                     </main>
                 </div>
             </div>
