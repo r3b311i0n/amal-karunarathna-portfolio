@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.9.10",
+  "version": "0.9.12",
   "description": "Source for AmalKarunarathna.com",
   "main": "index.js",
   "browserslist": [

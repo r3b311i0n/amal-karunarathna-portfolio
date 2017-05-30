@@ -3,6 +3,8 @@ import * as React from 'react';
 import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 import './article.component.pcss';
 
+// todo: Give better names for routes.
+
 const database = firebase.database();
 
 export interface IArticleProps {
