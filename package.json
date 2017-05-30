@@ -9,8 +9,9 @@
   ],
   "scripts": {
     "test": "mocha",
-    "watch": "webpack-dev-server --progress",
-    "build": "webpack"
+    "watch": "webpack-dev-server --env=dev --progress --profile --colors",
+    "build": "webpack --env=dev --progress --profile --colors",
+    "prod": "webpack --env=prod --progress --profile --colors"
   },
   "keywords": [
     "portfolio",
