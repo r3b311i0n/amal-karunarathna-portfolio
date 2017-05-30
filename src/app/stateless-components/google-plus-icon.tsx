@@ -3,7 +3,8 @@ import './google-plus-icon.pcss';
 
 //noinspection TsLint
 const GooglePlusIcon = () => (
-    <svg className="google-plus-root" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <svg className="google-plus-root" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"
+         shapeRendering="geometricPrecision" imageRendering="optimizeQuality" colorRendering="optimizeQuality">
         <title>Google +</title>
         <g fill="#fff" fillRule="evenodd">
             <path

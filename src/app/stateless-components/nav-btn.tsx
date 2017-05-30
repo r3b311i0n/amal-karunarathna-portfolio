@@ -15,8 +15,6 @@ const NavBtn = (isAboutShown: boolean) => {
     let transformArrowShaftLeft: { transform: string, transformOrigin: string };
     let transformArrowShaftRight: { transform: string, transformOrigin: string };
 
-    // todo: Take care of jaggies in home icon.
-
     // Animation rules for nav-btn.
     if (isAboutShown) {
         homePropsOpacity = 0;
@@ -54,7 +52,7 @@ const NavBtn = (isAboutShown: boolean) => {
     //noinspection TsLint
     return (
         <svg className="nav-btn-root" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.875 15.875" height="60"
-             width="60">
+             width="60" fillRule="evenodd" shapeRendering="geometricPrecision" imageRendering="optimizeQuality">
             <path className="nav-btn-arrow-background"
                   d="M15.875 7.938a7.938 7.938 0 0 1-7.938 7.937A7.938 7.938 0 0 1 0 7.937 7.938 7.938 0 0 1 7.938 0a7.938 7.938 0 0 1 7.937 7.938z"
                   fill="#fff"/>
