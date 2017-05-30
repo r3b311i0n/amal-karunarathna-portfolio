@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {Route} from 'react-router-dom';
 import {About} from './about.component';
-import './app.component.pcss';
 import {Blog} from './blog.component';
 import NavBtn from './stateless-components/nav-btn';
 

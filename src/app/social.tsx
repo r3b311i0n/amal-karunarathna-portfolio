@@ -4,8 +4,6 @@ import './social.pcss';
 import SocialIcon from './stateless-components/social-icon';
 
 //    Social links component.
-// todo: Fix responsive design.
-// todo: Refactor motion into different module.
 
 // Seven objects for seven social links representing initial x coordinates.
 const defaultStyles = [{h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}, {h: -768}];

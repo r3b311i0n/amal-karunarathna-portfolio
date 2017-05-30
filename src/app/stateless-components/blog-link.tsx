@@ -2,7 +2,6 @@ import * as React from 'react';
 import './blog-link.pcss';
 import Tag from './tag';
 
-// todo: Add active highlight on hover for blog links.
 const BlogLink = (articleName: string, tags: string[]) =>
     (
         <div className="blog-link-root">

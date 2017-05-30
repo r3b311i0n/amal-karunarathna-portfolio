@@ -7,8 +7,6 @@ import {Article} from './article.component';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
 
-// todo: Put all constants in in their own file.
-
 const database = firebase.database();
 
 const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
