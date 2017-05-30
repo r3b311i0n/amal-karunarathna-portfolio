@@ -5,37 +5,43 @@ const Tag = (tagName: string) => {
     switch (tagName) {
         case 'TypeScript':
             return (
-                <div className="tag-root blue" key={tagName}>
+                <div className="tag-root typescript" key={tagName}>
                     {tagName}
                 </div>
             );
         case 'Java':
             return (
-                <div className="tag-root red" key={tagName}>
+                <div className="tag-root java" key={tagName}>
                     {tagName}
                 </div>
             );
         case 'Web':
             return (
-                <div className="tag-root green" key={tagName}>
+                <div className="tag-root web" key={tagName}>
                     {tagName}
                 </div>
             );
         case 'JavaScript':
             return (
-                <div className="tag-root yellow" key={tagName}>
+                <div className="tag-root javascript" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'CSS':
+            return (
+                <div className="tag-root css" key={tagName}>
                     {tagName}
                 </div>
             );
         case 'C#':
             return (
-                <div className="tag-root purple" key={tagName}>
+                <div className="tag-root c-sharp" key={tagName}>
                     {tagName}
                 </div>
             );
         default:
             return (
-                <div className="tag-root white" key={tagName}>
+                <div className="tag-root misc" key={tagName}>
                     {tagName}
                 </div>
             );
