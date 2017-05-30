@@ -4,6 +4,10 @@ import './nav-btn.pcss';
 // This is the navigation button component.
 
 const NavBtn = (isAboutShown: boolean) => {
+    // Check browser for SVG transform-origin.
+    const isChrome: boolean = navigator.userAgent.indexOf('Chrome') > -1;
+    const arrowTransformOrigin = (isChrome) ? '50% 50%' : '50% 55%';
+    const arrowShaftTransformOrigin = (isChrome) ? '0% 0%' : '50% 40%';
     // Animate nav btn.
     let homePropsOpacity: number;
     let transformArrow: { transform: string, transformOrigin: string };
@@ -13,26 +17,37 @@ const NavBtn = (isAboutShown: boolean) => {
     // todo: Use a timeout for fillOpacity on homeProps.
     // todo: Use a var for home-props transition timing.
     // todo: Take care of jaggies in home icon.
-    // todo: Fix arrow on Firefox.
 
     // Animation rules for nav-btn.
     if (isAboutShown) {
         homePropsOpacity = 0;
-        transformArrow = {transform: 'rotate(270deg) translateX(1px)', transformOrigin: '50% 50%'};
+        transformArrow = {
+            transform: 'rotate(270deg) translateX(1px)',
+            transformOrigin: arrowTransformOrigin
+        };
         transformArrowShaftLeft = {
             transform: 'scaleY(1.8) translateX(1.8px) translateY(-1px)',
-            transformOrigin: '0% 0%'
+            transformOrigin: arrowShaftTransformOrigin
         };
         transformArrowShaftRight = {
             transform: 'scaleY(1.8) translateX(-1.8px) translateY(-1px)',
-            transformOrigin: '0% 0%'
+            transformOrigin: arrowShaftTransformOrigin
         };
     }
     else {
         homePropsOpacity = 1;
-        transformArrow = {transform: 'rotate(0) translateX(0px)', transformOrigin: '50% 50%'};
-        transformArrowShaftLeft = {transform: 'scaleY(1)', transformOrigin: '0% 0%'};
-        transformArrowShaftRight = {transform: 'scaleY(1)', transformOrigin: '0% 0%'};
+        transformArrow = {
+            transform: 'rotate(0) translateX(0px)',
+            transformOrigin: arrowTransformOrigin
+        };
+        transformArrowShaftLeft = {
+            transform: 'scaleY(1)',
+            transformOrigin: arrowShaftTransformOrigin
+        };
+        transformArrowShaftRight = {
+            transform: 'scaleY(1)',
+            transformOrigin: arrowShaftTransformOrigin
+        };
     }
 
     //noinspection TsLint
