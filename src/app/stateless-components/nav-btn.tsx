@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './nav-btn.pcss';
 
+// todo: Fix nav-btn transform origin for other browsers.
+
 // This is the navigation button component.
 
 const NavBtn = (isAboutShown: boolean) => {

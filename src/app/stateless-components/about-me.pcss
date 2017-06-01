@@ -1,8 +1,22 @@
-.about-me {
-    font-family: serif;
+.about-me-root {
+    font-family: Leitura News, serif;
+    font-size: 1em;
+}
+
+.about-me-description {
     font-size: 1.333em;
 }
 
-.about-me > p:first-child::first-letter {
-    font-size: 1.777em;
+.about-me-properties {
+    margin-top: 1.777em;
+
+    & div {
+        margin-top: 1em;
+    }
+
+    & ul li, & span {
+        font-family: Neuzeit Grotesk, sans-serif;
+        text-decoration: underline;
+        width: max-content;
+    }
 }

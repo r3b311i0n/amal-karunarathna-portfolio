@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.9.13",
+  "version": "0.9.14",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "index.js",
   "browserslist": [
