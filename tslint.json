@@ -197,6 +197,9 @@
     "object-literal-sort-keys": true,
     "await-promise": true,
     "prefer-conditional-expression": true,
-    "prefer-object-spread": true
+    "prefer-object-spread": true,
+    "binary-expression-operand-order": true,
+    "use-default-type-parameter": true,
+    "switch-final-break": true
   }
 }
