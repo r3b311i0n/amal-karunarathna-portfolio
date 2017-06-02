@@ -1,15 +1,13 @@
 import * as React from 'react';
 import './nav-btn.pcss';
 
-// todo: Fix nav-btn transform origin for other browsers.
-
 // This is the navigation button component.
 
 const NavBtn = (isAboutShown: boolean) => {
     // Check browser for SVG transform-origin.
-    const isChrome: boolean = navigator.userAgent.indexOf('Chrome') > -1;
-    const arrowTransformOrigin = (isChrome) ? '50% 50%' : '50% 55%';
-    const arrowShaftTransformOrigin = (isChrome) ? '0% 0%' : '50% 40%';
+    const isWebKit: boolean = navigator.userAgent.indexOf('WebKit') > -1;
+    const arrowTransformOrigin = (isWebKit) ? '50% 50%' : '50% 55%';
+    const arrowShaftTransformOrigin = (isWebKit) ? '0% 0%' : '50% 40%';
     // Animate nav btn.
     let homePropsOpacity: number;
     let homePropsTransitionDuration: string = '250ms';
