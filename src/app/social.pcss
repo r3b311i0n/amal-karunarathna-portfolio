@@ -22,7 +22,7 @@
     }
 
     .social-icon {
-        margin: 0.317em 0;
+        margin: 0.5em 0;
     }
 }
 
@@ -32,7 +32,7 @@
     }
 
     .social-icon {
-        margin: 0 0;
+        margin: 1em 0;
     }
 
     .social-root svg {
@@ -41,13 +41,32 @@
     }
 }
 
-@media screen and (width <= 480px) {
+@media screen and (width <= 480px) and (orientation: portrait) {
     .social-root {
         top: 1em;
+    }
+
+    .social-icon {
+        margin: 1em 0;
     }
 
     .social-root svg {
         height: 30px;
         width: 30px;
+    }
+}
+
+@media screen and (height <= 480px) and (width <= 640px) and (orientation: landscape) {
+    .social-root {
+        top: 0.5em;
+    }
+
+    .social-icon {
+        margin: 0.5em 0;
+    }
+
+    .social-root svg {
+        height: 25px;
+        width: 25px;
     }
 }

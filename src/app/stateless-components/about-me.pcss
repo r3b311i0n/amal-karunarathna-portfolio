@@ -1,15 +1,23 @@
 .about-me-root {
+    display: flex;
+    flex-flow: column nowrap;
     font-family: Leitura News, serif;
     font-size: 1em;
 }
 
 .about-me-description {
+    display: inline-block;
     font-size: 1.333em;
+    padding-bottom: 1em;
+}
+
+.about-me-information {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 .about-me-properties {
-    margin-top: 1.777em;
-
     & div {
         margin-top: 1em;
     }
