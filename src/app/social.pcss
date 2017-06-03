@@ -1,10 +1,13 @@
 .social-root {
-    display: flex;
-    flex-direction: column;
-    left: 7.478em;
-    top: 3.157em;
+    left: 0.5em;
+    top: 0.5em;
     position: fixed;
     width: max-content;
+}
+
+.social-root svg {
+    height: 25px;
+    width: 25px;
 }
 
 .social-icon {
@@ -16,57 +19,8 @@
     outline: none;
 }
 
-@media screen and (width <= 1024px) {
+@media screen and (width <= 480px) {
     .social-root {
-        left: 4.209em;
-    }
-
-    .social-icon {
-        margin: 0.5em 0;
-    }
-}
-
-@media screen and (width <= 768px) {
-    .social-root {
-        left: 0.75em;
-    }
-
-    .social-icon {
-        margin: 1em 0;
-    }
-
-    .social-root svg {
-        height: 45px;
-        width: 45px;
-    }
-}
-
-@media screen and (width <= 480px) and (orientation: portrait) {
-    .social-root {
-        top: 1em;
-    }
-
-    .social-icon {
-        margin: 1em 0;
-    }
-
-    .social-root svg {
-        height: 30px;
-        width: 30px;
-    }
-}
-
-@media screen and (height <= 480px) and (width <= 640px) and (orientation: landscape) {
-    .social-root {
-        top: 0.5em;
-    }
-
-    .social-icon {
-        margin: 0.5em 0;
-    }
-
-    .social-root svg {
-        height: 25px;
-        width: 25px;
+        position: absolute;
     }
 }

@@ -12,7 +12,7 @@ export class App extends React.Component<{}, IAppState> {
     constructor(props: any) {
         super(props);
 
-        this.state = {showAbout: false};
+        this.state = {showAbout: true};
     }
 
     private handleNavBtnClick = () => this.setState({

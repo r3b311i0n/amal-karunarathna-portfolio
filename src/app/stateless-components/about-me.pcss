@@ -18,13 +18,35 @@
 }
 
 .about-me-properties {
+    & a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    & a:hover {
+        background-color: #333;
+        color: #eee;
+    }
+
     & div {
         margin-top: 1em;
+    }
+
+    & img {
+        margin-left: 0.5em;
     }
 
     & ul li, & span {
         font-family: Neuzeit Grotesk, sans-serif;
         text-decoration: underline;
         width: max-content;
+    }
+
+    & sub {
+        font-size: 1em;
+    }
+
+    & sup {
+        white-space: nowrap;
     }
 }
