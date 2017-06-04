@@ -29,7 +29,7 @@ export class App extends React.Component<{}, IAppState> {
                     </Switch>
                 </div>
                 <div onClick={this.handleNavBtnClick}>
-                    <Link to={(this.state.showAbout) ? '/' : '/about'}>{NavBtn(this.state.showAbout)}</Link>
+                    <Link to={(this.state.showAbout) ? '/' : '/about'}>{NavBtn()}</Link>
                 </div>
             </div>
         );

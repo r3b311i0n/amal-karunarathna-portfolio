@@ -3,7 +3,7 @@ import './nav-btn.pcss';
 
 // This is the navigation button component.
 
-const NavBtn = (isAboutShown: boolean) => {
+const NavBtn = () => {
     // Check browser for SVG transform-origin.
     const isWebKit: boolean = navigator.userAgent.indexOf('WebKit') > -1;
     const arrowTransformOrigin = (isWebKit) ? '50% 50%' : '50% 55%';
@@ -16,7 +16,7 @@ const NavBtn = (isAboutShown: boolean) => {
     let transformArrowShaftRight: { transform: string, transformOrigin: string };
 
     // Animation rules for nav-btn.
-    if (isAboutShown) {
+    if (location.pathname === '/about') {
         homePropsOpacity = 0;
         homePropsTransitionDuration = '250ms';
         transformArrow = {
