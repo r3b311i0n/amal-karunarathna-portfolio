@@ -200,6 +200,10 @@
     "prefer-object-spread": true,
     "binary-expression-operand-order": true,
     "use-default-type-parameter": true,
-    "switch-final-break": true
+    "switch-final-break": true,
+    "max-line-length": [
+      true,
+      140
+    ]
   }
 }
