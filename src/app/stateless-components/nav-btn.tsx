@@ -6,7 +6,7 @@ import './nav-btn.pcss';
 const NavBtn = () => {
     // Check browser for SVG transform-origin.
     const isWebKit: boolean = navigator.userAgent.indexOf('WebKit') > -1;
-    const arrowTransformOrigin = (isWebKit) ? '50% 50%' : '50% 55%';
+    const arrowTransformOrigin = (isWebKit) ? '8px 9px' : '50% 55%';
     const arrowShaftTransformOrigin = (isWebKit) ? '0% 0%' : '50% 40%';
     // Animate nav btn.
     let homePropsOpacity: number;
