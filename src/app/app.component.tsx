@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Route} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import {About} from './about.component';
 import {Blog} from './blog.component';
 import NavBtn from './stateless-components/nav-btn';
@@ -12,7 +12,7 @@ export class App extends React.Component<{}, IAppState> {
     constructor(props: any) {
         super(props);
 
-        this.state = {showAbout: false};
+        this.state = {showAbout: (location.pathname === '/about')};
     }
 
     private handleNavBtnClick = () => this.setState({
@@ -23,10 +23,13 @@ export class App extends React.Component<{}, IAppState> {
         return (
             <div>
                 <div className="app-content">
-                    {(this.state.showAbout) ? <About/> : <Route component={Blog}/>}
+                    <Switch>
+                        <Route path="/about" component={About}/>
+                        <Route component={Blog}/>
+                    </Switch>
                 </div>
                 <div onClick={this.handleNavBtnClick}>
-                    {NavBtn(this.state.showAbout)}
+                    <Link to={(this.state.showAbout) ? '/' : '/about'}>{NavBtn(this.state.showAbout)}</Link>
                 </div>
             </div>
         );
