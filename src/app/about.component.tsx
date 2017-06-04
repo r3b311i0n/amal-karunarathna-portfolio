@@ -22,15 +22,17 @@ export class About extends React.Component<void, IAboutState> {
     }
 
     // 3 vars for 3 paragraphs
-    private static myDescription1: string;
-    private static myDescription2: string;
-    private static myDescription3: string;
+    private static currAnime: string;
+    private static currBook: string;
+    private static currGame: string;
+    private static currMusic: string;
 
     public componentDidMount() {
         meRef.once('value').then((snapshot) => {
-            About.myDescription1 = snapshot.child('para1').val();
-            About.myDescription2 = snapshot.child('para2').val();
-            About.myDescription3 = snapshot.child('para3').val();
+            About.currAnime = snapshot.child('anime').val();
+            About.currBook = snapshot.child('book').val();
+            About.currGame = snapshot.child('game').val();
+            About.currMusic = snapshot.child('music').val();
 
             // For triggering the slide-in animation for AboutMe.
             this.setState({willAnimateIn: true});
@@ -68,7 +70,7 @@ export class About extends React.Component<void, IAboutState> {
                             {(interpolation: any) => <div
                                 style={{transform: `translateX(${interpolation.x}px)`, opacity: interpolation.alpha}}
                             >
-                                {AboutMe(About.myDescription1, About.myDescription2, About.myDescription3)}
+                                {AboutMe(About.currAnime, About.currBook, About.currGame, About.currMusic)}
                             </div>}
                         </Motion>
                     </main>
