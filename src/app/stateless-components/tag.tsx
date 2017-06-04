@@ -3,27 +3,9 @@ import './tag.pcss';
 
 const Tag = (tagName: string) => {
     switch (tagName) {
-        case 'TypeScript':
+        case 'C#':
             return (
-                <div className="tag-root typescript" key={tagName}>
-                    {tagName}
-                </div>
-            );
-        case 'Java':
-            return (
-                <div className="tag-root java" key={tagName}>
-                    {tagName}
-                </div>
-            );
-        case 'Web':
-            return (
-                <div className="tag-root web" key={tagName}>
-                    {tagName}
-                </div>
-            );
-        case 'JavaScript':
-            return (
-                <div className="tag-root javascript" key={tagName}>
+                <div className="tag-root c-sharp" key={tagName}>
                     {tagName}
                 </div>
             );
@@ -33,9 +15,33 @@ const Tag = (tagName: string) => {
                     {tagName}
                 </div>
             );
-        case 'C#':
+        case 'Java':
             return (
-                <div className="tag-root c-sharp" key={tagName}>
+                <div className="tag-root java" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'JavaScript':
+            return (
+                <div className="tag-root javascript" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'React':
+            return (
+                <div className="tag-root react" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'TypeScript':
+            return (
+                <div className="tag-root typescript" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'Web':
+            return (
+                <div className="tag-root web" key={tagName}>
                     {tagName}
                 </div>
             );
