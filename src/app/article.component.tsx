@@ -4,6 +4,8 @@ import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 import './article.component.pcss';
 
 // todo: Give better names for routes.
+// todo: Add styles for markdown image alignment.
+// todo: Tweak blockquote style.
 
 const database = firebase.database();
 

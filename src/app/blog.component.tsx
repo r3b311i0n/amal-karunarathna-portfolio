@@ -7,6 +7,8 @@ import {Article} from './article.component';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
 
+// todo: Add scroll to top button.
+
 const database = firebase.database();
 
 const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
