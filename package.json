@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.9.19",
+  "version": "0.9.20",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "index.js",
   "browserslist": [
@@ -17,11 +17,12 @@
     "portfolio",
     "typescript",
     "firebase",
-    "react"
+    "react",
+    "blog"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/r3b311i0n/amal-karunarathna-portfolio",
+    "url": "https://gitlab.com/r3b311i0n/amal-karunarathna-portfolio",
     "private": true
   },
   "author": "Amal Karunarathna",
