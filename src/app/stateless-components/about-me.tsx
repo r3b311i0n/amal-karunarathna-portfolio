@@ -165,7 +165,7 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                         AC{'\u0020'}Milan
                         </a></span>
                         <img
-                            src="./AC_Milan.svg"
+                            src="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/AC_Milan.svg?alt=media&token=6a8c8e66-e961-4988-a38b-9e1fbf192730"
                             alt="AC Milan"
                             height={23}
                             width={14}
