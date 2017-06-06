@@ -5,7 +5,7 @@
   "background_color": "#fff",
   "description": "Amal Karunarathna's blog.",
   "lang": "en-UK",
-  "dir": "rtl",
+  "dir": "ltr",
   "icons": [
     {
       "src": "favicon.png",
