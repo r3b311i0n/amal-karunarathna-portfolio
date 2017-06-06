@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "0.9.21",
+  "version": "0.9.23",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "./src/index.tsx",
   "browserslist": [

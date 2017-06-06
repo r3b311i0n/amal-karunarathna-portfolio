@@ -1,12 +1,13 @@
 .blog-article {
     /* 3.157em + 17.713em */
-    font-family: Leitura News, serif;
+    font-family: Leitura News, "EmojiOne Color", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", serif;
     margin: 0 20.87em;
 }
 
 .blog-article-heading {
-    font-family: Neuzeit Grotesk, sans-serif;
+    font-family: Neuzeit Grotesk, "EmojiOne Color", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 2.369em;
+    text-decoration: underline;
 }
 
 @media screen and (width <= 1024px) {
@@ -61,6 +62,20 @@
 
 .markdown-body img {
     border: 0;
+    margin: 0.75em;
+}
+
+.markdown-body img[data-canonical-src*='#centre'], .markdown-body img[src*='#centre'] {
+    display: block;
+    margin: auto;
+}
+
+.markdown-body img[data-canonical-src*='#left'], .markdown-body img[src*='#left'] {
+    float: left;
+}
+
+.markdown-body img[data-canonical-src*='#right'], .markdown-body img[src*='#right'] {
+    float: right;
 }
 
 .markdown-body hr {
@@ -110,7 +125,7 @@
 }
 
 .markdown-body input {
-    font-family: Neuzeit Grotesk, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: Neuzeit Grotesk, sans-serif, "EmojiOne Color", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 13px;
 }
 
@@ -150,7 +165,7 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-    font-family: Neuzeit Grotesk, sans-serif;
+    font-family: Neuzeit Grotesk, "EmojiOne Color", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     margin-top: 15px;
     margin-bottom: 15px;
     line-height: 1.1;
@@ -181,7 +196,7 @@
 }
 
 .markdown-body blockquote {
-    font-family: Neuzeit Grotesk, sans-serif;
+    font-family: Neuzeit Grotesk, "EmojiOne Color", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 1.333rem;
     margin: 0;
 }
@@ -386,6 +401,10 @@
 .markdown-body ol ul {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.markdown-body li > h4 {
+    margin-left: 0.5em;
 }
 
 .markdown-body li > p {
