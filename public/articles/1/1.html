@@ -1,0 +1,82 @@
+<article class="markdown-body"><h2>A Little About What I'll Be Writing</h2>
+<p>So, here goes nothing. I am Amal, and this is my blog. I will be writing about programming, technology, and some of my occasionally ludicrous and oft-times incoherent musings that I dare to release into the vast expanse of the Cyberspace.</p>
+<p><img alt="lets-do-this" title="Let's do this!!!" src="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/firstArticle%2Fanchorman-the-legend-of-ron-burgundy-meme.jpg?alt=media&amp;token=f90565df-aeeb-45a0-9e88-531f043fcc0e#centre"</p>
+<hr>
+<h2>This Blog</h2>
+<p>I think it is appropriate for the first entry to be about this blog itself. It is built using <a href="https://facebook.github.io/react/" title="React">React</a> and written in TSX, and it makes use of <a href="https://github.com/chenglou/react-motion" title="React-Motion">React-Motion</a> and CSS transforms for animations. The CSS uses <a href="http://cssnext.io" title="cssnext">cssnext</a> powered by <a href="http://postcss.org" title="PostCSS">PostCSS</a>. The hosting is done on <a href="https://pages.github.com/" title="GitHub Pages">GitHub Pages</a> (as you can probably tell) and Google <a href="https://firebase.google.com" title="Firebase">Firebase</a> is used for storage.</p>
+<p>Posts are pre-rendered Markdown. I have used Sublime Text's <a href="https://github.com/SublimeText-Markdown/MarkdownEditing" title="MarkdownEditing">MarkdownEditing</a> plugin in conjunction with its <a href="https://github.com/revolunet/sublimetext-markdown-preview" title="Markdown Preview">Markdown Preview</a> plugin to generate the content. Which means, there is no Markdown parser using up any processing power.</p>
+<p>This is only a synoptic overview of the various elements that have come together to form this blog.</p>
+<p>The source can be found <a href="https://github.com/r3b311i0n/r3b311i0n.github.io" title="Sauce">here</a>.</p>
+<hr>
+<h3>React</h3>
+<p><img alt="react-logo" title="React" width="200" height="200" src="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/firstArticle%2Freact-logo.svg?alt=media&token=11f7150b-a77e-43ef-9217-4f03d362f5eb#right"></p>
+<p><a href="https://facebook.github.io/react/" title="React">React</a> is Facebook's View library. It keeps an abstract representation of the HTML-DOM called the Virtual-DOM. When we update a View, React updates the Virtual-DOM and diffs it against the HTML-DOM. Then it updates the HTML-DOM using the difference from the diff. This is only the gist of it as it is a quite complex operation using a quite complex diffing <a href="https://facebook.github.io/react/docs/reconciliation.html" title="React Reconciliation">algorithm</a>.<br>
+Here is a comprehensive <a href="https://medium.com/@rajaraodv/the-inner-workings-of-virtual-dom-666ee7ad47cf" title="Virtual-DOM Article"><strong>article</strong></a> on the Virtual-DOM by <a href="https://twitter.com/rajaraodv" title="Raja Rao">@rajaraodv</a>.</p>
+<h4>JSX vs TSX</h4>
+<p><a href="https://facebook.github.io/react/docs/jsx-in-depth.html" title="JSX">JSX</a> stands for <strong>J</strong>ava<strong>S</strong>cript <strong>X</strong>ML. It is a syntax extension for JavaScript. As you probably guessed, TSX is short for <strong>T</strong>ype<strong>S</strong>cript <strong>X</strong>ML. While it is possible to use plain JavaScript or TypeScript, React recommends the template-like XML syntax when defining Views in your React components.</p>
+<p>Picking which language to use with React is mostly up to your language type preference. If you prefer dynamic typing, go with JSX. Or, if you prefer static typing, TSX might serve you better.</p>
+<blockquote>
+<p>If you prefer dynamic typing, go with JSX.</p>
+<p>if you prefer static typing, TSX might serve you better.</p>
+</blockquote>
+<p>I chose to code this app using TSX because I'm more comfortable writing in statically typed languages.</p>
+<hr>
+<h3>Why Firebase?</h3>
+<p><img alt="firebase" title="Firebase" src="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/firstArticle%2Ffirebase.png?alt=media&amp;token=1bffe6a3-ad7b-4377-be3b-ca86514ae35a#right"></p>
+<p>Why not? Truth be told, I just wanted to try it out. A constantly changing environment (like a chat app) is needed to fully appreciate the responsiveness, <strong><del>the magic!</del></strong> of <a href="https://firebase.google.com" title="Firebase">Firebase</a>'s <em>websockety</em> goodness. Alas, it does not show its strengths here.</p>
+<blockquote>
+<p>Firebase: the beauty of WebSockets without the hassle of the setup.</p>
+</blockquote>
+<hr>
+<h3>The Typefaces</h3>
+<ul>
+<li>
+<p><a href="https://www.myfonts.com/fonts/dstype/leitura-news/" title="Leitura News">Leitura News</a> ⟵ serif</p>
+<p><em>Leitura News was designed by award winning type designer <strong>Dino dos Santos</strong> and is published by his foundry, <a href="http://www.dstype.com/" title="DSType">DSType</a>.</em></p>
+</li>
+<li>
+<p><a href="https://www.myfonts.com/fonts/urw/neuzeit-grotesk/" title="Neuzeit Grotesk">Neuzeit Grotesk</a> ⟵ sans-serif</p>
+<p><em>Crafted by German designer <strong>Wilhelm Pischner</strong> and published by the legendary <a href="https://www.urwpp.de/en/" title="URW++">URW++</a> foundry, there is a reason why this typeface is a favourite among designers: it looks gorgeous.</em></p>
+</li>
+<li>
+<p><a href="https://github.com/be5invis/Iosevka" title="Iosevka - GitHub">Iosevka</a> ⟵ monospace</p>
+<p><em>Iosevka is a coding typeface by designer <a href="https://github.com/be5invis/Iosevka" title="Belleve Invis - GitHub"><strong>Belleve Invis</strong></a> which follows the same design as the famous <a href="https://www.fsd.it/shop/fonts/pragmatapro/" title="PragmataPro">PragmataPro</a> created by designer Fabrizio Schiavi. The variant used here is Stylistic Set 08 (ss08).</em></p>
+</li>
+</ul>
+<hr>
+<h3>The Icons</h3>
+<p>The social <a href="https://dribbble.com/shots/3149349-Free-Social-Icons-Update" title="Social Icons">icons</a> on the About page are SVG and they were made by product designer <a href="https://dribbble.com/Rengised" title="Alex Martinov"><strong>Alex Martinov</strong></a>, I have only slightly modified them to make them animatable. The nav button is something I whipped up in a few minutes using Inkscape.</p>
+<hr>
+<h3>The Animations</h3>
+<ul>
+<li>
+<h4>Animating SVG using CSS</h4>
+<p><strong>Animating complex SVG images without the use of a helper library like <a href="https://greensock.com" title="GreenSock">GreenSock</a> can be very frustrating</strong>. But for simpler animations, plain CSS gets the job done without too much of a fuss (transform-origin is still annoying though 😠). The nav button on the right and the social network icons on the About page are all animated using pure CSS.</p>
+</li>
+<li>
+<h4>React-Motion</h4>
+<p><a href="https://github.com/chenglou/react-motion" title="React-Motion">React-Motion</a> is a physics based animations library for React. The blog entries' and the social icons' "enter" animations are both powered by React-Motion's StaggerMotion component and its Motion component gives life to the blog heading and content.</p>
+</li>
+</ul>
+<hr>
+<h3>PostCSS</h3>
+<p><img alt="postcss-logo" title="PostCSS" width="200" height="200" src="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/firstArticle%2Fpostcss-logo.svg?alt=media&token=65713212-3403-46b7-b7cf-5b12760a338c#right"></p>
+<p>The GitHub page for <a href="http://postcss.org" title="PostCSS">PostCSS</a> describes it as a "tool for transforming styles with JS plugins", and that is exactly what it is, a tool that acts on CSS using plugins written with JavaScript. I have used the awesome <a href="http://cssnext.io" title="cssnext">cssnext</a> plugin here which enables you to use CSS from the future, today (kind of like what <a href="https://babeljs.io/" title="Babel">Babel</a> is to JS) while also providing autoprefixing.</p>
+<hr>
+<h3>The End of the Begining</h3>
+<p>Right, then, this is me signing off on a very shaky first post of <del>very</del> questionable quality. I plan to log my <del>perhaps futile</del> endeavours on a regular basis. Until number two, cheerio.</p>
+<hr>
+<h5>Thanks</h5>
+<ul>
+<li>Facebook for <a href="https://facebook.github.io/react/" title="React">React</a></li>
+<li><a href="https://github.com/chenglou" title="Cheng Lou - GitHub">Cheng Lou</a> and the rest of React-Motion <a href="https://github.com/chenglou/react-motion/graphs/contributors" title="React-Motion Contributors">Contributors</a> for <a href="https://github.com/chenglou/react-motion" title="React-Motion">React-Motion</a></li>
+<li>Google for <a href="https://firebase.google.com" title="Firebase">Firebase</a></li>
+<li>Microsoft for <a href="https://www.typescriptlang.org" title="TypeScript">TypeScript</a></li>
+<li><a href="https://dribbble.com/Rengised" title="Alex Martinov">Alex Martinov</a> for free <a href="https://dribbble.com/shots/3149349-Free-Social-Icons-Update" title="Social Icons">social icons</a></li>
+<li><a href="https://github.com/SublimeText-Markdown" title="SublimeText-Markdown">SublimeText-Markdown</a> for <a href="https://github.com/SublimeText-Markdown/MarkdownEditing" title="MarkdownEditing">MarkdownEditing</a></li>
+<li><a href="https://github.com/revolunet" title="revolunet">Julien Bouquillon</a> for <a href="https://github.com/revolunet/sublimetext-markdown-preview" title="Markdown Preview">Markdown Preview</a></li>
+<li><a href="https://github.com/be5invis/Iosevka" title="Belleve Invis - GitHub">Belleve Invis</a> for <a href="https://github.com/be5invis/Iosevka" title="Iosevka - GitHub">Iosevka</a></li>
+<li><a href="https://github.com/postcss" title="PostCSS - GitHub">PostCSS</a> team for <a href="http://postcss.org" title="PostCSS">PostCSS</a></li>
+<li><a href="https://github.com/MoOx" title="MoOx">Maxime Thirouin</a> for <a href="http://cssnext.io" title="cssnext">cssnext</a></li>
+<li><a href="https://github.com/malte-wessel" title="Malte Wessel - GitHub">Malte Wessel</a> for <a href="https://github.com/malte-wessel/react-custom-scrollbars" title="React-Custom-Scrollbars - GitHub">React-Custom-Scrollbars</a></li>
+</ul></article>
