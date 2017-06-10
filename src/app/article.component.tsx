@@ -3,19 +3,19 @@ import * as React from 'react';
 import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 import './article.component.pcss';
 
-// todo: Give better names for routes.
-// todo: Add styles for markdown image alignment.
 // todo: Tweak blockquote style.
 
 const database = firebase.database();
 
 export interface IArticleProps {
     articleAddress: string;
+    articleDate: string;
     articleHeading: string;
 }
 
 interface IArticleState {
     articleBody: string;
+    articleDate: string;
     articleHeading: string;
     articleStyle: { alpha: OpaqueConfig | number, y: OpaqueConfig | number };
 }
@@ -26,6 +26,7 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
 
         this.state = {
             articleBody: '',
+            articleDate: '',
             articleHeading: '',
             articleStyle: {
                 alpha: 0,
@@ -43,6 +44,7 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
         await database.ref(this.props.articleAddress + '/').once('value').then((snapshot) => {
             this.setState({
                 articleBody: snapshot.val(),
+                articleDate: this.props.articleDate,
                 articleHeading: this.props.articleHeading,
                 articleStyle: {
                     alpha: spring(1, presets.gentle),
@@ -78,6 +80,7 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                             transform: `translateY(${interpolation.y}px)`
                         }}
                     >
+                        <span className="blog-article-date"><small>{this.state.articleDate}</small></span>
                         <div dangerouslySetInnerHTML={{__html: this.state.articleBody}}/>
                     </div>}
                 </Motion>

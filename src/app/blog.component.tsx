@@ -59,7 +59,8 @@ export class Blog extends React.Component<void, IBlogState> {
                                 key={key}
                                 path={`/${key}`}
                                 render={() =>
-                                    <Article articleAddress={value.article} articleHeading={value.header}/>}
+                                    <Article articleAddress={value.article} articleDate={value.date}
+                                             articleHeading={value.header}/>}
                             />
                         )
                     );
