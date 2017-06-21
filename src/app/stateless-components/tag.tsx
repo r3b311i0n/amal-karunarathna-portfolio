@@ -15,6 +15,12 @@ const Tag = (tagName: string) => {
                     {tagName}
                 </div>
             );
+        case 'Design':
+            return (
+                <div className="tag-root design" key={tagName}>
+                    {tagName}
+                </div>
+            );
         case 'Java':
             return (
                 <div className="tag-root java" key={tagName}>
@@ -36,6 +42,12 @@ const Tag = (tagName: string) => {
         case 'TypeScript':
             return (
                 <div className="tag-root typescript" key={tagName}>
+                    {tagName}
+                </div>
+            );
+        case 'Typography':
+            return (
+                <div className="tag-root typography" key={tagName}>
                     {tagName}
                 </div>
             );
