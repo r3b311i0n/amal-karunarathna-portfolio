@@ -1,0 +1,52 @@
+<article class="markdown-body"><h2>Font Compression</h2>
+<p>I've been going a bit mental 😵 in regards to fonts recently, and I think web-fonts or font compression for use on the web is essential for anyone serious about web development.</p>
+<p><img alt="letters" title="Letters" src="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/secondArticle%2Fdiomari-madulara.jpg?alt=media&amp;token=93d6e74b-faff-4c9f-993f-b52f63e64421#centre"></p>
+<hr>
+<h2>WOFF2</h2>
+<p><a href="https://www.wikiwand.com/en/Web_Open_Font_Format" title="WOFF">WOFF2</a> or <strong>W</strong>eb <strong>O</strong>pen <strong>F</strong>ont <strong>F</strong>ormat <strong>2</strong> is the second iteration of the web-font format. The <a href="https://www.wikiwand.com/en/Web_Open_Font_Format" title="WOFF">WOFF</a> formats compress your desired <a href="https://www.wikiwand.com/en/TrueType" title="TTF">TTF</a> and <a href="https://www.wikiwand.com/en/OpenType" title="OTF">OTF</a> fonts to be efficiently used on the web.</p>
+<h3>WOFF vs WOFF2</h3>
+<ul>
+<li>
+<p>WOFF uses <a href="https://www.wikiwand.com/en/Zlib" title="zlib">zlib</a> for compression while WOFF2 uses <a href="https://www.wikiwand.com/en/Brotli" title="Brotli">Brotli</a> for compression.</p>
+</li>
+<li>
+<p>WOFF grants a &gt;40% reduction to file size vs traditional TTF while WOFF2 grants a &gt;30% reduction to file size vs WOFF.</p>
+</li>
+<li>
+<p>Support:</p>
+<ul>
+<li>
+<p>WOFF</p>
+<ul>
+<li>Firefox &gt;= 3.6</li>
+<li>Chrome &gt;= 6.0</li>
+<li>Internet Explorer &gt;= 9</li>
+<li>Edge</li>
+<li>Opera &gt;= 11.10</li>
+<li>Safari &gt;= 5.1</li>
+</ul>
+</li>
+<li>
+<p>WOFF2</p>
+<ul>
+<li>Firefox &gt;= 35</li>
+<li>Chrome &gt;= 36</li>
+<li>Internet Explorer &gt;= 9</li>
+<li>Edge &gt;= 14</li>
+<li>Opera &gt;= 26</li>
+<li>Safari &gt;= 10</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Compress to WOFF2</h2>
+<p>Grab the source from <a href="https://github.com/google/woff2" title="WOFF2 Source">here</a> and install it. Note that compilation requires <a href="https://gcc.gnu.org" title="GCC">GCC</a>. Afterwards, you get two command <strong>woff2_compress</strong> and <strong>woff2_decompress</strong>. Both commands take one argument each; use woff2_compress to compress a <a href="https://www.wikiwand.com/en/TrueType" title="TTF">TTF</a> or <a href="https://www.wikiwand.com/en/OpenType" title="OTF">OTF</a> file to <a href="https://www.wikiwand.com/en/Web_Open_Font_Format" title="WOFF">WOFF2</a> or use woff2_decompress to decompress a <a href="https://www.wikiwand.com/en/Web_Open_Font_Format" title="WOFF">WOFF2</a> file to its original format (OTF/TTF).</p>
+<pre><code>woff2_compress font.otf
+var x = 0;
+</code></pre>
+<pre><code>woff2_decompress font.woff2
+</code></pre>
+<p>And there you have it. Simple and effective. Happy coding! 🙌🎉</p>
+<hr>
+<p>Special thanks to <a href="https://unsplash.com/@diomari?utm_campaign=photographer-credit" title="Diomari Madulara">Diomari Madulara</a> 🙇 for <a href="https://unsplash.com/photos/FFZjSpUwc_I" title="Unsplash">photo</a>.</p></article>
