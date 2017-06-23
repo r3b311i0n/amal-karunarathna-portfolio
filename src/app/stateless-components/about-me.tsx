@@ -176,7 +176,7 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                         </span></sup>
                         <ul>
                             <li><a
-                                href="http://store.steampowered.com/agecheck/app/49520/"
+                                href="http://store.steampowered.com/app/49520/Borderlands_2/"
                                 target="_blank"
                             >
                                 Borderlands{'\u0020'}2
@@ -216,6 +216,9 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                     </div>
                     <div>Movies{'\u0020'}<sub>⮧</sub>
                         <ul>
+                            <li><a target="_blank"
+                                   href="http://www.imdb.com/title/tt0266308/">Battle{'\u0020'}Royale</a>
+                            </li>
                             <li><a target="_blank" href="http://www.imdb.com/title/tt0137523/">Fight{'\u0020'}Club</a>
                             </li>
                             <li><a target="_blank" href="http://www.imdb.com/title/tt0110912/">Pulp{'\u0020'}Fiction</a>
