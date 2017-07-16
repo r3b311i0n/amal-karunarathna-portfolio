@@ -4,8 +4,6 @@ import {About} from './about.component';
 import {Blog} from './blog.component';
 import NavBtn from './stateless-components/nav-btn';
 
-// todo: Go back to last location on back arrow click.
-
 interface IAppState {
     showAbout: boolean;
 }
