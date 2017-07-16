@@ -23,9 +23,16 @@ export class App extends React.Component<{}, IAppState> {
 
     public componentDidMount() {
         window.onpopstate = () => {
-            this.setState({
-                showAbout: !this.state.showAbout
-            });
+            if (location.pathname === '/about') {
+                this.setState({
+                    showAbout: true
+                });
+            }
+            else {
+                this.setState({
+                    showAbout: false
+                });
+            }
         };
     }
 
