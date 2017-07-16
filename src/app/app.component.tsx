@@ -21,6 +21,14 @@ export class App extends React.Component<{}, IAppState> {
         showAbout: !this.state.showAbout
     });
 
+    public componentDidMount() {
+        window.onpopstate = () => {
+            this.setState({
+                showAbout: !this.state.showAbout
+            });
+        };
+    }
+
     public render(): JSX.Element {
         return (
             <div>
