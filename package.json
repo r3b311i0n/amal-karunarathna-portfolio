@@ -47,8 +47,6 @@
     "mocha": "^3.4.2",
     "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.6",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.17.0",
     "tslint": "^5.5.0",
@@ -60,7 +58,9 @@
   },
   "dependencies": {
     "firebase": "^3.9.0",
+    "react": "^15.6.1",
     "react-custom-scrollbars": "^4.1.2",
+    "react-dom": "^15.6.1",
     "react-motion": "^0.5.0",
     "react-router-dom": "^4.1.1"
   }
