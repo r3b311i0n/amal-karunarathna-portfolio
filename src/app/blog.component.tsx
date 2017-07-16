@@ -23,7 +23,7 @@ interface IBlogState {
     windowHeight: number;
 }
 
-export class Blog extends React.Component<void, IBlogState> {
+export class Blog extends React.Component<{}, IBlogState> {
     constructor(props: any) {
         super(props);
         this.state = {

@@ -12,7 +12,7 @@ interface IAboutState {
     willAnimateIn: boolean;
 }
 
-export class About extends React.Component<void, IAboutState> {
+export class About extends React.Component<{}, IAboutState> {
     constructor(props: any) {
         super(props);
 
