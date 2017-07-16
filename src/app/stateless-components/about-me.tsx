@@ -4,6 +4,7 @@ import './about-me.pcss';
 // My stateless component.
 // todo: Look into 4k media query.
 
+//noinspection TsLint
 const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusic: string) => (
     <section>
         <div className="about-me-root">
@@ -17,10 +18,12 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
             </span>
             <div className="about-me-information">
                 <div className="about-me-properties">
-                    <div>Editor{'\u0020'}⟶{'\u0020'}<span>
-                        <a href="https://www.sublimetext.com" target="_blank">
-                        Sublime{'\u0020'}Text
-                    </a></span></div>
+                    <div>Editors{'\u0020'}<sub>⮧</sub>
+                        <ul>
+                            <li><a href="https://neovim.io" target="_blank">NeoVim</a></li>
+                            <li><a href="https://www.sublimetext.com" target="_blank">Sublime{'\u0020'}Text</a></li>
+                        </ul>
+                    </div>
                     <div>Graphics{'\u0020'}<sub>⮧</sub>
                         <ul>
                             <li>
@@ -216,8 +219,11 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                     </div>
                     <div>Movies{'\u0020'}<sub>⮧</sub>
                         <ul>
-                            <li><a target="_blank"
-                                   href="http://www.imdb.com/title/tt0266308/">Battle{'\u0020'}Royale</a>
+                            <li><a
+                                target="_blank"
+                                href="http://www.imdb.com/title/tt0266308/"
+                            >Battle{'\u0020'}Royale
+                            </a>
                             </li>
                             <li><a target="_blank" href="http://www.imdb.com/title/tt0137523/">Fight{'\u0020'}Club</a>
                             </li>
