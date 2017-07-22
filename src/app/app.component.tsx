@@ -12,8 +12,11 @@ export class App extends React.Component<{}, IAppState> {
     constructor(props: any) {
         super(props);
 
+        this.currentArticleLocation = location.pathname !== '/about' ? location.pathname : '/';
         this.state = {showAbout: (location.pathname === '/about')};
     }
+
+    private currentArticleLocation: string;
 
     private handleNavBtnClick = () => this.setState({
         showAbout: !this.state.showAbout
@@ -34,6 +37,12 @@ export class App extends React.Component<{}, IAppState> {
         };
     }
 
+    public componentDidUpdate() {
+        if (location.pathname !== '/about') {
+            this.currentArticleLocation = location.pathname;
+        }
+    }
+
     public render(): JSX.Element {
         return (
             <div>
@@ -44,7 +53,7 @@ export class App extends React.Component<{}, IAppState> {
                     </Switch>
                 </div>
                 <div onClick={this.handleNavBtnClick}>
-                    <Link to={(this.state.showAbout) ? '/' : '/about'}>{NavBtn()}</Link>
+                    <Link to={(this.state.showAbout) ? this.currentArticleLocation : '/about'}>{NavBtn()}</Link>
                 </div>
             </div>
         );
