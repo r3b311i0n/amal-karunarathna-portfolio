@@ -8,6 +8,8 @@ interface IAppState {
     showAbout: boolean;
 }
 
+// todo: Disable article link if already on its page.
+
 export class App extends React.Component<{}, IAppState> {
     constructor(props: any) {
         super(props);
