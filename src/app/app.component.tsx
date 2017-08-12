@@ -11,7 +11,7 @@ interface IAppState {
 // todo: Disable article link if already on its page.
 
 export class App extends React.Component<{}, IAppState> {
-    constructor(props: any) {
+    public constructor(props: any) {
         super(props);
 
         this.currentArticleLocation = location.pathname !== '/about' ? location.pathname : '/';

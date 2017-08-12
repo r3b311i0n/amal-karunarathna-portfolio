@@ -23,7 +23,7 @@ interface IArticleState {
 }
 
 export class Article extends React.Component<IArticleProps, IArticleState> {
-    constructor(props: any) {
+    public constructor(props: any) {
         super(props);
 
         this.state = {

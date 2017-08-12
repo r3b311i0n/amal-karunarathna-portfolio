@@ -24,7 +24,7 @@ interface IBlogState {
 }
 
 export class Blog extends React.Component<{}, IBlogState> {
-    constructor(props: any) {
+    public constructor(props: any) {
         super(props);
         this.state = {
             articleRoutes: [],

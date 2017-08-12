@@ -15,7 +15,7 @@ const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.ma
 });
 
 export default class Social extends React.Component<{}, {}> {
-    constructor(props: any) {
+    public constructor(props: any) {
         super(props);
     }
 

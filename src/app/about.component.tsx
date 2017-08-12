@@ -13,7 +13,7 @@ interface IAboutState {
 }
 
 export class About extends React.Component<{}, IAboutState> {
-    constructor(props: any) {
+    public constructor(props: any) {
         super(props);
 
         this.state = {

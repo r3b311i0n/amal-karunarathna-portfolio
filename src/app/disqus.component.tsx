@@ -9,7 +9,7 @@ export interface IDisqusProps {
 }
 
 export class Disqus extends React.Component <IDisqusProps, {}> {
-    constructor(props: any) {
+    public constructor(props: any) {
         super(props);
     }
 

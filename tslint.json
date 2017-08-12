@@ -54,7 +54,11 @@
         ]
       }
     ],
-    "member-access": true,
+    "member-access": [
+      true,
+      "check-accessor",
+      "check-constructor"
+    ],
     "no-empty-interface": true,
     "prefer-for-of": true,
     "curly": true,
@@ -83,7 +87,10 @@
     ],
     "typeof-compare": true,
     "use-isnan": true,
-    "cyclomatic-complexity": true,
+    "cyclomatic-complexity": [
+      true,
+      20
+    ],
     "eofline": true,
     "indent": [
       true,
@@ -197,7 +204,10 @@
     "no-object-literal-type-assertion": true,
     "object-literal-sort-keys": true,
     "await-promise": true,
-    "prefer-conditional-expression": true,
+    "prefer-conditional-expression": [
+      true,
+      "check-else-if"
+    ],
     "prefer-object-spread": true,
     "binary-expression-operand-order": true,
     "use-default-type-parameter": true,
@@ -205,6 +215,16 @@
     "max-line-length": [
       true,
       140
-    ]
+    ],
+    "no-duplicate-imports": false,
+    "no-submodule-imports": true,
+    "space-within-parens": 0,
+    "no-shadowed-variable": true,
+    "jsx-key": true,
+    "jsx-equals-spacing": [
+      true,
+      "never"
+    ],
+    "no-useless-files": true
   }
 }
