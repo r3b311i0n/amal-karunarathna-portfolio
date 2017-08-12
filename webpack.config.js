@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const workboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = function (env) {
     if (env === 'dev') {
@@ -71,7 +72,15 @@ module.exports = function (env) {
             },
 
             plugins: [
-                new ExtractTextPlugin('styles.css')
+                new ExtractTextPlugin('styles.css'),
+                new workboxPlugin({
+                    globDirectory: 'dist',
+                    globPatterns: [
+                        'bundle.js',
+                        'styles.css'
+                    ],
+                    swDest: path.join(__dirname, 'dist/sw.js')
+                })
             ],
 
             externals: {
@@ -83,6 +92,7 @@ module.exports = function (env) {
             devServer: {
                 contentBase: [
                     path.join(__dirname, 'public'),
+                    path.join(__dirname, 'dist'),
                     path.join(__dirname, 'node_modules/react/dist'),
                     path.join(__dirname, 'node_modules/react-dom/dist'),
                     path.join(__dirname, 'node_modules/firebase')
@@ -164,7 +174,15 @@ module.exports = function (env) {
             },
 
             plugins: [
-                new ExtractTextPlugin('styles.css')
+                new ExtractTextPlugin('styles.css'),
+                new workboxPlugin({
+                    globDirectory: 'dist/prod',
+                    globPatterns: [
+                        'bundle.js',
+                        'styles.css'
+                    ],
+                    swDest: path.join(__dirname, 'dist/prod/sw.js')
+                })
             ],
 
             externals: {
