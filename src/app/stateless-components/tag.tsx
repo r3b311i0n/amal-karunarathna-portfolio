@@ -33,6 +33,12 @@ const Tag = (tagName: string) => {
                     {tagName}
                 </div>
             );
+        case 'Python':
+            return (
+                <div className="tag-root python" key={tagName}>
+                    {tagName}
+                </div>
+            );
         case 'React':
             return (
                 <div className="tag-root react" key={tagName}>
