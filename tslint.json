@@ -190,7 +190,11 @@
       true,
       "check-branch",
       "check-decl",
-      "check-operator"
+      "check-operator",
+      "check-module",
+      "check-typecast",
+      "check-rest-spread",
+      "check-type-operator"
     ],
     "jsx-alignment": true,
     "jsx-curly-spacing": [
@@ -202,7 +206,10 @@
     "jsx-wrap-multiline": true,
     "jsx-no-multiline-js": false,
     "no-object-literal-type-assertion": true,
-    "object-literal-sort-keys": true,
+    "object-literal-sort-keys": [
+      true,
+      "match-declaration-order"
+    ],
     "await-promise": true,
     "prefer-conditional-expression": [
       true,
@@ -225,6 +232,7 @@
       true,
       "never"
     ],
-    "no-useless-files": true
+    "no-useless-files": true,
+    "no-parameter-reassignment": true
   }
 }
