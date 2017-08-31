@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "./src/index.tsx",
   "browserslist": [
@@ -35,10 +35,10 @@
     "@types/react-motion": "0.0.21",
     "@types/react-router-dom": "^4.0.7",
     "awesome-typescript-loader": "^3.2.3",
-    "css-loader": "^0.28.5",
+    "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
     "history": "^4.7.2",
-    "karma": "^1.7.0",
+    "karma": "^1.7.1",
     "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
@@ -52,7 +52,7 @@
     "tslint": "^5.7.0",
     "tslint-microsoft-contrib": "^5.0.1",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.4.2",
+    "typescript": "^2.5.2",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
     "workbox-webpack-plugin": "^2.0.0"
