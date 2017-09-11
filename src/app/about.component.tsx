@@ -21,7 +21,6 @@ export class About extends React.Component<{}, IAboutState> {
         };
     }
 
-    // 3 vars for 3 paragraphs
     private static currAnime: string;
     private static currBook: string;
     private static currGame: string;

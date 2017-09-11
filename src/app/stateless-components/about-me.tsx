@@ -22,6 +22,9 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                         <ul>
                             <li><a href="https://neovim.io" target="_blank">NeoVim</a></li>
                             <li><a href="https://www.sublimetext.com" target="_blank">Sublime{'\u0020'}Text</a></li>
+                            <li><a href="https://code.visualstudio.com/"
+                                   target="_blank">Visual{'\u0020'}Studio{'\u0020'}Code</a>
+                            </li>
                         </ul>
                     </div>
                     <div>Graphics{'\u0020'}<sub>⮧</sub>
@@ -66,6 +69,9 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                             </li>
                             <li>
                                 <a target="_blank" href="https://www.wikiwand.com/en/PHP">PHP</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.wikiwand.com/en/Python_(programming_language)">Python</a>
                             </li>
                             <li>
                                 <a target="_blank" href="https://www.wikiwand.com/en/TypeScript">TypeScript</a>
