@@ -26,11 +26,10 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                     </div>
                     <div>Graphics{'\u0020'}<sub>⮧</sub>
                         <ul>
-                            <li>
-                                <a href="http://www.inkscape.org" target="_blank">Inkscape</a>{'\u0020'}⟶{'\u0020'}
-                                <a href="https://github.com/svg/svgo" target="_blank">SVGO</a>
-                            </li>
-                            <li><a href="https://www.gimp.org" target="_blank">GIMP</a></li>
+                            <li><a href="https://affinity.serif.com/en-gb/"
+                                   target="_blank">Affinity{'\u0020'}Designer</a></li>
+                            <li><a href="http://www.inkscape.org" target="_blank">Inkscape</a></li>
+                            <li><a href="https://krita.org/en/" target="_blank">Krita</a></li>
                             <li><a href="https://www.adobe.com/products/photoshop.html" target="_blank">Photoshop</a>
                             </li>
                         </ul>
