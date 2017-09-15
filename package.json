@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "./src/index.tsx",
   "browserslist": [
@@ -54,7 +54,7 @@
     "tslint-react": "^3.2.0",
     "typescript": "^2.5.2",
     "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.8.0",
+    "webpack-dev-server": "^2.8.2",
     "workbox-webpack-plugin": "^2.0.1"
   },
   "dependencies": {
