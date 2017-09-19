@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "./src/index.tsx",
   "browserslist": [
@@ -37,7 +37,6 @@
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
-    "history": "^4.7.2",
     "karma": "^1.7.1",
     "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.1",
