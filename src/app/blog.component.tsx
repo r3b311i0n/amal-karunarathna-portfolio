@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import {presets, spring, StaggeredMotion} from 'react-motion';
-import {Link, Redirect, Route, Switch} from 'react-router-dom';
+import {Link as Link, Redirect as Redirect, Route as Route, Switch as Switch} from 'react-router-dom';
 import {Article} from './article.component';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
