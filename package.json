@@ -1,8 +1,8 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "1.7.2",
+  "version": "2.0.0",
   "description": "Source for Amal Karunarathna's blog.",
-  "main": "./src/index.tsx",
+  "main": "./src/index.prod.tsx",
   "browserslist": [
     "last 2 versions",
     "not ie < 11"
@@ -58,6 +58,8 @@
   },
   "dependencies": {
     "firebase": "^4.4.0",
+    "preact": "^8.2.5",
+    "preact-compat": "^3.17.0",
     "react": "^15.6.1",
     "react-custom-scrollbars": "^4.1.2",
     "react-disqus-comments": "^1.0.3",

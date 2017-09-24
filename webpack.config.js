@@ -1,13 +1,14 @@
-const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 const workboxPlugin = require('workbox-webpack-plugin');
+const webpack = require('webpack');
 
-module.exports = function (env) {
+module.exports = (env) => {
     if (env === 'dev') {
         return {
             context: path.resolve(__dirname, './'),
 
-            entry: './src/index.tsx',
+            entry: './src/index.dev.tsx',
             output: {
                 filename: 'bundle.js',
                 path: path.resolve(__dirname, 'dist'),
@@ -15,7 +16,11 @@ module.exports = function (env) {
             },
 
             resolve: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss']
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss'],
+                alias: {
+                    'react': 'preact-compat',
+                    'react-dom': 'preact-compat'
+                }
             },
 
             devtool: 'source-map',
@@ -73,19 +78,20 @@ module.exports = function (env) {
 
             plugins: [
                 new ExtractTextPlugin('styles.css'),
+                new webpack.DefinePlugin({
+                    'NODE_ENV': JSON.stringify('development')
+                })
             ],
 
             externals: {
-                'react': 'React',
-                'react-dom': 'ReactDOM',
+                'preact': 'preact',
                 'firebase': 'firebase'
             },
 
             devServer: {
                 contentBase: [
                     path.join(__dirname, 'public'),
-                    path.join(__dirname, 'node_modules/react/dist'),
-                    path.join(__dirname, 'node_modules/react-dom/dist'),
+                    path.join(__dirname, 'node_modules/preact/dist'),
                     path.join(__dirname, 'node_modules/firebase')
                 ],
                 compress: true,
@@ -99,7 +105,7 @@ module.exports = function (env) {
         return {
             context: path.resolve(__dirname, './'),
 
-            entry: './src/index.tsx',
+            entry: './src/index.prod.tsx',
             output: {
                 filename: 'bundle.js',
                 path: path.resolve(__dirname, 'dist/prod'),
@@ -107,7 +113,11 @@ module.exports = function (env) {
             },
 
             resolve: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss']
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss'],
+                alias: {
+                    'react': 'preact-compat',
+                    'react-dom': 'preact-compat'
+                }
             },
 
             devtool: 'source-map',
@@ -177,8 +187,7 @@ module.exports = function (env) {
             ],
 
             externals: {
-                'react': 'React',
-                'react-dom': 'ReactDOM',
+                'preact': 'preact',
                 'firebase': 'firebase'
             }
         };
