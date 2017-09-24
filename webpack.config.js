@@ -80,7 +80,8 @@ module.exports = (env) => {
                 new ExtractTextPlugin('styles.css'),
                 new webpack.DefinePlugin({
                     'NODE_ENV': JSON.stringify('development')
-                })
+                }),
+                new webpack.HotModuleReplacementPlugin({})
             ],
 
             externals: {
@@ -176,6 +177,8 @@ module.exports = (env) => {
 
             plugins: [
                 new ExtractTextPlugin('styles.css'),
+                new webpack.NoEmitOnErrorsPlugin(),
+                new webpack.optimize.ModuleConcatenationPlugin(),
                 new workboxPlugin({
                     globDirectory: 'dist/prod',
                     globPatterns: [
