@@ -17,10 +17,6 @@ module.exports = (env) => {
 
             resolve: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss'],
-                alias: {
-                    'react': 'preact-compat',
-                    'react-dom': 'preact-compat'
-                }
             },
 
             devtool: 'source-map',
@@ -85,14 +81,16 @@ module.exports = (env) => {
             ],
 
             externals: {
-                'preact': 'preact',
+                'react': 'React',
+                'react-dom': 'ReactDOM',
                 'firebase': 'firebase'
             },
 
             devServer: {
                 contentBase: [
                     path.join(__dirname, 'public'),
-                    path.join(__dirname, 'node_modules/preact/dist'),
+                    path.join(__dirname, 'node_modules/react/umd'),
+                    path.join(__dirname, 'node_modules/react-dom/umd'),
                     path.join(__dirname, 'node_modules/firebase')
                 ],
                 compress: true,
@@ -115,10 +113,6 @@ module.exports = (env) => {
 
             resolve: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.pcss'],
-                alias: {
-                    'react': 'preact-compat',
-                    'react-dom': 'preact-compat'
-                }
             },
 
             devtool: 'source-map',
@@ -190,7 +184,8 @@ module.exports = (env) => {
             ],
 
             externals: {
-                'preact': 'preact',
+                'react': 'React',
+                'react-dom': 'ReactDOM',
                 'firebase': 'firebase'
             }
         };
