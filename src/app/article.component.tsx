@@ -2,7 +2,6 @@ import * as firebase from 'firebase';
 import * as React from 'react';
 import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 import './article.component.pcss';
-import {Disqus} from './disqus.component';
 
 // todo: Tweak blockquote style.
 
@@ -15,7 +14,6 @@ export interface IArticleProps {
 }
 
 interface IArticleState {
-    areCommentsShown: boolean;
     articleBody: string;
     articleDate: string;
     articleHeading: string;
@@ -27,7 +25,6 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
         super(props);
 
         this.state = {
-            areCommentsShown: false,
             articleBody: '',
             articleDate: '',
             articleHeading: '',
@@ -54,9 +51,6 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                     y: spring(0, presets.gentle)
                 }
             });
-            window.setTimeout(() => this.setState({
-                areCommentsShown: true
-            }), 1000);
         });
     }
 
@@ -90,12 +84,6 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                         <div dangerouslySetInnerHTML={{__html: this.state.articleBody}}/>
                     </div>}
                 </Motion>
-                {this.state.areCommentsShown ?
-                    <Disqus
-                        id={location.pathname.replace('/', '')}
-                        title={this.state.articleHeading}
-                        url={location.href}
-                    /> : undefined}
             </div>
         );
     }
