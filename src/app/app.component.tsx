@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Link as Link, Route as Route, Switch as Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import {About} from './about.component';
 import {Blog} from './blog.component';
 import NavBtn from './stateless-components/nav-btn';
