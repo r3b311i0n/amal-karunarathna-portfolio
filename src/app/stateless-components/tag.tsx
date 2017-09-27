@@ -24,7 +24,7 @@ const Tag = (tagName: string) => {
         case 'Java':
             return (
                 <div className="tag-root java" key={tagName}>
-                    {tagName}
+                    {tagName}{'\u0020'}🍵
                 </div>
             );
         case 'JavaScript':
@@ -33,16 +33,22 @@ const Tag = (tagName: string) => {
                     {tagName}
                 </div>
             );
+        case 'Preact':
+            return (
+                <div className="tag-root preact" key={tagName}>
+                    {tagName}
+                </div>
+            );
         case 'Python':
             return (
                 <div className="tag-root python" key={tagName}>
-                    {tagName}
+                    {tagName}{'\u0020'}🐍
                 </div>
             );
         case 'React':
             return (
                 <div className="tag-root react" key={tagName}>
-                    {tagName}
+                    {tagName}{'\u0020'}⚛
                 </div>
             );
         case 'TypeScript':
@@ -54,13 +60,13 @@ const Tag = (tagName: string) => {
         case 'Typography':
             return (
                 <div className="tag-root typography" key={tagName}>
-                    {tagName}
+                    {tagName}{'\u0020'}ℱ
                 </div>
             );
         case 'Web':
             return (
                 <div className="tag-root web" key={tagName}>
-                    {tagName}
+                    {tagName}{'\u0020'}🌐
                 </div>
             );
         default:
