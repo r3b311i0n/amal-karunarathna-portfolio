@@ -48,7 +48,7 @@ const Tag = (tagName: string) => {
         case 'React':
             return (
                 <div className="tag-root react" key={tagName}>
-                    {tagName}{'\u0020'}⚛
+                    {tagName}
                 </div>
             );
         case 'TypeScript':
@@ -66,7 +66,7 @@ const Tag = (tagName: string) => {
         case 'Web':
             return (
                 <div className="tag-root web" key={tagName}>
-                    {tagName}{'\u0020'}🌐
+                    {tagName}
                 </div>
             );
         default:
