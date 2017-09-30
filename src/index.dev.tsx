@@ -5,6 +5,8 @@ import './index.pcss';
 
 import {App} from './app/app.component';
 
+// todo: Add <noscript> tag.
+
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
