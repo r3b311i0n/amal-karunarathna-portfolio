@@ -18,9 +18,6 @@ if ('serviceWorker' in navigator) {
                 })
             );
         });
-    }).catch((err: Error) => {
-        // noinspection TsLint
-        console.error(err.message, err.stack);
     });
 }
 
