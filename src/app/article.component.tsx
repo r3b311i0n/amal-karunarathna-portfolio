@@ -43,6 +43,8 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
         y: -200
     };
 
+    private timeoutId: number;
+
     public async componentDidMount() {
         await database.ref(this.props.articleAddress + '/').once('value').then((snapshot) => {
             this.setState({
@@ -54,10 +56,14 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                     y: spring(0, presets.gentle)
                 }
             });
-            window.setTimeout(() => this.setState({
+            this.timeoutId = window.setTimeout(() => this.setState({
                 areCommentsShown: true
             }), 1000);
         });
+    }
+
+    public componentWillUnmount() {
+        window.clearTimeout(this.timeoutId);
     }
 
     public render() {
