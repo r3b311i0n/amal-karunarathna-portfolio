@@ -30,7 +30,10 @@ export default class Social extends React.Component<{}, {}> {
                         <div>
                             {interpolatingStyles.map((style: { h: number }, i: number) =>
                                 <div key={i}>
-                                    <div className="social-icon" style={{transform: `translateX(${style.h}px)`}}>
+                                    <div
+                                        className="social-motion-block"
+                                        style={{transform: `translateX(${style.h}px)`}}
+                                    >
                                         {SocialIcon[i]}
                                     </div>
                                 </div>

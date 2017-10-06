@@ -3,7 +3,7 @@ import './linked-in-icon.pcss';
 
 //noinspection TsLint
 const LinkedInIcon = () => (
-    <svg className="linked-in-root" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"
          shapeRendering="geometricPrecision" imageRendering="optimizeQuality" colorRendering="optimizeQuality">
         <title>LinkedIn</title>
         <g fill="#0077b5" fillRule="evenodd">

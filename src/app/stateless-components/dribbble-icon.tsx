@@ -3,7 +3,7 @@ import './dribbble-icon.pcss';
 
 //noinspection TsLint
 const DribbbleIcon = () => (
-    <svg className="dribbble-root" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
+    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
          shapeRendering="geometricPrecision" imageRendering="optimizeQuality" colorRendering="optimizeQuality">
         <title>Dribbble</title>
         <g fill="none" fillRule="evenodd">
