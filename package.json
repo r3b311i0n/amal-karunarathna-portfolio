@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "./src/index.prod.tsx",
   "browserslist": [
@@ -29,10 +29,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/history": "^4.6.0",
-    "@types/react": "^16.0.9",
+    "@types/react": "^16.0.10",
     "@types/react-custom-scrollbars": "^4.0.1",
-    "@types/react-dom": "^16.0.0",
-    "@types/react-motion": "0.0.21",
+    "@types/react-dom": "^16.0.1",
+    "@types/react-motion": "0.0.23",
     "@types/react-router-dom": "^4.0.8",
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
@@ -47,7 +47,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "source-map-loader": "^0.2.2",
-    "style-loader": "^0.18.2",
+    "style-loader": "^0.19.0",
     "tslint": "^5.7.0",
     "tslint-microsoft-contrib": "^5.0.1",
     "tslint-react": "^3.2.0",
