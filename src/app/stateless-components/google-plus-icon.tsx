@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import './google-plus-icon.pcss';
 
 //noinspection TsLint

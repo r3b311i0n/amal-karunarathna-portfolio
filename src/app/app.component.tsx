@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
+
 import {About} from './about.component';
 import {Blog} from './blog.component';
 import NavBtn from './stateless-components/nav-btn';
@@ -22,19 +23,18 @@ export class App extends React.Component<{}, IAppState> {
     private currentArticleLocation: string;
 
     private handleNavBtnClick = () => this.setState({
-        showAbout: !this.state.showAbout
+        showAbout: !this.state.showAbout,
     });
 
     public componentDidMount() {
         window.onpopstate = () => {
             if (location.pathname === '/about') {
                 this.setState({
-                    showAbout: true
+                    showAbout: true,
                 });
-            }
-            else {
+            } else {
                 this.setState({
-                    showAbout: false
+                    showAbout: false,
                 });
             }
         };

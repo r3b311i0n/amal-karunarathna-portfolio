@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import './tag.pcss';
 
 const Tag = (tagName: string) => {

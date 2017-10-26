@@ -3,6 +3,7 @@ import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import {presets, spring, StaggeredMotion} from 'react-motion';
 import {Link, Redirect, Route, Switch} from 'react-router-dom';
+
 import {Article} from './article.component';
 import './blog.component.pcss';
 import BlogLink from './stateless-components/blog-link';
@@ -29,7 +30,7 @@ export class Blog extends React.Component<{}, IBlogState> {
         this.state = {
             articleRoutes: [],
             willAnimateInBlogLinkList: false,
-            windowHeight: window.innerHeight
+            windowHeight: window.innerHeight,
         };
         this.setWindowHeight = this.setWindowHeight.bind(this);
     }
@@ -87,7 +88,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                 // Push style objects into array for StaggerMotion of Blog List.
                 this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
                 this.setState({
-                    willAnimateInBlogLinkList: true
+                    willAnimateInBlogLinkList: true,
                 });
             });
             resolve();

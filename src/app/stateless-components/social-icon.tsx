@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import CodePenIcon from './codepen-icon';
 import DribbbleIcon from './dribbble-icon';
 import GitHubIcon from './github-icon';
@@ -87,7 +88,7 @@ const SocialIcon = [(
             <TwitterIcon/>
         </a>
     </div>
-)
+),
 ];
 
 export default SocialIcon;

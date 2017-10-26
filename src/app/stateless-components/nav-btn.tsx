@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import './nav-btn.pcss';
 
 // This is the navigation button component.
@@ -21,31 +22,30 @@ const NavBtn = () => {
         homePropsTransitionDuration = '250ms';
         transformArrow = {
             transform: 'rotate(270deg) translateX(1px)',
-            transformOrigin: arrowTransformOrigin
+            transformOrigin: arrowTransformOrigin,
         };
         transformArrowShaftLeft = {
             transform: 'scaleY(1.8) translateX(1.8px) translateY(-1px)',
-            transformOrigin: arrowShaftTransformOrigin
+            transformOrigin: arrowShaftTransformOrigin,
         };
         transformArrowShaftRight = {
             transform: 'scaleY(1.8) translateX(-1.8px) translateY(-1px)',
-            transformOrigin: arrowShaftTransformOrigin
+            transformOrigin: arrowShaftTransformOrigin,
         };
-    }
-    else {
+    } else {
         homePropsOpacity = 1;
         homePropsTransitionDuration = '1500ms';
         transformArrow = {
             transform: 'rotate(0) translateX(0px)',
-            transformOrigin: arrowTransformOrigin
+            transformOrigin: arrowTransformOrigin,
         };
         transformArrowShaftLeft = {
             transform: 'scaleY(1)',
-            transformOrigin: arrowShaftTransformOrigin
+            transformOrigin: arrowShaftTransformOrigin,
         };
         transformArrowShaftRight = {
             transform: 'scaleY(1)',
-            transformOrigin: arrowShaftTransformOrigin
+            transformOrigin: arrowShaftTransformOrigin,
         };
     }
 

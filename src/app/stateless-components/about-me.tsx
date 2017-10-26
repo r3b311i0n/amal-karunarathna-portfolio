@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import './about-me.pcss';
 
 // My stateless component.
@@ -303,6 +304,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                             <li><a target="_blank" rel="noopener"
                                    href="http://lanadelrey.com">Lana{'\u0020'}Del{'\u0020'}Rey</a></li>
                             <li><a target="_blank" rel="noopener" href="https://lorde.co.nz">Lorde</a></li>
+                            <li><a target="_blank" rel="noopener" href="https://www.mybloodyvalentine.org">My{'\u0020'}Bloody{'\u0020'}Valentine</a>
+                            </li>
                             <li>
                                 <a
                                     target="_blank"

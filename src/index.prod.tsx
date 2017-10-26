@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {BrowserRouter, Switch} from 'react-router-dom';
-import './index.pcss';
 
 import {App} from './app/app.component';
+import './index.pcss';
 
 // Register Service Worker
 if ('serviceWorker' in navigator) {
@@ -13,7 +13,7 @@ if ('serviceWorker' in navigator) {
                 caches.open('v1').then((cache) => {
                     return cache.addAll([
                         'bundle.js',
-                        'styles.css'
+                        'styles.css',
                     ]);
                 })
             );
