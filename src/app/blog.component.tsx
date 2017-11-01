@@ -14,7 +14,7 @@ const database = firebase.database();
 
 const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
     return i === 0
-        ? {h: spring(0, {stiffness: 150, damping: 20})}
+        ? {h: spring(1, {stiffness: 200, damping: 23})}
         : {h: spring(prevInterpolatedStyles[i - 1].h)};
 });
 
@@ -86,7 +86,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                 // Populate render() with Route list.
                 this.setState({articleRoutes: routes});
                 // Push style objects into array for StaggerMotion of Blog List.
-                this.blogLinkList.forEach(() => this.defaultStyles.push({h: -320}));
+                this.blogLinkList.forEach(() => this.defaultStyles.push({h: 0}));
                 this.setState({
                     willAnimateInBlogLinkList: true,
                 });
@@ -127,7 +127,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                                             {interpolatingStyles.map((style: { h: number }, i: number) =>
                                                 <div key={i}>
                                                     <div
-                                                        style={{transform: `translateX(${style.h}px)`}}
+                                                        style={{opacity: style.h}}
                                                     >
                                                         {this.blogLinkList[i]}
                                                     </div>
