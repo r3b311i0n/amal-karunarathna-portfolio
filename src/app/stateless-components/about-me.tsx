@@ -11,9 +11,7 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
         <div className="about-me-root">
             <span className="about-me-description">Hi,{'\u0020'}I’m{'\u0020'}Amal.{'\u0020'}I{'\u0020'}make{'\u0020'}things{'\u0020'}that{'\u0020'}run{'\u0020'}in{'\u0020'}computers.
                 <a
-                    href="https://firebasestorage.googleapis.com/v0/b/amalkarunarathna-353b0.appspot.com/o/r3b311i0n.asc?alt=media&token=27b16a6a-1f23-405f-b640-6f1049834f44"
-                    target="_blank"
-                    rel="noopener"
+                    href="https://r3b311i0n.github.io/public/r3b311i0n.asc"
                 >
                     <sup>PGP</sup>
                 </a>
