@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 import * as React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
-import {presets, spring, StaggeredMotion} from 'react-motion';
+import {spring, StaggeredMotion} from 'react-motion';
 import {Link, Redirect, Route, Switch} from 'react-router-dom';
 
 import {Article} from './article.component';
@@ -14,7 +14,7 @@ const database = firebase.database();
 
 const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
     return i === 0
-        ? {h: spring(0, presets.noWobble)}
+        ? {h: spring(0, {stiffness: 150, damping: 20})}
         : {h: spring(prevInterpolatedStyles[i - 1].h)};
 });
 
