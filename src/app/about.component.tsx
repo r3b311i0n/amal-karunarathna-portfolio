@@ -49,7 +49,6 @@ export class About extends React.Component<{}, IAboutState> {
         return (
             <div className="about-root">
                 <div className="about-content">
-                    <Social/>
                     <Motion
                         style={this.state.aboutMeMotion}
                     >
@@ -62,6 +61,7 @@ export class About extends React.Component<{}, IAboutState> {
                                 <header><h2 className="about-header">
                                     Amal Karunarathna
                                 </h2>
+                                    <Social/>
                                 </header>
                                 <main>
                                     {AboutMe(About.currAnime, About.currBook, About.currGame, About.currMusic, About.currTV)}

@@ -1,8 +1,8 @@
-.social-root {
-    left: 1em;
-    top: 0.5em;
-    position: fixed;
-    width: max-content;
+.social-root > div:nth-child(1) {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
 .social-root svg {
@@ -11,17 +11,10 @@
 }
 
 .social-motion-block {
-    margin: 0.75em 0;
+    margin: auto 0.5rem 0.75rem 0.5rem;
 }
 
 .social-motion-block > a:any-link {
     cursor: pointer;
     outline: none;
-}
-
-@media screen and (width <= 480px) {
-    .social-root {
-        left: 0.5em;
-        position: absolute;
-    }
 }
