@@ -18,6 +18,8 @@
     "emitDecoratorMetadata": true,
     "jsx": "react",
     "noImplicitAny": true,
+    "strict": true,
+    "strictFunctionTypes": false,
     "pretty": true,
     "removeComments": true,
     "typeRoots": [
