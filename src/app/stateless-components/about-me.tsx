@@ -355,6 +355,9 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                    href="http://www.imdb.com/title/tt2100976">Impractical{'\u0020'}Jokers</a>
                             </li>
                             <li><a target="_blank" rel="noopener" href="http://www.imdb.com/title/tt0380136">QI</a></li>
+                            <li><a target="_blank" rel="noopener"
+                                   href="http://www.adultswim.com/videos/rick-and-morty">Rick{'\u0020'}and{'\u0020'}Morty</a>
+                            </li>
                             <li><a target="_blank"
                                    rel="noopener"
                                    href="http://www.imdb.com/title/tt4574334">Stranger{'\u0020'}Things</a></li>
