@@ -20,7 +20,7 @@ interface IArticleState {
     articleBody: string;
     articleDate: string;
     articleHeading: string;
-    articleStyle: { alpha: OpaqueConfig | number, y: OpaqueConfig | number };
+    articleStyle: { alpha: OpaqueConfig | number };
 }
 
 export class Article extends React.Component<IArticleProps, IArticleState> {
@@ -34,14 +34,12 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
             articleHeading: '',
             articleStyle: {
                 alpha: 0,
-                y: -200,
             },
         };
     }
 
     private static readonly articleDefaultStyle = {
         alpha: 0,
-        y: -200,
     };
 
     private timeoutId: number;
@@ -54,7 +52,6 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                 articleHeading: this.props.articleHeading,
                 articleStyle: {
                     alpha: spring(1, presets.gentle),
-                    y: spring(0, presets.gentle),
                 },
             });
             this.timeoutId = window.setTimeout(() => this.setState({
@@ -77,7 +74,6 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                     {(interpolation: any) => <div
                         style={{
                             opacity: interpolation.alpha,
-                            transform: `translateX(${-interpolation.y}px)`,
                         }}
                     >
                         <h1 className="blog-article-heading">{this.state.articleHeading}</h1>
@@ -90,7 +86,6 @@ export class Article extends React.Component<IArticleProps, IArticleState> {
                     {(interpolation: any) => <div
                         style={{
                             opacity: interpolation.alpha,
-                            transform: `translateY(${interpolation.y}px)`,
                         }}
                     >
                         <span className="blog-article-date"><small>{this.state.articleDate}</small></span>

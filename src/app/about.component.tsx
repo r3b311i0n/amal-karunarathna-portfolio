@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 import * as React from 'react';
-import {Motion, presets, spring} from 'react-motion';
+import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 
 import './about.component.pcss';
 import Social from './social';
@@ -10,7 +10,7 @@ const database = firebase.database();
 const meRef = database.ref('me/');
 
 interface IAboutState {
-    willAnimateIn: boolean;
+    aboutMeMotion: { alpha: number | OpaqueConfig };
 }
 
 export class About extends React.Component<{}, IAboutState> {
@@ -18,7 +18,9 @@ export class About extends React.Component<{}, IAboutState> {
         super(props);
 
         this.state = {
-            willAnimateIn: false,
+            aboutMeMotion: {
+                alpha: 0,
+            },
         };
     }
 
@@ -36,8 +38,8 @@ export class About extends React.Component<{}, IAboutState> {
             About.currMusic = snapshot.child('music').val();
             About.currTV = snapshot.child('tv').val();
 
-            // For triggering the slide-in animation for AboutMe.
-            this.setState({willAnimateIn: true});
+            // For triggering the alpha animation for AboutMe.
+            this.setState({aboutMeMotion: {alpha: spring(1, presets.gentle)}});
         });
     }
 
@@ -47,35 +49,26 @@ export class About extends React.Component<{}, IAboutState> {
         return (
             <div className="about-root">
                 <div className="about-content">
-                    <header>
-                        <Motion
-                            style={{
-                                alpha: this.state.willAnimateIn ? spring(1) : spring(0),
-                            }}
-                        >
-                            {(interpolation: any) => <h2
-                                className="about-header"
-                                style={{opacity: interpolation.alpha}}
-                            >
-                                Amal Karunarathna
-                            </h2>}
-                        </Motion>
-                    </header>
                     <Social/>
-                    <main>
-                        <Motion
-                            style={{
-                                alpha: this.state.willAnimateIn ? spring(1) : spring(0),
-                                x: this.state.willAnimateIn ? spring(0, presets.gentle) : spring(300),
-                            }}
-                        >
-                            {(interpolation: any) => <div
-                                style={{transform: `translateX(${interpolation.x}px)`, opacity: interpolation.alpha}}
+                    <Motion
+                        style={this.state.aboutMeMotion}
+                    >
+                        {(interpolation: any) =>
+                            <div
+                                style={{
+                                    opacity: interpolation.alpha,
+                                }}
                             >
-                                {AboutMe(About.currAnime, About.currBook, About.currGame, About.currMusic, About.currTV)}
-                            </div>}
-                        </Motion>
-                    </main>
+                                <header><h2 className="about-header">
+                                    Amal Karunarathna
+                                </h2>
+                                </header>
+                                <main>
+                                    {AboutMe(About.currAnime, About.currBook, About.currGame, About.currMusic, About.currTV)}
+                                </main>
+                            </div>
+                        }
+                    </Motion>
                 </div>
             </div>
         );
