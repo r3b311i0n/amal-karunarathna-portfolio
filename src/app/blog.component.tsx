@@ -14,7 +14,7 @@ const database = firebase.database();
 
 const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.map((_: { h: number }, i: number) => {
     return i === 0
-        ? {h: spring(0, presets.stiff)}
+        ? {h: spring(0, presets.noWobble)}
         : {h: spring(prevInterpolatedStyles[i - 1].h)};
 });
 
@@ -86,7 +86,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                 // Populate render() with Route list.
                 this.setState({articleRoutes: routes});
                 // Push style objects into array for StaggerMotion of Blog List.
-                this.blogLinkList.forEach(() => this.defaultStyles.push({h: -640}));
+                this.blogLinkList.forEach(() => this.defaultStyles.push({h: -320}));
                 this.setState({
                     willAnimateInBlogLinkList: true,
                 });
@@ -100,7 +100,6 @@ export class Blog extends React.Component<{}, IBlogState> {
         window.addEventListener('resize', this.setWindowHeight);
     }
 
-    //noinspection JSMethodCanBeStatic
     public componentWillUnmount() {
         window.removeEventListener('resize', this.setWindowHeight);
     }
