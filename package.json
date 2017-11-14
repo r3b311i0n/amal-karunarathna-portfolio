@@ -1,6 +1,6 @@
 {
   "name": "amal-karunarathna-portfolio",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "Source for Amal Karunarathna's blog.",
   "main": "./src/index.prod.tsx",
   "browserslist": [
@@ -29,13 +29,13 @@
   "author": "Amal Karunarathna",
   "license": "MIT",
   "devDependencies": {
-    "@types/history": "^4.6.1",
-    "@types/react": "^16.0.19",
+    "@types/history": "^4.6.2",
+    "@types/react": "^16.0.22",
     "@types/react-custom-scrollbars": "^4.0.1",
-    "@types/react-dom": "^16.0.2",
+    "@types/react-dom": "^16.0.3",
     "@types/react-motion": "0.0.23",
-    "@types/react-router-dom": "^4.2.0",
-    "awesome-typescript-loader": "^3.2.3",
+    "@types/react-router-dom": "^4.2.1",
+    "awesome-typescript-loader": "^3.3.0",
     "css-loader": "^0.28.7",
     "cypress": "^1.0.3",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -44,7 +44,7 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.5",
+    "karma-webpack": "^2.0.6",
     "mocha": "^4.0.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.8",
@@ -55,15 +55,15 @@
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3",
-    "workbox-webpack-plugin": "^2.1.0"
+    "webpack-dev-server": "^2.9.4",
+    "workbox-webpack-plugin": "^2.1.1"
   },
   "dependencies": {
-    "firebase": "^4.6.0",
-    "react": "^16.0.0",
+    "firebase": "^4.6.2",
+    "react": "^16.1.1",
     "react-custom-scrollbars": "^4.2.1",
     "react-disqus-comments": "^1.1.1",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.1.1",
     "react-motion": "^0.5.2",
     "react-router-dom": "^4.2.2"
   }
