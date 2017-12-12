@@ -364,6 +364,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                             </li>
                             <li><a target="_blank" rel="noopener"
                                    href="http://www.imdb.com/title/tt0306414">The{'\u0020'}Wire</a></li>
+                            <li><a target="_blank" rel="noopener"
+                                   href="http://www.imdb.com/title/tt1514753/">Three{'\u0020'}Kingdoms</a></li>
                         </ul>
                     </div>
                 </div>
