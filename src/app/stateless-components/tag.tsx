@@ -58,6 +58,12 @@ const Tag = (tagName: string) => {
                     {tagName}
                 </div>
             );
+        case 'Kotlin':
+            return (
+                <div className="tag-root kotlin" key={tagName}>
+                    {tagName}
+                </div>
+            );
         case 'Preact':
             return (
                 <div className="tag-root preact" key={tagName}>
@@ -103,4 +109,4 @@ const Tag = (tagName: string) => {
     }
 };
 
-export default Tag;
+export {Tag};
