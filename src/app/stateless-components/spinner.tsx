@@ -40,4 +40,4 @@ const Spinner = () => (
     </svg>
 );
 
-export default Spinner;
+export {Spinner};

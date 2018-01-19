@@ -46,4 +46,4 @@ const CodePenIcon = () => (
     </svg>
 );
 
-export default CodePenIcon;
+export {CodePenIcon};

@@ -27,8 +27,8 @@ import * as React from 'react';
 import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 
 import './about.component.pcss';
-import Social from './social';
-import AboutMe from './stateless-components/about-me';
+import {Social} from './social';
+import {AboutMe} from './stateless-components/about-me';
 
 const database = firebase.database();
 const meRef = database.ref('me/');

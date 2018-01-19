@@ -43,4 +43,4 @@ const ScrollUpBtn = (showBtn: string) => (
     </svg>
 );
 
-export default ScrollUpBtn;
+export {ScrollUpBtn};

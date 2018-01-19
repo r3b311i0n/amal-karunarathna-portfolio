@@ -30,7 +30,7 @@ import {Link, Redirect, Route, Switch} from 'react-router-dom';
 
 import {Article} from './article.component';
 import './blog.component.pcss';
-import BlogLink from './stateless-components/blog-link';
+import {BlogLink} from './stateless-components/blog-link';
 
 // todo: Add scroll to top button.
 

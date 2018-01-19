@@ -43,4 +43,4 @@ const DribbbleIcon = () => (
     </svg>
 );
 
-export default DribbbleIcon;
+export {DribbbleIcon};

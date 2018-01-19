@@ -100,4 +100,4 @@ const NavBtn = () => {
     );
 };
 
-export default NavBtn;
+export {NavBtn};

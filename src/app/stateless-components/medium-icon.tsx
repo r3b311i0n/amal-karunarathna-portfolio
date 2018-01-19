@@ -58,4 +58,4 @@ const MediumIcon = () => (
     </svg>
 );
 
-export default MediumIcon;
+export {MediumIcon};

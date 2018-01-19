@@ -221,3 +221,4 @@ rules:
     - Copyright
   no-dynamic-delete: true,
   prefer-readonly: true
+  no-default-export: true

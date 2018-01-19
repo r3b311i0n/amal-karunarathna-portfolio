@@ -25,7 +25,7 @@
 import * as React from 'react';
 
 import './blog-link.pcss';
-import Tag from './tag';
+import {Tag} from './tag';
 
 const BlogLink = (articleName: string, tags: string[]) =>
     (
@@ -44,4 +44,4 @@ const BlogLink = (articleName: string, tags: string[]) =>
     )
 ;
 
-export default BlogLink;
+export {BlogLink};

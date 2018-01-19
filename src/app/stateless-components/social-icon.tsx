@@ -24,14 +24,14 @@
 
 import * as React from 'react';
 
-import CodePenIcon from './codepen-icon';
-import DribbbleIcon from './dribbble-icon';
-import GitHubIcon from './github-icon';
-import GooglePlusIcon from './google-plus-icon';
-import LinkedInIcon from './linked-in-icon';
-import MediumIcon from './medium-icon';
+import {CodePenIcon} from './codepen-icon';
+import {DribbbleIcon} from './dribbble-icon';
+import {GitHubIcon} from './github-icon';
+import {GooglePlusIcon} from './google-plus-icon';
+import {LinkedInIcon} from './linked-in-icon';
+import {MediumIcon} from './medium-icon';
 import './social-icon.pcss';
-import TwitterIcon from './twitter-icon';
+import {TwitterIcon} from './twitter-icon';
 
 // Social links put in an array for StaggeredMotion animation.
 
@@ -115,4 +115,4 @@ const SocialIcon = [(
 ),
 ];
 
-export default SocialIcon;
+export {SocialIcon};

@@ -27,7 +27,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 
 import {About} from './about.component';
 import {Blog} from './blog.component';
-import NavBtn from './stateless-components/nav-btn';
+import {NavBtn} from './stateless-components/nav-btn';
 
 interface IAppState {
     showAbout: boolean;

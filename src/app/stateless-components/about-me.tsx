@@ -416,4 +416,4 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
     </section>
 );
 
-export default AboutMe;
+export {AboutMe};

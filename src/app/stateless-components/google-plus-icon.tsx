@@ -47,4 +47,4 @@ const GooglePlusIcon = () => (
     </svg>
 );
 
-export default GooglePlusIcon;
+export {GooglePlusIcon};

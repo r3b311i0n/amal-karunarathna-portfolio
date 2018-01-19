@@ -26,7 +26,7 @@ import * as React from 'react';
 import {presets, spring, StaggeredMotion} from 'react-motion';
 
 import './social.pcss';
-import SocialIcon from './stateless-components/social-icon';
+import {SocialIcon} from './stateless-components/social-icon';
 
 //    Social links component.
 
@@ -40,7 +40,7 @@ const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.ma
         : {h: spring(prevInterpolatedStyles[i - 1].h)};
 });
 
-export default class Social extends React.Component<{}, {}> {
+export class Social extends React.Component<{}, {}> {
     public constructor(props: any) {
         super(props);
     }
