@@ -34,7 +34,6 @@ interface IAppState {
 }
 
 // todo: Disable article link if already on its page.
-// todo: Implement dark mode.
 
 export class App extends React.Component<{}, IAppState> {
     public constructor(props: any) {

@@ -31,6 +31,7 @@ import {Link, Redirect, Route, Switch} from 'react-router-dom';
 import {Article} from './article.component';
 import './blog.component.pcss';
 import {BlogLink} from './stateless-components/blog-link';
+import {Spinner} from './stateless-components/spinner';
 
 // todo: Add scroll to top button.
 
@@ -44,6 +45,7 @@ const staggerStyles = (prevInterpolatedStyles: any) => prevInterpolatedStyles.ma
 
 interface IBlogState {
     articleRoutes: JSX.Element[];
+    showSpinner: boolean;
     willAnimateInBlogLinkList: boolean;
     windowHeight: number;
 }
@@ -53,6 +55,7 @@ export class Blog extends React.Component<{}, IBlogState> {
         super(props);
         this.state = {
             articleRoutes: [],
+            showSpinner: true,
             willAnimateInBlogLinkList: false,
             windowHeight: window.innerHeight,
         };
@@ -114,6 +117,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                     // Push style objects into array for StaggerMotion of Blog List.
                     this.blogLinkList.forEach(() => this.defaultStyles.push({h: 0}));
                     this.setState({
+                        showSpinner: false,
                         willAnimateInBlogLinkList: true,
                     });
                 });
@@ -165,9 +169,12 @@ export class Blog extends React.Component<{}, IBlogState> {
                             </Scrollbars>
                         </div>
                     </aside>
-                    <main>
-                        <Switch>{this.state.articleRoutes}</Switch>
-                    </main>
+                    {(this.state.showSpinner) ?
+                        <Spinner/> :
+                        <main>
+                            <Switch>{this.state.articleRoutes}</Switch>
+                        </main>
+                    }
                 </div>
             </div>
         );

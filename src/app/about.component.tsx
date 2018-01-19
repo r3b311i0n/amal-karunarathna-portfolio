@@ -29,12 +29,14 @@ import {Motion, OpaqueConfig, presets, spring} from 'react-motion';
 import './about.component.pcss';
 import {Social} from './social';
 import {AboutMe} from './stateless-components/about-me';
+import {Spinner} from './stateless-components/spinner';
 
 const database = firebase.database();
 const meRef = database.ref('me/');
 
 interface IAboutState {
     aboutMeMotion: { alpha: number | OpaqueConfig };
+    showSpinner: boolean;
 }
 
 export class About extends React.Component<{}, IAboutState> {
@@ -45,6 +47,7 @@ export class About extends React.Component<{}, IAboutState> {
             aboutMeMotion: {
                 alpha: 0,
             },
+            showSpinner: true,
         };
     }
 
@@ -63,8 +66,11 @@ export class About extends React.Component<{}, IAboutState> {
                 About.currMusic = snapshot.child('music').val();
                 About.currTV = snapshot.child('tv').val();
 
-                // For triggering the alpha animation for AboutMe.
-                this.setState({aboutMeMotion: {alpha: spring(1, presets.gentle)}});
+                // For triggering the alpha animation for AboutMe and hiding the spinner.
+                this.setState({
+                    aboutMeMotion: {alpha: spring(1, presets.gentle)},
+                    showSpinner: false,
+                });
             });
     }
 
@@ -74,26 +80,29 @@ export class About extends React.Component<{}, IAboutState> {
         return (
             <div className="about-root">
                 <div className="about-content">
-                    <Motion
-                        style={this.state.aboutMeMotion}
-                    >
-                        {(interpolation: any) =>
-                            <div
-                                style={{
-                                    opacity: interpolation.alpha,
-                                }}
-                            >
-                                <header><h2 className="about-header">
-                                    Amal Karunarathna
-                                </h2>
-                                    <Social/>
-                                </header>
-                                <main>
-                                    {AboutMe(About.currAnime, About.currBook, About.currGame, About.currMusic, About.currTV)}
-                                </main>
-                            </div>
-                        }
-                    </Motion>
+                    {(this.state.showSpinner) ?
+                        <Spinner/> :
+                        <Motion
+                            style={this.state.aboutMeMotion}
+                        >
+                            {(interpolation: any) =>
+                                <div
+                                    style={{
+                                        opacity: interpolation.alpha,
+                                    }}
+                                >
+                                    <header><h2 className="about-header">
+                                        Amal Karunarathna
+                                    </h2>
+                                        <Social/>
+                                    </header>
+                                    <main>
+                                        {AboutMe(About.currAnime, About.currBook, About.currGame, About.currMusic, About.currTV)}
+                                    </main>
+                                </div>
+                            }
+                        </Motion>
+                    }
                 </div>
             </div>
         );
