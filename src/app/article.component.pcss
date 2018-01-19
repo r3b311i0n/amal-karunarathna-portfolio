@@ -417,10 +417,10 @@
 }
 
 .markdown-body hr {
-  height: 4px;
+  height: 2px;
   padding: 0;
   margin: 16px 0;
-  background-color: #e7e7e7;
+  background-color: rgba(32, 178, 170, 0.75);
   border: 0 none;
 }
 
@@ -461,7 +461,16 @@
 .markdown-body blockquote {
   padding: 0 15px;
   color: #777;
-  border-left: 4px solid #ddd;
+  border-left: 6px rgba(32, 178, 170, 0.75) dotted;
+
+  & ::before {
+    color: rgba(32, 178, 170, 0.75);
+    content: open-quote;
+  }
+  & ::after {
+    color: rgba(32, 178, 170, 0.75);
+    content: close-quote;
+  }
 }
 
 .markdown-body blockquote > :first-child {
