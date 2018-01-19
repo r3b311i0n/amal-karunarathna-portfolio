@@ -1,3 +1,27 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2017-2018 Amal Shasthree Karunarathna
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 import * as React from 'react';
 
 import './about-me.pcss';
@@ -9,7 +33,8 @@ import './about-me.pcss';
 const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusic: string, currTV: string) => (
     <section>
         <div className="about-me-root">
-            <span className="about-me-description">Hi,{'\u0020'}I’m{'\u0020'}Amal.{'\u0020'}I{'\u0020'}make{'\u0020'}things{'\u0020'}that{'\u0020'}run{'\u0020'}in{'\u0020'}computers.
+            <span
+                className="about-me-description">Hi,{'\u0020'}I’m{'\u0020'}Amal.{'\u0020'}I{'\u0020'}make{'\u0020'}things{'\u0020'}that{'\u0020'}run{'\u0020'}in{'\u0020'}computers.
                 <a
                     href="https://r3b311i0n.github.io/public/r3b311i0n.asc"
                 >
@@ -21,7 +46,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                     <div>Editors{'\u0020'}<sub>⮧</sub>
                         <ul>
                             <li><a rel="noopener" href="https://neovim.io" target="_blank">NeoVim</a></li>
-                            <li><a rel="noopener" href="https://www.sublimetext.com" target="_blank">Sublime{'\u0020'}Text</a>
+                            <li><a rel="noopener" href="https://www.sublimetext.com"
+                                   target="_blank">Sublime{'\u0020'}Text</a>
                             </li>
                             <li><a rel="noopener" href="https://code.visualstudio.com/"
                                    target="_blank">Visual{'\u0020'}Studio{'\u0020'}Code</a>
@@ -34,7 +60,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                    target="_blank" rel="noopener">Affinity{'\u0020'}Designer</a></li>
                             <li><a href="http://www.inkscape.org" target="_blank" rel="noopener">Inkscape</a></li>
                             <li><a href="https://krita.org/en/" target="_blank" rel="noopener">Krita</a></li>
-                            <li><a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener">Photoshop</a>
+                            <li><a href="https://www.adobe.com/products/photoshop.html" target="_blank"
+                                   rel="noopener">Photoshop</a>
                             </li>
                         </ul>
                     </div>
@@ -45,7 +72,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                    rel="noopener">IntelliJ{'\u0020'}Idea</a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.visualstudio.com" rel="noopener">Visual{'\u0020'}Studio</a>
+                                <a target="_blank" href="https://www.visualstudio.com"
+                                   rel="noopener">Visual{'\u0020'}Studio</a>
                             </li>
                         </ul>
                     </div>
@@ -69,7 +97,12 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/JavaScript">JavaScript</a>
+                                <a target="_blank" rel="noopener"
+                                   href="https://www.wikiwand.com/en/JavaScript">JavaScript</a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noopener"
+                                   href="https://kotlinlang.org">Kotlin</a>
                             </li>
                             <li>
                                 <a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/PHP">PHP</a>
@@ -79,7 +112,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                    href="https://www.wikiwand.com/en/Python_(programming_language)">Python</a>
                             </li>
                             <li>
-                                <a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/TypeScript">TypeScript</a>
+                                <a target="_blank" rel="noopener"
+                                   href="https://www.wikiwand.com/en/TypeScript">TypeScript</a>
                             </li>
                         </ul>
                     </div>
@@ -119,13 +153,15 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                             </li>
                             <li><a rel="noopener" href="https://myanimelist.net/anime/227/FLCL" target="_blank">FLCL</a>
                             </li>
-                            <li><a rel="noopener" href="https://myanimelist.net/anime/918/Gintama" target="_blank">Gintama</a>
+                            <li><a rel="noopener" href="https://myanimelist.net/anime/918/Gintama"
+                                   target="_blank">Gintama</a>
                             </li>
                             <li><a rel="noopener" href="https://myanimelist.net/anime/245/Great_Teacher_Onizuka"
                                    target="_blank">
                                 Great{'\u0020'}Teacher{'\u0020'}Onizuka
                             </a></li>
-                            <li><a rel="noopener" href="https://myanimelist.net/anime/19/Monster" target="_blank">Monster</a>
+                            <li><a rel="noopener" href="https://myanimelist.net/anime/19/Monster"
+                                   target="_blank">Monster</a>
                             </li>
                             <li>
                                 <a rel="noopener" href="https://myanimelist.net/anime/30/Neon_Genesis_Evangelion"
@@ -184,9 +220,11 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                    href="https://www.goodreads.com/series/49075-the-stormlight-archive">
                                 The{'\u0020'}Stormlight{'\u0020'}Archive
                             </a></li>
-                            <li><a target="_blank" rel="noopener" href="https://myanimelist.net/manga/656/Vagabond">Vagabond</a>
+                            <li><a target="_blank" rel="noopener"
+                                   href="https://myanimelist.net/manga/656/Vagabond">Vagabond</a>
                             </li>
-                            <li><a target="_blank" rel="noopener" href="https://myanimelist.net/manga/104/Yotsuba_to">Yotsuba{'\u0020'}to!</a>
+                            <li><a target="_blank" rel="noopener"
+                                   href="https://myanimelist.net/manga/104/Yotsuba_to">Yotsuba{'\u0020'}to!</a>
                             </li>
                         </ul>
                     </div>
@@ -302,7 +340,8 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                             <li><a target="_blank" rel="noopener"
                                    href="http://lanadelrey.com">Lana{'\u0020'}Del{'\u0020'}Rey</a></li>
                             <li><a target="_blank" rel="noopener" href="https://lorde.co.nz">Lorde</a></li>
-                            <li><a target="_blank" rel="noopener" href="https://www.mybloodyvalentine.org">My{'\u0020'}Bloody{'\u0020'}Valentine</a>
+                            <li><a target="_blank" rel="noopener"
+                                   href="https://www.mybloodyvalentine.org">My{'\u0020'}Bloody{'\u0020'}Valentine</a>
                             </li>
                             <li>
                                 <a
@@ -325,14 +364,17 @@ const AboutMe = (currAnime: string, currBook: string, currGame: string, currMusi
                                    href="https://stellardrone.bandcamp.com">Stellardrone</a></li>
                             <li><a target="_blank" rel="noopener" href="http://www.theclash.com">The{'\u0020'}Clash</a>
                             </li>
-                            <li><a target="_blank" rel="noopener" href="http://www.thelibertines.com">The{'\u0020'}Libertines</a>
+                            <li><a target="_blank" rel="noopener"
+                                   href="http://www.thelibertines.com">The{'\u0020'}Libertines</a>
                             </li>
-                            <li><a target="_blank" rel="noopener" href="http://www.theverveonline.com">The{'\u0020'}Verve</a>
+                            <li><a target="_blank" rel="noopener"
+                                   href="http://www.theverveonline.com">The{'\u0020'}Verve</a>
                             </li>
                             <li><a target="_blank" rel="noopener"
                                    href="http://www.whitestripes.com">The{'\u0020'}White{'\u0020'}Stripes</a>
                             </li>
-                            <li><a target="_blank" rel="noopener" href="http://vocaloid.wikia.com/wiki/Vocaloid_Wiki">Vocaloid</a>
+                            <li><a target="_blank" rel="noopener"
+                                   href="http://vocaloid.wikia.com/wiki/Vocaloid_Wiki">Vocaloid</a>
                             </li>
                         </ul>
                     </div>
