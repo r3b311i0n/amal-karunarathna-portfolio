@@ -30,9 +30,15 @@ import './nav-btn.pcss';
 
 const NavBtn = () => {
     // Check browser for SVG transform-origin.
-    const isWebKit: boolean = navigator.userAgent.indexOf('WebKit') > -1;
-    const arrowTransformOrigin = (isWebKit) ? '8px 9px' : '50% 55%';
-    const arrowShaftTransformOrigin = (isWebKit) ? '0% 0%' : '50% 40%';
+    let uaString = navigator.userAgent.match(/Chrome\/([1-6]?[0-9])/);
+    // Assume that transform-origin is fixed if user-agent string doesn't have include Chrome.
+    // String.prototype.match() returns an Array<string> | null, hence the null check.
+    uaString = (uaString !== null) ? uaString : Array('', '64');
+    const v = parseInt(uaString[1], 10);
+    // @version 64, Chrome added transform-box and fixed transform-origin.
+    const isOldWebKit: boolean = v < 64 || isNaN(v);
+    const arrowTransformOrigin = (isOldWebKit) ? '8px 9px' : '50% 55%';
+    const arrowShaftTransformOrigin = (isOldWebKit) ? '0% 0%' : '50% 40%';
     // Animate nav btn.
     let homePropsOpacity: number;
     let homePropsTransitionDuration: string = '250ms';
