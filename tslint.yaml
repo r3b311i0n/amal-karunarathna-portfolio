@@ -222,3 +222,4 @@ rules:
   no-dynamic-delete: true,
   prefer-readonly: true
   no-default-export: true
+  jsx-use-translation-function: true
