@@ -25,7 +25,8 @@
     "removeComments": true,
     "typeRoots": [
       "./typings/"
-    ]
+    ],
+    "strictPropertyInitialization": false
   },
   "include": [
     "./src/**/*",

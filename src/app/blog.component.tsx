@@ -64,6 +64,7 @@ export class Blog extends React.Component<{}, IBlogState> {
 
 //    Blog article component.
 
+    // TODO: Remove ""strictPropertyInitialization": false" from tsconfig after IntelliJ adds support for TypeScript 2.7.*+
     private blogLinkList: JSX.Element[];
     private defaultStyles: Array<{ h: number }> = [];
     private index: any;
@@ -81,7 +82,7 @@ export class Blog extends React.Component<{}, IBlogState> {
                     this.index = snapshot.val();
                     const routes: JSX.Element[] = [];
                     this.blogLinkList = Object.entries(this.index)
-                        .map(([key, value]) => {
+                        .map(([key, value]: any) => {
                             // Initialise and array of routes.
                             //noinspection TsLint
                             routes.push((
