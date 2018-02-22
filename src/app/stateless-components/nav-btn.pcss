@@ -1,39 +1,39 @@
 .nav-btn-root {
-    cursor: pointer;
-    position: fixed;
-    right: 7.478em;
-    top: 3.157em;
-    transition: filter 200ms, transform 200ms;
-    z-index: 99;
+  cursor: pointer;
+  position: fixed;
+  right: 7.478em;
+  top: 3.157em;
+  transition: filter 200ms, transform 200ms;
+  z-index: 99;
 }
 
 .nav-btn-root:hover {
-    filter: invert(100%);
-    transform: scale(1.1, 1.1) translate(-2px, 2px);
+  filter: invert(100%);
+  transform: scale(1.1, 1.1) translate(-2px, 2px);
 }
 
 .nav-btn-arrow {
-    transition: transform 750ms;
+  transition: transform 750ms;
 }
 
 .nav-btn-arrow-shaft {
-    transition: transform 750ms;
+  transition: transform 750ms;
 }
 
 @media screen and (width <= 1024px) {
-    .nav-btn-root {
-        right: 5.61em;
-    }
+  .nav-btn-root {
+    right: 5.61em;
+  }
 }
 
 @media screen and (width <= 768px) {
-    .nav-btn-root {
-        right: 0.75em;
-        top: 1.777em;
+  .nav-btn-root {
+    right: 0.75em;
+    top: 1.777em;
 
-        & svg {
-            height: 35px;
-            width: 35px;
-        }
+    & svg {
+      height: 35px;
+      width: 35px;
     }
+  }
 }

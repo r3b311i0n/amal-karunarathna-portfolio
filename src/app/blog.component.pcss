@@ -1,41 +1,41 @@
 /* todo: consider having hint/citation on a block on the right side. */
 
 .blog-link-list {
-    bottom: 0;
-    left: 1em;
-    max-width: 17.713em;
-    outline: none;
-    position: fixed;
-    top: 0;
+  bottom: 0;
+  left: 1em;
+  max-width: 17.713em;
+  outline: none;
+  position: fixed;
+  top: 0;
 }
 
 .blog-link-list a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 @media screen and (width <= 1024px) {
-    .blog-link-list {
-        max-width: 9.969em;
-    }
+  .blog-link-list {
+    max-width: 9.969em;
+  }
 }
 
 @media screen and (width <= 768px) {
-    .blog-link-list {
-        left: 0.5em;
-        max-width: 4.209em;
-        transition: transform 250ms;
-    }
+  .blog-link-list {
+    left: 0.5em;
+    max-width: 4.209em;
+    transition: transform 250ms;
+  }
 }
 
 @media screen and (width <= 480px) {
-    .blog-link-list {
-        left: 0;
-        max-width: 4.209em;
-        transform: translateX(-2.369em);
-        transition: transform 250ms;
-    }
+  .blog-link-list {
+    left: 0;
+    max-width: 4.209em;
+    transform: translateX(-2.369em);
+    transition: transform 250ms;
+  }
 
-    .blog-link-list:hover, .blog-link-list:active {
-        transform: translateX(0);
-    }
+  .blog-link-list:hover, .blog-link-list:active {
+    transform: translateX(0);
+  }
 }
