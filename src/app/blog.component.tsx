@@ -137,47 +137,45 @@ export class Blog extends React.Component<{}, IBlogState> {
 
     public render(): JSX.Element {
         return (
-            <div>
-                <div>
-                    <aside>
-                        <div className="blog-link-list">
-                            <Scrollbars
-                                autoHeight={true}
-                                autoHeightMin={100}
-                                autoHeightMax={this.state.windowHeight}
-                                autoHide={true}
-                                autoHideDuration={200}
-                                autoHideTimeout={1000}
+            <React.Fragment>
+                <aside>
+                    <div className="blog-link-list">
+                        <Scrollbars
+                            autoHeight={true}
+                            autoHeightMin={100}
+                            autoHeightMax={this.state.windowHeight}
+                            autoHide={true}
+                            autoHideDuration={200}
+                            autoHideTimeout={1000}
+                        >
+                            {this.state.willAnimateInBlogLinkList ? <StaggeredMotion
+                                defaultStyles={this.defaultStyles}
+                                styles={staggerStyles}
                             >
-                                {this.state.willAnimateInBlogLinkList ? <StaggeredMotion
-                                    defaultStyles={this.defaultStyles}
-                                    styles={staggerStyles}
-                                >
-                                    {(interpolatingStyles: object[]) =>
-                                        <div>
-                                            {interpolatingStyles.map((style: { h: number }, i: number) =>
-                                                <div key={i}>
-                                                    <div
-                                                        style={{opacity: style.h}}
-                                                    >
-                                                        {this.blogLinkList[i]}
-                                                    </div>
+                                {(interpolatingStyles: object[]) =>
+                                    <div>
+                                        {interpolatingStyles.map((style: { h: number }, i: number) =>
+                                            <div key={i}>
+                                                <div
+                                                    style={{opacity: style.h}}
+                                                >
+                                                    {this.blogLinkList[i]}
                                                 </div>
-                                            )}
-                                        </div>
-                                    }
-                                </StaggeredMotion> : <div/>}
-                            </Scrollbars>
-                        </div>
-                    </aside>
-                    {(this.state.showSpinner) ?
-                        <Spinner/> :
-                        <main>
-                            <Switch>{this.state.articleRoutes}</Switch>
-                        </main>
-                    }
-                </div>
-            </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                }
+                            </StaggeredMotion> : <div/>}
+                        </Scrollbars>
+                    </div>
+                </aside>
+                {(this.state.showSpinner) ?
+                    <Spinner/> :
+                    <main>
+                        <Switch>{this.state.articleRoutes}</Switch>
+                    </main>
+                }
+            </React.Fragment>
         );
     }
 }

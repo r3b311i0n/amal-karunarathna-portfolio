@@ -71,7 +71,7 @@ export class App extends React.Component<{}, IAppState> {
 
     public render(): JSX.Element {
         return (
-            <div>
+            <React.Fragment>
                 <div className="app-content">
                     <Switch>
                         <Route path="/about" component={About}/>
@@ -81,7 +81,7 @@ export class App extends React.Component<{}, IAppState> {
                 <div onClick={this.handleNavBtnClick}>
                     <Link to={(this.state.showAbout) ? this.currentArticleLocation : '/about'}>{NavBtn()}</Link>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
